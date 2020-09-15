@@ -1303,13 +1303,6 @@
 
     /* ------------------ Roller Modifier Logic ------------------------------------*/
 
-    on("change:stat_roller_toggle", function(){
-        console.log("Radio Button Change");
-        getAttrs(["stat_roller_toggle", "stat_roll_dice_mod_ready"], function(values){
-            calculateStatRoll(values.stat_roll_dice_mod_ready, values.stat_roller_toggle);
-        });
-    });
-
     //Verify Stat Roll modifier inputs
     on("change:stat_roll_dice_mod change:stat_roll_power_mod", function(){
         getAttrs(["stat_roll_dice_mod", "stat_roll_power_mod", "stat_roller_toggle"], function(values){
@@ -1319,11 +1312,6 @@
             var dice_mod = parseInt(values["stat_roll_dice_mod"]) || 0;
             var power_mod = parseInt(values["stat_roll_power_mod"]) || 0;
             var toggle = values["stat_roller_toggle"];
-
-            console.log("Dice Mod: " + dice_mod);
-            console.log("Stat Mod: " + power_mod);
-
-            calculateStatRoll(dice_mod, toggle);
 
             setAttrs({
                 stat_roll_dice_mod_ready : dice_mod,
@@ -1340,11 +1328,6 @@
 
             var dice_mod = parseInt(values.atk_roll_dice_mod) || 0;
             var power_mod = parseInt(values.atk_roll_power_mod) || 0;
-
-            console.log("Dice Mod: " + dice_mod);
-            console.log("Stat Mod: " + power_mod);
-
-            calculateAttackBaseRoll(dice_mod);
 
             setAttrs({
                 atk_roll_dice_mod_ready : dice_mod,
@@ -1393,10 +1376,6 @@
             
             attribute_totals["wpn_power"] = attribute_totals[equippedWeapon.source] + 
                                         (attribute_totals["tier_mod"] * bonus);
-                                        
-            getAttrs(["stat_roll_dice_mod_ready"], function(values){
-                calculateAttackBaseRoll(values["stat_roll_dice_mod_ready"]);
-            });
         }
     };
 
