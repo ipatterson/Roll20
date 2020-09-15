@@ -188,7 +188,7 @@
                 </div>
                 <div class="attack-grid-title">
                     <input type="hidden" value="3d20>8" name="attr_atk_base_dice_roll" readonly>
-                    <input type="hidden" value="&{template:default}" name="attr_atk_roll_template" readonly>
+                    <input type="hidden" value="&{template:attack}" name="attr_atk_roll_template" readonly>
                     <input type="hidden" value="1" name="attr_atk_roll_tier" readonly>
                     <div class="attack-grid-title-text">ATTACK ROLLER</div>
                     <div class="modifier-grid">
@@ -208,8 +208,6 @@
                         <button class="btn-charge">[CHARGE ACTION]</button>
                         <button class="btn-defend">[DEFEND ACTION]</button>
                         <button class="btn-steady" type="roll" value="!steady 1'">[STEADY ACTION]</button>
-                        <!-- <button class="btn-steady" type="roll" value="&{template:default} {{name=Stat Manipulation Test}} !setattr --name @{character_name} --modb --ap|{{Recharge AP=@{ap}+1}}!!! {{desc=@{character_name} steadies themselves.}}">[STEADY ACTION]</button> -->
-                        <!-- <button class="btn-steady" type="roll" value="!token-mod --set bar3_current|+1 --report all|'{name} steadies themselves.' gm:control|'{name} recharges {bar3_value:change} AP, previously at {bar3_value:before}'">[STEADY ACTION]</button> -->
                     </div>
                 </div>
             </span>
@@ -989,6 +987,33 @@
         </div>
     </span>
 </span>
+
+<rolltemplate class="sheet-rolltemplate-attack">
+    <div class="sheet-template-container">
+        <div class="sheet-template-header">Name: {{name}}</div>
+        <div class="sheet-template-row">Dice Rolled: {{base}} </div>
+        <div class="sheet-template-row">Dice Mod: {{diceMod}} </div>
+        <div class="sheet-template-row">Weapon: {{wpnPower}} </div>
+        <div class="sheet-template-row">Power Mod: {{powerMod}} </div>
+        <div class="sheet-template-row">Level Tier: {{levelTier}} </div>
+        <div class="sheet-template-row">Result: {{result}}</div>
+    </div>
+</rolltemplate>
+
+<rolltemplate class="sheet-rolltemplate-stat">
+    <div class="sheet-template-container">
+        <div class="sheet-template-header">Name: {{name}}</div>
+        <div class="sheet-template-row">Dice Rolled: {{base}} </div>
+        <div class="sheet-template-row">Dice Mod: {{diceMod}} </div>
+        <div class="sheet-template-row">Stat: {{statName}} </div>
+        <div class="sheet-template-row">Stat Value: {{statValue}} </div>
+        <div class="sheet-template-row">Power Mod: {{powerMod}} </div>
+        <div class="sheet-template-row">Level Tier: {{levelTier}} </div>
+        <div class="sheet-template-row">Result: {{result}}</div>
+    </div>
+</rolltemplate>
+
+
 <!------------------------------- SHEETWORKERS ----------------------------------------->
 <script type="text/worker">
     /* ------------------------------------------ Page Toggle -------------------------------------------------------------*/
@@ -1102,28 +1127,9 @@
         });
     });
 
-/*
-    //Check Input on Current Points
-    currentPoints.forEach(stat => {
+   
 
-        on('change:'+[stat], function(eventInfo){
-            getAttrs([stat], function(values){
-
-                var pointValue = parseInt(values[stat]);
-
-                if (isNaN(pointValue)) { pointValue = eventInfo.previousValue; }
-                else if (pointValue > attribute_totals[[stat]+'_max']) { pointValue = attribute_totals[[stat]+'_max']; }
-
-                setAttrs({
-                    [stat] : pointValue
-                });
-            });
-        });
-    });
-*/
-    
-
-    /* ------------------------------------------Gear Management -------------------------------------------------------------*/
+    /* -------------------------- Gear Management ------------------------------------*/
     on("change:repeating_weapons", function (e) { console.log("Adding Weapon"); });
     on("change:repeating_armor", function (e) { console.log("Adding Armor"); });
 
@@ -1190,7 +1196,7 @@
     });
 
     
-    /* ------------------------------------------ Level/Attribute Management -------------------------------------------------------------*/
+    /* -------------------- Level/Attribute Management ------------------------------*/
 
     on("change:start-stat1 change:start-stat2", function(eventInfo){
         var oldValue = eventInfo.previousValue;
@@ -1307,7 +1313,7 @@
         });
     }
 
-    /* ------------------------------------------ Roller Modifier Logic -------------------------------------------------------------*/
+    /* ------------------ Roller Modifier Logic ------------------------------------*/
 
     on("change:stat_roller_toggle", function(){
         console.log("Radio Button Change");
@@ -1359,7 +1365,7 @@
         });
     });
 
-    /* ------------------------------------------ Formula Calculations -------------------------------------------------------------*/    
+    /* ------------------ Formula Calculations ----------------------------------*/    
 
     function calculateArmorBonuses(){
         var hp_mod = 0;
