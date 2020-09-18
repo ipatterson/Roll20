@@ -1,17 +1,16 @@
-.sheet-style-wrapper {
+.sheet-style-wrapper{
     font-family: Tahoma;
 }
 
 /* Tooltip container */
 .sheet-help-text {
-    border-bottom: 1px dotted black;
-    /* If you want dots under the hoverable text */
+  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
 }
 
 .sheet-help-text,
-.sheet-help-text-attb {
-    position: relative;
-    display: inline-block;
+.sheet-help-text-attb{
+  position: relative;
+  display: inline-block;
 }
 
 /* Tooltip text */
@@ -22,74 +21,72 @@
     left: 50%;
 }
 
-.sheet-help-text-attb .sheet-tooltip {
+.sheet-help-text-attb .sheet-tooltip{
     width: 250px;
     margin-left: 0px;
     top: -150%;
-    left: -10%;
+    left: -10%;   
 }
 
 .sheet-help-text .sheet-tooltip,
 .sheet-help-text-attb .sheet-tooltip {
-    visibility: hidden;
-    background-color: rgba(45, 148, 237, 1);
-    border: 1px solid black;
-    color: #fff;
-    text-align: center;
-    padding: 2px 0;
-    border-radius: 6px;
-    position: absolute;
-    z-index: 1;
-    font-size: 12px;
-    font-weight: normal;
-    -webkit-text-fill-color: white;
-    -webkit-text-stroke: 0px;
+  visibility: hidden;
+  background-color: rgba(45, 148, 237, 1);
+  border: 1px solid black;
+  color: #fff;
+  text-align: center;
+  padding: 2px 0;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+  font-size: 12px;
+  font-weight: normal;
+  -webkit-text-fill-color: white;
+  -webkit-text-stroke: 0px;
 }
-
 /* Show the tooltip text when you mouse over the tooltip container */
 .sheet-help-text:hover .sheet-tooltip,
 .sheet-help-text-attb:hover .sheet-tooltip {
-    visibility: visible;
+  visibility: visible;
 }
 
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 /* Firefox */
 input[type=number] {
-    -moz-appearance: textfield;
+  -moz-appearance: textfield;
 }
 
-input {
+input{
     border: 1px solid gray;
     outline: none;
     background-color: #e1e6e2;
     width: 90px;
-    font-weight: bold;
+    font-weight:bold;
 }
 
-input::checked {
+input::checked{
     background-color: red;
 }
 
-textarea {
+textarea{
     border: 1px solid gray;
     outline: none;
     background-color: #e1e6e2;
 }
 
-input:focus,
-textarea:focus {
-    background-color: #f2ffff;
-    border: 1px solid black;
-    outline: none;
+input:focus, textarea:focus {
+  background-color: #f2ffff;
+  border: 1px solid black;
+  outline: none;
 }
 
-select {
+select{
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -107,26 +104,26 @@ select {
     text-transform: uppercase;
 }
 
-.sheet-select-new-arrow {
+.sheet-select-new-arrow{
     position: relative;
 }
 
 .sheet-select-new-arrow:after {
-    content: "▼";
-    -webkit-text-fill-color: white;
-    font-size: 10px;
-    -webkit-text-stroke: 1px;
-    padding: 0 10px 2px;
-    position: absolute;
-    right: 0;
-    top: 1px;
-    text-align: left;
-    width: 10%;
-    height: 100%;
-    pointer-events: none;
+  content: "▼";
+  -webkit-text-fill-color: white;
+  font-size: 10px;
+  -webkit-text-stroke: 1px;
+  padding: 0 10px 2px;
+  position: absolute;
+  right: 0;
+  top: 1px;
+  text-align: left;
+  width: 10%;
+  height: 100%;
+  pointer-events: none;
 }
 
-button {
+button{
     background-image: linear-gradient(to bottom right, #e5c8f7, #f88379);
     border: 1px solid black;
     border-radius: 12px;
@@ -135,25 +132,22 @@ button {
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
-button:hover {
+button:hover{
     background: white;
 }
 
-h1 {
+h1{
     font-size: 24px;
     line-height: 20px;
 }
 
-h4 {
+h4{
     font-size: 20px;
     line-height: 16px;
     margin-top: 7px;
 }
 
-h1,
-h2,
-h3,
-h4 {
+h1, h2, h3, h4{
     -webkit-font-smoothing: antialiased;
     -webkit-text-fill-color: white;
     -webkit-text-stroke-width: 1px;
@@ -167,13 +161,13 @@ h4 {
     text-align: center;
     padding-bottom: 5px;
     padding-top: 3px;
-
+    
     /*text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;*/
 }
 
 /* Top Grid */
 
-.sheet-top-grid {
+.sheet-top-grid{
     display: grid;
     text-align: right;
     padding-right: 15px;
@@ -183,64 +177,61 @@ h4 {
 
 }
 
-.sheet-pageButtons>button {
+.sheet-pageButtons > button{
     font-weight: bold;
     text-transform: uppercase;
 }
 
 /* Main Grid */
-.sheet-section-main {
-    display: grid;
+.sheet-section-main{
+    display:grid;
     grid-template-columns: 320px 500px;
     grid-column-gap: 10px;
 }
 
-.sheet-main1 {
+.sheet-main1{
     padding-right: 10px;
     border-right-style: solid;
     margin-left: -20px;
 }
 
-.sheet-section-tabs {
+.sheet-section-tabs{
     padding-right: 10px;
 }
 
 /* Starting Stat Grid */
 
-.sheet-base-stat-grid {
+.sheet-base-stat-grid{
     display: grid;
     grid-template-columns: auto 100px 100px auto;
     justify-items: center;
     grid-column-gap: 50px;
-    grid-template-areas:
-        ". base1 base2 .";
+    grid-template-areas: 
+    ". base1 base2 .";
 }
 
-.sheet-base-stat1select {
-    grid-area: base1;
-}
-
-.sheet-base-stat2select {
-    grid-area: base2;
-}
+.sheet-base-stat1select{grid-area: base1;}
+.sheet-base-stat2select{grid-area: base2;}
 
 /* Stats Grid */
-.sheet-stats-grid {
-    display: grid;
+.sheet-stats-grid{
+    display:grid;
     grid-template-columns: auto auto auto;
     grid-column-gap: 10px;
 }
 
 .sheet-stat-box-hp,
 .sheet-stat-box-mp,
-.sheet-stat-box-ap {
+.sheet-stat-box-ap
+{
     border: 1px solid black;
     border-radius: 5px;
 }
 
 .sheet-stat-box-hp .sheet-text,
 .sheet-stat-box-mp .sheet-text,
-.sheet-stat-box-ap .sheet-text {
+.sheet-stat-box-ap .sheet-text
+{
     font-size: 20px;
     transform: ScaleY(80);
     font-weight: bold;
@@ -256,7 +247,8 @@ h4 {
 
 .sheet-stat-box-hp .sheet-max,
 .sheet-stat-box-mp .sheet-max,
-.sheet-stat-box-ap .sheet-max {
+.sheet-stat-box-ap .sheet-max
+{
     font-size: 18px;
     transform: ScaleY(80);
     font-weight: bold;
@@ -269,14 +261,14 @@ h4 {
     z-index: 1;
 }
 
-.sheet-stat-box-hp .sheet-curr>input,
-.sheet-stat-box-mp .sheet-curr>input,
-.sheet-stat-box-ap .sheet-curr>input {
+.sheet-stat-box-hp .sheet-curr > input,
+.sheet-stat-box-mp .sheet-curr > input,
+.sheet-stat-box-ap .sheet-curr > input{
     text-align: right;
     font-size: 14px;
     width: 40px !important;
     font-weight: bold;
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255,255,255,0.6);
     padding: 2px;
     margin-bottom: 3px;
     margin-left: 10px;
@@ -284,38 +276,32 @@ h4 {
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
-.sheet-stat-box-hp .sheet-curr>input {
+.sheet-stat-box-hp .sheet-curr > input{
     color: red;
 }
 
-.sheet-stat-box-mp .sheet-curr>input {
+.sheet-stat-box-mp .sheet-curr > input{
     color: #27b7f5;
 }
 
-.sheet-stat-box-ap .sheet-curr>input {
+.sheet-stat-box-ap .sheet-curr > input{
     color: yellow;
 }
 
-.sheet-stat-box-hp {
-    background-image: linear-gradient(to bottom right, white, #ba4343);
-}
+.sheet-stat-box-hp{ background-image: linear-gradient(to bottom right, white, #ba4343);}
 
-.sheet-stat-box-mp {
-    background-image: linear-gradient(to bottom right, white, #4365ba);
-}
+.sheet-stat-box-mp{ background-image: linear-gradient(to bottom right, white, #4365ba);}
 
-.sheet-stat-box-ap {
-    background-image: linear-gradient(to bottom right, white, #b8ba43);
-}
+.sheet-stat-box-ap{ background-image: linear-gradient(to bottom right, white, #b8ba43);}
 
 /* Equipped Weapon Grid */
 
-.sheet-active-equipment {
+.sheet-active-equipment{
     font-weight: bold;
     font-size: 10px;
 }
 
-.sheet-eq-wpn-grid {
+.sheet-eq-wpn-grid{
     display: grid;
     /*background-color: rgba(241,131,121,0.2);*/
     border-radius: 5px;
@@ -324,59 +310,33 @@ h4 {
     align-items: stretch;
     justify-items: stretch;
     grid-template-areas:
-        "wpnName wpnSource"
-        "wpnName wpnFeature"
-        "arName arWeight"
-        "arName arWeight"
+    "wpnName wpnSource"
+    "wpnName wpnFeature"
+    "arName arWeight"
+    "arName arWeight"
 }
 
-.sheet-eq-stats-grid {
+.sheet-eq-stats-grid{
     padding-top: 15px;
     font-size: 12px;
     display: grid;
     grid-template-columns: repeat(3, auto);
     align-items: center;
     grid-template-areas:
-        "wpnRange wpnPower wpnBlock";
+    "wpnRange wpnPower wpnBlock";
 }
 
-.sheet-eq-wpn-grid-name {
-    grid-area: wpnName;
-}
+.sheet-eq-wpn-grid-name{ grid-area: wpnName;}
+.sheet-eq-wpn-grid-source{ grid-area: wpnSource;}
+.sheet-eq-wpn-grid-feature{ grid-area: wpnFeature;}
+.sheet-eq-wpn-grid-feature div.sheet-val{ text-indent: 12px;}
+.sheet-eq-wpn-grid-arName{ grid-area: arName;}
+.sheet-eq-wpn-grid-arWeight{ grid-area: arWeight;}
+.sheet-eq-wpn-grid-power{ grid-area: wpnPower;}
+.sheet-eq-wpn-grid-range{ grid-area: wpnRange;}
+.sheet-eq-wpn-grid-block{ grid-area: wpnBlock;}
 
-.sheet-eq-wpn-grid-source {
-    grid-area: wpnSource;
-}
-
-.sheet-eq-wpn-grid-feature {
-    grid-area: wpnFeature;
-}
-
-.sheet-eq-wpn-grid-feature div.sheet-val {
-    text-indent: 12px;
-}
-
-.sheet-eq-wpn-grid-arName {
-    grid-area: arName;
-}
-
-.sheet-eq-wpn-grid-arWeight {
-    grid-area: arWeight;
-}
-
-.sheet-eq-wpn-grid-power {
-    grid-area: wpnPower;
-}
-
-.sheet-eq-wpn-grid-range {
-    grid-area: wpnRange;
-}
-
-.sheet-eq-wpn-grid-block {
-    grid-area: wpnBlock;
-}
-
-.sheet-active-equipment div.sheet-lbl {
+.sheet-active-equipment div.sheet-lbl{
     -webkit-text-fill-color: white;
     width: 30%;
     position: relative;
@@ -384,7 +344,7 @@ h4 {
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
-.sheet-active-equipment div.sheet-val {
+.sheet-active-equipment div.sheet-val{
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
     position: relative;
     text-indent: 1px;
@@ -394,22 +354,22 @@ h4 {
 
 .sheet-eq-wpn-grid div.sheet-val {
     text-align: left;
-    text-indent: 5px;
+    text-indent:5px;
     width: 60%;
 }
 
 .sheet-eq-wpn-grid-name div.sheet-val,
 .sheet-eq-wpn-grid-source div.sheet-val,
-.sheet-eq-wpn-grid-feature div.sheet-val {
+.sheet-eq-wpn-grid-feature div.sheet-val{
     -webkit-text-fill-color: #d47dff;
 }
 
 .sheet-eq-wpn-grid-arName div.sheet-val,
-.sheet-eq-wpn-grid-arWeight div.sheet-val {
+.sheet-eq-wpn-grid-arWeight div.sheet-val{
     -webkit-text-fill-color: #78fffd;
 }
 
-.sheet-eq-stats-grid div.sheet-lbl {
+.sheet-eq-stats-grid div.sheet-lbl{
     width: 50%;
 }
 
@@ -419,12 +379,12 @@ h4 {
     width: 25%;
     -webkit-text-fill-color: white;
     text-align: center;
-
+    
 }
 
 /* Base Setup Grid */
-.sheet-base-setup-grid {
-    display: inline-grid;
+.sheet-base-setup-grid{
+    display:inline-grid;
     grid-template-columns: 200px 400px;
     grid-template-rows: auto;
     grid-column-gap: 200px;
@@ -434,148 +394,104 @@ h4 {
 
 /* Attribute Grid & Actions */
 
-.sheet-modifier-inst {
+.sheet-modifier-inst{
     padding-bottom: 10px;
 }
 
-.sheet-modifier-note {
+.sheet-modifier-note{
+    font-weight:bold;
+    color: yellow;
+    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+}
+
+.sheet-action-grid-inst .sheet-lbl-mod{
     font-weight: bold;
     color: yellow;
     text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
 }
 
-.sheet-action-grid-inst .sheet-lbl-mod {
-    font-weight: bold;
-    color: yellow;
-    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
-}
-
-.sheet-modifier-grid {
-    display: grid;
+.sheet-modifier-grid{
+    display:grid;
     grid-template-columns: auto auto;
-    font-weight: bold;
+    font-weight:bold;
     text-transforum: uppercase;
-    font-size: 14px;
+    font-size:14px;
     padding-top: 15px;
     padding-bottom: 3px;
     padding: 10px;
 }
 
-.sheet-dice-mod-input {
+.sheet-dice-mod-input{
     justify-self: center;
     border-right: 1px solid #454545;
     padding-right: 15px;
 }
 
 .sheet-dice-mod-input input,
-.sheet-power-mod-input input {
+.sheet-power-mod-input input{
     width: 30px !important;
 }
 
-.sheet-attribute-grid {
-    display: grid;
+.sheet-attribute-grid{
+    display:grid;
     grid-template-columns: 37px 37px 75px 75px 75px;
     grid-row-gap: 5px;
-    justify-content: center;
-    align-items: stretch;
+    justify-content:center;
+    align-items:stretch;
     margin-top: 10px;
-    grid-template-areas:
-        "toggleAbl toggleAtk attribImpact attribResist attribEnergy"
-        "attribBrawn attribBrawn attribMight attribBody attribVigor"
-        "attribMagic attribMagic attribWill attribEgo attribEssence"
-        "attribMastery attribMastery attribTechnique attribInstinct attribFocus";
+    grid-template-areas: 
+    "toggleAbl toggleAtk attribImpact attribResist attribEnergy"
+    "attribBrawn attribBrawn attribMight attribBody attribVigor"
+    "attribMagic attribMagic attribWill attribEgo attribEssence"
+    "attribMastery attribMastery attribTechnique attribInstinct attribFocus";
 }
 
 .sheet-attribute-grid-title,
-.sheet-attack-grid-title {
+.sheet-attack-grid-title{
     padding-top: 5px;
     padding-bottom: 6px;
-    background-color: rgba(69, 69, 69, 0.3);
-    border-radius: 12px;
+    background-color: rgba(69,69,69,0.3);
+    border-radius:12px;
 }
 
-.sheet-attack-grid-title {
+.sheet-attack-grid-title{
     margin-top: 10px;
 }
 
 .sheet-attribute-grid-title-text,
-.sheet-attack-grid-title-text {
+.sheet-attack-grid-title-text{
     text-align: center;
     -webkit-text-fill-color: white;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
     font-size: 14px;
-    font-weight: bold;
+    font-weight:bold;
 }
 
-.sheet-attribNum {
+.sheet-attribNum{
     -webkit-text-fill-color: white;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
-.sheet-btn-attr.sheet-attribImpact {
-    grid-area: attribImpact;
-}
-
-.sheet-btn-attr.sheet-attribResist {
-    grid-area: attribResist;
-}
-
-.sheet-btn-attr.sheet-attribEnergy {
-    grid-area: attribEnergy;
-}
-
-.sheet-btn-attr.sheet-attribBrawn {
-    grid-area: attribBrawn;
-}
-
-.sheet-btn-attr.sheet-attribMagic {
-    grid-area: attribMagic;
-}
-
-.sheet-btn-attr.sheet-attribMastery {
-    grid-area: attribMastery;
-}
-
-.sheet-btn-attr.sheet-attribMight {
-    grid-area: attribMight;
-}
-
-.sheet-btn-attr.sheet-attribBody {
-    grid-area: attribBody;
-}
-
-.sheet-btn-attr.sheet-attribVigor {
-    grid-area: attribVigor;
-}
-
-.sheet-btn-attr.sheet-attribWill {
-    grid-area: attribWill;
-}
-
-.sheet-btn-attr.sheet-attribEgo {
-    grid-area: attribEgo;
-}
-
-.sheet-btn-attr.sheet-attribEssence {
-    grid-area: attribEssence;
-}
-
-.sheet-btn-attr.sheet-attribTechnique {
-    grid-area: attribTechnique;
-}
-
-.sheet-btn-attr.sheet-attribInstinct {
-    grid-area: attribInstinct;
-}
-
-.sheet-btn-attr.sheet-attribFocus {
-    grid-area: attribFocus;
-}
+.sheet-btn-attr.sheet-attribImpact{grid-area: attribImpact;}
+.sheet-btn-attr.sheet-attribResist{grid-area: attribResist;}
+.sheet-btn-attr.sheet-attribEnergy{grid-area: attribEnergy;}
+.sheet-btn-attr.sheet-attribBrawn{grid-area: attribBrawn;}
+.sheet-btn-attr.sheet-attribMagic{grid-area: attribMagic;}
+.sheet-btn-attr.sheet-attribMastery{grid-area: attribMastery;}
+.sheet-btn-attr.sheet-attribMight{grid-area: attribMight;}
+.sheet-btn-attr.sheet-attribBody{grid-area: attribBody;}
+.sheet-btn-attr.sheet-attribVigor{grid-area: attribVigor;}
+.sheet-btn-attr.sheet-attribWill{grid-area: attribWill;}
+.sheet-btn-attr.sheet-attribEgo{grid-area: attribEgo;}
+.sheet-btn-attr.sheet-attribEssence{grid-area: attribEssence;}
+.sheet-btn-attr.sheet-attribTechnique{grid-area: attribTechnique;}
+.sheet-btn-attr.sheet-attribInstinct{grid-area: attribInstinct;}
+.sheet-btn-attr.sheet-attribFocus{grid-area: attribFocus;}
 
 
 /* Attribute Roll Radio Buttons */
 
-.sheet-stat-roll-radio-btns {
+.sheet-stat-roll-radio-btns{
     grid-area: toggle;
     display: flex;
     grid-template-columns: auto auto;
@@ -583,35 +499,35 @@ h4 {
     flex-direction: row;
 }
 
-.sheet-attribute-grid input[type="radio"] {
-    display: none;
+.sheet-attribute-grid input[type="radio"]{
+    display:none;
 }
 
-.sheet-attribute-grid label {
-    background-color: #ddd;
-    padding: 2px 8px;
-    font-family: Tahoma;
-    font-size: 20px;
-    font-weight: Bold;
-    width: 20px;
-    cursor: pointer;
-    -webkit-text-fill-color: black;
-    text-shadow: none;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-    margin: 0px;
+.sheet-attribute-grid label{
+  background-color: #ddd;
+  padding: 2px 8px;
+  font-family: Tahoma;
+  font-size: 20px;
+  font-weight: Bold;
+  width: 20px;
+  cursor: pointer;
+  -webkit-text-fill-color: black;
+  text-shadow: none;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  margin: 0px;
 }
 
-label.sheet-lbl-radio-ability {
+label.sheet-lbl-radio-ability{
     grid-area: toggleAbl;
     border-left: 1px solid black;
     padding: 8px 6px 3px 9px;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
-    margin-left: 2px;
+    margin-left:2px;
 }
 
-label.sheet-lbl-radio-attack {
+label.sheet-lbl-radio-attack{
     grid-area: toggleAtk;
     border-right: 1px solid black;
     border-left: 1px dotted black;
@@ -620,27 +536,27 @@ label.sheet-lbl-radio-attack {
     border-bottom-right-radius: 8px;
 }
 
-input.sheet-radio-attack[value="attack"]:checked+label {
+input.sheet-radio-attack[value="attack"]:checked+label{
     background-image: linear-gradient(to bottom right, #c0edc7, #538f5c);
     -webkit-text-fill-color: white;
 }
 
-input.sheet-radio-ability[value="ability"]:checked+label {
-    background-image: linear-gradient(to bottom right, #b0e7f7, #3db6d9);
-    -webkit-text-fill-color: white;
+input.sheet-radio-ability[value="ability"]:checked+label{
+     background-image: linear-gradient(to bottom right, #b0e7f7, #3db6d9);
+     -webkit-text-fill-color: white;
 }
 
 /* Change color of attribute roll buttons */
-input.sheet-radio-attack[value="attack"]:checked~button.sheet-btn-attr {
+input.sheet-radio-attack[value="attack"]:checked ~ button.sheet-btn-attr{
     background-image: linear-gradient(to bottom right, #c0edc7, #538f5c);
 }
 
-input.sheet-radio-ability[value="ability"]:checked~button.sheet-btn-attr {
+input.sheet-radio-ability[value="ability"]:checked ~ button.sheet-btn-attr{
     background-image: linear-gradient(to bottom right, #b0e7f7, #3db6d9);
 }
 
 /* Attribute Buttons */
-.sheet-btn-attr {
+.sheet-btn-attr{
     font-size: 12px !important;
     text-transform: uppercase;
     font-weight: bold;
@@ -651,23 +567,23 @@ input.sheet-radio-ability[value="ability"]:checked~button.sheet-btn-attr {
     text-shadow: none;
 }
 
-.sheet-btn-attr::before {
-    display: none;
+.sheet-btn-attr::before{
+    display:none;
 }
 
 /* Attack Grid */
-.sheet-action-grid {
+.sheet-action-grid{
     display: grid;
-    justify-items: center;
+    justify-items:center;
     justify-content: space-evenly;
     grid-row-gap: 5px;
     margin-top: 12px;
     grid-template-areas:
-        "attackRoll charge"
-        "steady defend";
+    "attackRoll charge"
+    "steady defend";
 }
 
-.sheet-action-grid button {
+.sheet-action-grid button{
     font-size: 14px !important;
     width: 150px !important;
     height: 50px;
@@ -676,82 +592,56 @@ input.sheet-radio-ability[value="ability"]:checked~button.sheet-btn-attr {
 }
 
 
-.sheet-btn-attack {
-    background-image: linear-gradient(to bottom right, white, #8f1431);
-}
-
-.sheet-btn-charge {
-    background-image: linear-gradient(to bottom right, white, #538f5c);
-}
-
-.sheet-btn-defend {
-    background-image: linear-gradient(to bottom right, white, #053999);
-}
-
-.sheet-btn-steady {
-    background-image: linear-gradient(to bottom right, white, #b8ab1c);
-}
+.sheet-btn-attack{background-image: linear-gradient(to bottom right, white, #8f1431);}
+.sheet-btn-charge{background-image: linear-gradient(to bottom right, white, #538f5c);}
+.sheet-btn-defend{background-image: linear-gradient(to bottom right, white, #053999);}
+.sheet-btn-steady{background-image: linear-gradient(to bottom right, white, #b8ab1c);}
 
 
 /* Role Grid */
 
-.sheet-rolegrid {
+.sheet-rolegrid{
     display: grid;
     text-size: 24px;
     text-align: center;
     grid-template-columns: repeat(3, auto);
     grid-column-gap: 10px;
     grid-template-areas:
-        ". role1 role2 role3 .";
+    ". role1 role2 role3 .";
 }
 
-.sheet-rolegrid select {
+.sheet-rolegrid select{ 
     text-indent: 1px;
     width: 100%;
 }
 
-.sheet-rolegrid input {
+.sheet-rolegrid input{ 
     text-indent: 1px;
     width: 100%;
 }
 
 
-.sheet-role1 {
-    grid-area: role1;
-}
-
-.sheet-role2 {
-    grid-area: role2;
-}
-
-.sheet-role3 {
-    grid-area: role3;
-}
+.sheet-role1{grid-area: role1;}
+.sheet-role2{grid-area: role2;}
+.sheet-role3{grid-area: role3;}
 
 /* Tier Button Grid */
 
-.sheet-tier-button-grid {
-    display: grid;
-    justify-items: center;
-    grid-template-columns: auto 150px 150px 150px auto grid-column-gap: 5px;
+.sheet-tier-button-grid{
+    display:grid;
+    justify-items:center;
+    grid-template-columns: auto 150px 150px 150px auto
+    grid-column-gap: 5px;
     margin-bottom: 5px;
     grid-template-areas:
-        ". tier1 tier2 tier3 .";
+    ". tier1 tier2 tier3 .";
 }
 
-.sheet-tier1button {
-    grid-area: tier1;
-}
+.sheet-tier1button{grid-area: tier1;}
+.sheet-tier2button{grid-area: tier2;}
+.sheet-tier3button{grid-area: tier3;}
 
-.sheet-tier2button {
-    grid-area: tier2;
-}
-
-.sheet-tier3button {
-    grid-area: tier3;
-}
-
-.sheet-tier-button-grid button {
+.sheet-tier-button-grid button{
     font-size: 16px;
     height: 24px;
     font-weight: bold;
@@ -759,65 +649,50 @@ input.sheet-radio-ability[value="ability"]:checked~button.sheet-btn-attr {
 
 /* Tier Grid */
 
-.sheet-tier-grid {
-    display: grid;
-    grid-template-columns: 75px auto 75px auto 75px auto;
-    grid-column-gap: 2px;
+.sheet-tier-grid{
+  display: grid;
+  grid-template-columns: 75px auto 75px auto 75px auto;
+  grid-column-gap: 2px;
 }
 
-.sheet-tier-grid select {
+.sheet-tier-grid select{
     width: 75px;
     font-size: 10px;
     text-indent: 1px;
 }
 
-.sheet-tier-grid input {
+.sheet-tier-grid input{
     width: 100%;
     text-indent: 5px;
 }
 
 /* Weapon Sheet Grid */
 
-.sheet-new-wpn-grid {
+.sheet-new-wpn-grid{
     display: grid;
     grid-template-rows: repeat(3, auto);
     grid-row-gap: 5px;
-    grid-template-areas:
-        "newWpnName newWpnNotes newWpnEquip"
-        "newWpnSelect newWpnNotes newWpnEquip";
+    grid-template-areas: 
+    "newWpnName newWpnNotes newWpnEquip"
+    "newWpnSelect newWpnNotes newWpnEquip";
     border-bottom-style: dotted;
     padding-top: 10px;
 }
 
-.sheet-new-wpn-grid-name {
-    grid-area: newWpnName;
-}
+.sheet-new-wpn-grid-name{grid-area: newWpnName;}
+.sheet-new-wpn-grid-select{grid-area: newWpnSelect;}
+.sheet-new-wpn-grid-notes{grid-area: newWpnNotes;}
+.sheet-new-wpn-grid-equip{grid-area: newWpnEquip;}
 
-.sheet-new-wpn-grid-select {
-    grid-area: newWpnSelect;
-}
-
-.sheet-new-wpn-grid-notes {
-    grid-area: newWpnNotes;
-}
-
-.sheet-new-wpn-grid-equip {
-    grid-area: newWpnEquip;
-}
-
-.sheet-new-wpn-grid-equip>button {
+.sheet-new-wpn-grid-equip > button{
     height: 40px;
     margin-top: 5px;
-    font-weight: bold;
+    font-weight:bold;
 }
 
-select.sheet-select-wpn {
-    width: 120px;
-}
+select.sheet-select-wpn{ width: 120px;}
 
-.sheet-input-wpn-name {
-    width: 244px;
-}
+.sheet-input-wpn-name{ width: 244px; }
 
 .sheet-txt-wpn-notes {
     width: 150px;
@@ -826,46 +701,31 @@ select.sheet-select-wpn {
 }
 
 /* Armor Grid */
-.sheet-new-ar-grid {
+.sheet-new-ar-grid{
     display: grid;
     grid-template-columns: auto 125px 175px auto;
     grid-row-gap: 5px;
-    grid-template-areas:
-        ". newArName newArNotes newArEquip"
-        ". newArSelect newArNotes newArEquip";
+    grid-template-areas: 
+    ". newArName newArNotes newArEquip"
+    ". newArSelect newArNotes newArEquip";
     border-bottom-style: dotted;
     padding-top: 10px;
 }
 
-.sheet-new-ar-grid-name {
-    grid-area: newArName;
-}
+.sheet-new-ar-grid-name{grid-area: newArName;}
+.sheet-new-ar-grid-select{grid-area: newArSelect;}
+.sheet-new-ar-grid-notes{grid-area: newArNotes;}
+.sheet-new-ar-grid-equip{grid-area: newArEquip;}
 
-.sheet-new-ar-grid-select {
-    grid-area: newArSelect;
-}
-
-.sheet-new-ar-grid-notes {
-    grid-area: newArNotes;
-}
-
-.sheet-new-ar-grid-equip {
-    grid-area: newArEquip;
-}
-
-.sheet-new-ar-grid-equip>button {
+.sheet-new-ar-grid-equip > button{
     height: 40px;
     margin-top: 5px;
-    font-weight: bold;
+    font-weight:bold;
 }
 
-select.sheet-select-wgt {
-    width: 120px;
-}
+select.sheet-select-wgt{ width: 120px;}
 
-.sheet-input-ar-name {
-    width: 120px;
-}
+.sheet-input-ar-name{ width: 120px; }
 
 .sheet-txt-ar-notes,
 .sheet-txt-wpn-notes {
@@ -876,13 +736,13 @@ select.sheet-select-wgt {
 }
 
 .sheet-input-ar-name,
-.sheet-input-wpn-name {
+.sheet-input-wpn-name{
     color: #f88379;
     text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
 }
 
 /* Repeating Section Buttons */
-.repcontrol {
+.repcontrol{
     padding-top: 10px;
     float: left;
     text-transform: uppercase;
@@ -891,76 +751,35 @@ select.sheet-select-wgt {
 
 /* Armor Grid Info */
 
-.sheet-ar-info-grid {
+.sheet-ar-info-grid{
     display: grid;
     text-align: left;
     grid-template-columns: auto 200px 70px 40px 40px auto;
     box-sizing: border-box;
-    grid-gap: 1px;
+    grid-gap:1px;
     border-bottom-style: solid;
     padding-bottom: 10px;
     grid-template-areas:
-        ". . . columnHP columnAP ."
-        ". arInfo arInfoLight arInfoLightHP arInfoLightAP ."
-        ". arInfoHP arInfoMedium arInfoMediumHP arInfoMediumAP ."
-        ". arInfoAP arInfoHeavy arInfoHeavyHP arInfoHeavyAP .";
+    ". . . columnHP columnAP ."
+    ". arInfo arInfoLight arInfoLightHP arInfoLightAP ."
+    ". arInfoHP arInfoMedium arInfoMediumHP arInfoMediumAP ."
+    ". arInfoAP arInfoHeavy arInfoHeavyHP arInfoHeavyAP .";
 }
 
-.sheet-ar-info {
-    grid-area: arInfo;
-}
-
-.sheet-ar-info-hp {
-    grid-area: arInfoHP;
-}
-
-.sheet-ar-info-ap {
-    grid-area: arInfoAP;
-}
-
-.sheet-ar-info-lgt {
-    grid-area: arInfoLight;
-}
-
-.sheet-ar-info-med {
-    grid-area: arInfoMedium;
-}
-
-.sheet-ar-info-hvy {
-    grid-area: arInfoHeavy;
-}
-
-.sheet-ar-info-lgt-hp {
-    grid-area: arInfoLightHP;
-}
-
-.sheet-ar-info-med-hp {
-    grid-area: arInfoMediumHP;
-}
-
-.sheet-ar-info-hvy-hp {
-    grid-area: arInfoHeavyHP;
-}
-
-.sheet-ar-info-lgt-ap {
-    grid-area: arInfoLightAP;
-}
-
-.sheet-ar-info-med-ap {
-    grid-area: arInfoMediumAP;
-}
-
-.sheet-ar-info-hvy-ap {
-    grid-area: arInfoHeavyAP;
-}
-
-.sheet-ar-col-HP {
-    grid-area: columnHP;
-}
-
-.sheet-ar-col-AP {
-    grid-area: columnAP;
-}
+.sheet-ar-info{grid-area: arInfo;}
+.sheet-ar-info-hp{grid-area: arInfoHP;}
+.sheet-ar-info-ap{grid-area: arInfoAP;}
+.sheet-ar-info-lgt{grid-area: arInfoLight;}
+.sheet-ar-info-med{grid-area: arInfoMedium;}
+.sheet-ar-info-hvy{grid-area: arInfoHeavy;}
+.sheet-ar-info-lgt-hp{grid-area: arInfoLightHP;}
+.sheet-ar-info-med-hp{grid-area: arInfoMediumHP;}
+.sheet-ar-info-hvy-hp{grid-area: arInfoHeavyHP;}
+.sheet-ar-info-lgt-ap{grid-area: arInfoLightAP;}
+.sheet-ar-info-med-ap{grid-area: arInfoMediumAP;}
+.sheet-ar-info-hvy-ap{grid-area: arInfoHeavyAP;}
+.sheet-ar-col-HP{grid-area: columnHP;}
+.sheet-ar-col-AP{grid-area: columnAP;}
 
 .sheet-ar-col-HP,
 .sheet-ar-col-AP,
@@ -972,13 +791,13 @@ select.sheet-select-wgt {
 .sheet-ar-info-hvy-ap,
 .sheet-ar-info-lgt,
 .sheet-ar-info-med,
-.sheet-ar-info-hvy {
+.sheet-ar-info-hvy{
     padding: 2px;
     -webkit-text-fill-color: white;
     text-transform: uppercase;
     font-weight: bold;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-    box-shadow: 0 0 0 1px black;
+    box-shadow:0 0 0 1px black;
 }
 
 .sheet-ar-col-HP,
@@ -988,7 +807,7 @@ select.sheet-select-wgt {
 .sheet-ar-info-hvy-hp,
 .sheet-ar-info-lgt-ap,
 .sheet-ar-info-med-ap,
-.sheet-ar-info-hvy-ap {
+.sheet-ar-info-hvy-ap{
     text-align: center;
 }
 
@@ -996,8 +815,8 @@ select.sheet-select-wgt {
 .sheet-ar-col-AP,
 .sheet-ar-info-lgt,
 .sheet-ar-info-med,
-.sheet-ar-info-hvy {
-    background: rgba(140, 140, 140, 0.2);
+.sheet-ar-info-hvy{
+    background: rgba(140,140,140,0.2);
 }
 
 .sheet-ar-info-lgt-hp,
@@ -1005,8 +824,8 @@ select.sheet-select-wgt {
 .sheet-ar-info-hvy-hp,
 .sheet-ar-info-lgt-ap,
 .sheet-ar-info-med-ap,
-.sheet-ar-info-hvy-ap {
-    background: rgba(150, 150, 150, 0.6);
+.sheet-ar-info-hvy-ap{
+    background: rgba(150,150,150,0.6);
 }
 
 /*Configure the tab buttons*/
@@ -1022,16 +841,100 @@ select.sheet-select-wgt {
 }
 
 /* show the selected tab */
-.sheet-tabstoggle[value="buildSheet"]~div.sheet-buildSheet,
-.sheet-tabstoggle[value="weaponSheet"]~div.sheet-weaponSheet,
-.sheet-tabstoggle[value="armorSheet"]~div.sheet-armorSheet,
-.sheet-tabstoggle[value="inventorySheet"]~div.sheet-inventorySheet,
-.sheet-tabstoggle[value="skillSheet"]~div.sheet-skillSheet {
+.sheet-tabstoggle[value="buildSheet"] ~ div.sheet-buildSheet,
+.sheet-tabstoggle[value="weaponSheet"] ~ div.sheet-weaponSheet,
+.sheet-tabstoggle[value="armorSheet"] ~ div.sheet-armorSheet,
+.sheet-tabstoggle[value="inventorySheet"] ~ div.sheet-inventorySheet,
+.sheet-tabstoggle[value="skillSheet"] ~ div.sheet-skillSheet {
     display: block;
 }
 
-.sheet-tier_tabstoggle[value="tier1tab"]~div.sheet-tier1tab,
-.sheet-tier_tabstoggle[value="tier2tab"]~div.sheet-tier2tab,
-.sheet-tier_tabstoggle[value="tier3tab"]~div.sheet-tier3tab {
+.sheet-tier_tabstoggle[value="tier1tab"] ~ div.sheet-tier1tab,
+.sheet-tier_tabstoggle[value="tier2tab"] ~ div.sheet-tier2tab,
+.sheet-tier_tabstoggle[value="tier3tab"] ~ div.sheet-tier3tab {
     display: block;
 }
+
+.sheet-rolltemplate-attack .sheet-template-container-attack,
+.sheet-rolltemplate-attack .sheet-template-container-stat,
+.sheet-rolltemplate-stat .sheet-template-container-attack,
+.sheet-rolltemplate-stat .sheet-template-container-stat{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-areas:
+    "tmpTitle tmpTitle"
+    "tmpBaseDice tmpBaseDice"
+    "tmpPower tmpTier"
+    "tmpPowerMod tmpDiceMod"
+    "tmpResult tmpResult";
+    padding: 10px;
+    color: white;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.sheet-rolltemplate-attack .sheet-outer-container,
+.sheet-rolltemplate-stat .sheet-outer-container{
+    width: 280px;
+}
+
+.sheet-rolltemplate-attack .sheet-box-outer,
+.sheet-rolltemplate-stat .sheet-box-outer{
+    border: 1px solid black;
+    border-radius: 5px;
+    height: 100%;
+}
+
+.sheet-rolltemplate-attack .sheet-box-middle,
+.sheet-rolltemplate-stat .sheet-box-middle{
+    border: 2px solid lightgrey;
+    border-radius: 4px;
+    height: 100%;
+}
+
+.sheet-rolltemplate-attack .sheet-box-inner,
+.sheet-rolltemplate-stat .sheet-box-inner{
+    border: 1px solid black;
+    border-radius: 3px;
+    height: 100%;
+    position: relative;
+}
+
+.sheet-rolltemplate-attack .sheet-template-container-attack{
+    background-image: linear-gradient(to bottom right, #ba4343, black);
+}
+
+.sheet-rolltemplate-stat .sheet-template-container-stat{
+    background-image: linear-gradient(to bottom right, #4365ba, black);
+}
+
+.sheet-rolltemplate-attack .sheet-template-title,
+.sheet-rolltemplate-attack .sheet-template-result,
+.sheet-rolltemplate-stat .sheet-template-title,
+.sheet-rolltemplate-stat .sheet-template-result{
+    text-align: center;
+    font-size: 16px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.sheet-rolltemplate-attack .sheet-template-title,
+.sheet-rolltemplate-stat .sheet-template-title
+{grid-area: tmpTitle;}
+.sheet-rolltemplate-attack .sheet-template-baseDice,
+.sheet-rolltemplate-stat .sheet-template-baseDice
+{grid-area: tmpBaseDice;}
+.sheet-rolltemplate-attack .sheet-template-diceMod,
+.sheet-rolltemplate-stat .sheet-template-diceMod
+{grid-area: tmpDiceMod;}
+.sheet-rolltemplate-attack .sheet-template-power,
+.sheet-rolltemplate-stat .sheet-template-power
+{grid-area: tmpPower;}
+.sheet-rolltemplate-attack .sheet-template-powerMod,
+.sheet-rolltemplate-stat .sheet-template-powerMod
+{grid-area: tmpPowerMod;}
+.sheet-rolltemplate-attack .sheet-template-tier,
+.sheet-rolltemplate-stat .sheet-template-tier
+{grid-area: tmpTier;}
+.sheet-rolltemplate-attack .sheet-template-result,
+.sheet-rolltemplate-stat .sheet-template-result
+{grid-area: tmpResult;}

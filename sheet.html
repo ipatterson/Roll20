@@ -104,8 +104,13 @@
                 <h4>Attributes & Actions</h4>
                 <div class="modifier-inst"><span class="modifier-note">NOTE:</span> Rolls take into account modifier fields. Hit 'Enter' to apply modifier number changes!</div>
                 <div class="attribute-grid-title">
+                    <input type="hidden" value="3d20>8" name="attr_stat_base_dice_roll" readonly>
+                    <input type="hidden" value="*" name="attr_stat_roll_operator" readonly>
+                    <input type="hidden" value="Success-Based" name="attr_stat_roll_type" readonly>
+                    <input type="hidden" value="0" name="attr_stat_roll_power_formula" readonly>
                     <input type="hidden" value="0" name="attr_stat_roll_dice_mod_ready" readonly>
                     <input type="hidden" value="0" name="attr_stat_roll_power_mod_ready" readonly>
+                    <input type="hidden" value="&{template:default}" name="attr_stat_roll_template" readonly>
                     <div class="attribute-grid-title-text">ATTRIBUTE ROLLER</div>
                     <div class="modifier-grid">
                         <div class='dice-mod-input'>
@@ -182,6 +187,9 @@
                     </div>
                 </div>
                 <div class="attack-grid-title">
+                    <input type="hidden" value="3d20>8" name="attr_atk_base_dice_roll" readonly>
+                    <input type="hidden" value="&{template:attack}" name="attr_atk_roll_template" readonly>
+                    <input type="hidden" value="1" name="attr_atk_roll_tier" readonly>
                     <div class="attack-grid-title-text">ATTACK ROLLER</div>
                     <div class="modifier-grid">
                         <div class='dice-mod-input'>
@@ -980,26 +988,33 @@
     </span>
 </span>
 <rolltemplate class="sheet-rolltemplate-attack">
-    <div class="sheet-template-container">
-        <div class="sheet-template-header">Name: {{name}}</div>
-        <div class="sheet-template-row">Dice Rolled: {{base}} </div>
-        <div class="sheet-template-row">Dice Mod: {{diceMod}} </div>
-        <div class="sheet-template-row">Weapon: {{wpnPower}} </div>
-        <div class="sheet-template-row">Power Mod: {{powerMod}} </div>
-        <div class="sheet-template-row">Level Tier: {{levelTier}} </div>
-        <div class="sheet-template-row">Result: {{result}}</div>
+    <div class="sheet-outer-container">
+    <div class="sheet-box-outer"><div class="sheet-box-middle"><div class="sheet-box-inner">
+    <div class="sheet-template-container-attack">
+        <div class="sheet-template-title">{{name}}</div>
+        <div class="sheet-template-baseDice">Dice Rolled: {{base}} </div>
+        <div class="sheet-template-diceMod">Dice Mod: {{diceMod}} </div>
+        <div class="sheet-template-power">Weapon Power: {{wpnPower}} </div>
+        <div class="sheet-template-powerMod">Power Mod: {{powerMod}} </div>
+        <div class="sheet-template-tier">Tier: {{levelTier}} </div>
+        <div class="sheet-template-result">Result: {{result}}</div>
+    </div>
+    </div></div></div>
     </div>
 </rolltemplate>
 <rolltemplate class="sheet-rolltemplate-stat">
-    <div class="sheet-template-container">
-        <div class="sheet-template-header">Name: {{name}}</div>
-        <div class="sheet-template-row">Dice Rolled: {{base}} </div>
-        <div class="sheet-template-row">Dice Mod: {{diceMod}} </div>
-        <div class="sheet-template-row">Stat: {{statName}} </div>
-        <div class="sheet-template-row">Stat Value: {{statValue}} </div>
-        <div class="sheet-template-row">Power Mod: {{powerMod}} </div>
-        <div class="sheet-template-row">Level Tier: {{levelTier}} </div>
-        <div class="sheet-template-row">Result: {{result}}</div>
+    <div class="sheet-outer-container">
+    <div class="sheet-box-outer"><div class="sheet-box-middle"><div class="sheet-box-inner">
+    <div class="sheet-template-container-stat">
+        <div class="sheet-template-title">{{name}} - {{statName}}</div>
+        <div class="sheet-template-baseDice">Dice Rolled: {{base}} </div>
+        <div class="sheet-template-diceMod">Dice Mod: {{diceMod}} </div>
+        <div class="sheet-template-power">{{statName}} Value: {{statValue}} </div>
+        <div class="sheet-template-powerMod">Power Mod: {{powerMod}} </div>
+        <div class="sheet-template-tier">Tier: {{levelTier}} </div>
+        <div class="sheet-template-result">Result: {{result}}</div>
+    </div>
+    </div></div></div>
     </div>
 </rolltemplate>
 <!------------------------------- SHEETWORKERS ----------------------------------------->
@@ -1303,6 +1318,13 @@
 
     /* ------------------ Roller Modifier Logic ------------------------------------*/
 
+    on("change:stat_roller_toggle", function(){
+        console.log("Radio Button Change");
+        getAttrs(["stat_roller_toggle", "stat_roll_dice_mod_ready"], function(values){
+            calculateStatRoll(values.stat_roll_dice_mod_ready, values.stat_roller_toggle);
+        });
+    });
+
     //Verify Stat Roll modifier inputs
     on("change:stat_roll_dice_mod change:stat_roll_power_mod", function(){
         getAttrs(["stat_roll_dice_mod", "stat_roll_power_mod", "stat_roller_toggle"], function(values){
@@ -1312,6 +1334,11 @@
             var dice_mod = parseInt(values["stat_roll_dice_mod"]) || 0;
             var power_mod = parseInt(values["stat_roll_power_mod"]) || 0;
             var toggle = values["stat_roller_toggle"];
+
+            console.log("Dice Mod: " + dice_mod);
+            console.log("Stat Mod: " + power_mod);
+
+            calculateStatRoll(dice_mod, toggle);
 
             setAttrs({
                 stat_roll_dice_mod_ready : dice_mod,
@@ -1328,6 +1355,11 @@
 
             var dice_mod = parseInt(values.atk_roll_dice_mod) || 0;
             var power_mod = parseInt(values.atk_roll_power_mod) || 0;
+
+            console.log("Dice Mod: " + dice_mod);
+            console.log("Stat Mod: " + power_mod);
+
+            calculateAttackBaseRoll(dice_mod);
 
             setAttrs({
                 atk_roll_dice_mod_ready : dice_mod,
@@ -1376,8 +1408,75 @@
             
             attribute_totals["wpn_power"] = attribute_totals[equippedWeapon.source] + 
                                         (attribute_totals["tier_mod"] * bonus);
+                                        
+            getAttrs(["stat_roll_dice_mod_ready"], function(values){
+                calculateAttackBaseRoll(values["stat_roll_dice_mod_ready"]);
+            });
         }
     };
+
+    /* Recalculate Base Rolls */
+
+    function calculateAttackBaseRoll(playerModDie){
+        var base_attack;
+        console.log("--------------Recalculating Attack Roll----------------");
+        var diceMod = wpnFeatBonus[equippedWeapon.feature].dice_mod + playerModDie;
+
+        console.log("Dice Mod: " + diceMod);
+
+        if(diceMod < 0){
+            base_attack = (Math.abs(diceMod) + 3) + "d20>8kl3";
+        } else{
+            base_attack = (diceMod + 3) + "d20>8";
+        }   
+
+        console.log("Base Attack is: " + base_attack);
+
+        setAttrs({
+            atk_base_dice_roll : base_attack,
+            atk_roll_tier : attribute_totals["tier_mod"]
+        });
+    };
+
+    function calculateStatRoll(diceMod, toggle){
+        var base_roll = (Math.abs(diceMod) + 3) + "d20";
+        var operator;
+        var power_formula;
+        var type;
+
+        if(toggle == "attack"){
+            if(diceMod < 0){
+                base_roll = base_roll.concat(">8kl3");
+            } else {
+                base_roll = base_roll.concat(">8");
+            }
+            operator = "*";
+            power_formula = "(@{stat_roll_power_mod_ready} * " + attribute_totals["tier_mod"] + ")";
+            type = "Success-Based";
+        } else {
+            if(diceMod < 0){
+                base_roll = base_roll.concat("kl3");
+            } else {
+                base_roll = base_roll.concat("k3");
+            }
+            operator = "+";
+            power_formula = "@{stat_roll_power_mod_ready}";
+            type = "Additive";
+        }
+
+        console.log("Type is: " + type);
+        console.log("Base Roll is: " + base_roll);
+        console.log("Base Operator is: " + operator);
+        console.log("PowerMod is: " + power_formula);
+
+        setAttrs({
+            stat_base_dice_roll : base_roll,
+            stat_roll_operator : operator,
+            stat_roll_type : type,
+            stat_roll_power_formula : power_formula
+        });
+
+    }
 
     function calculateTierMod(){
         attribute_totals["tier_mod"] = Math.floor((attribute_totals["player_level"]/8) + 1);
