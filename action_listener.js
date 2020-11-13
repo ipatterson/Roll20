@@ -1,4 +1,5 @@
 on("chat:message", function(msg) {
+    //Read the chat message for API commands and execute based on the command given
     if(msg.type == "api"){
         
         //Steady Action - Player recharges AP
@@ -76,10 +77,11 @@ on("chat:message", function(msg) {
             
             var base_attack = createBaseAttackRoll(parseInt(args.diceMod));
             
-            sendChat(msg.who, '&{template:attack} {{name=Attack Roll}} {{base='+base_attack+'}} {{diceMod='+args.diceMod+'}} {{wpnPower='+args.wpnPower+'}} {{powerMod='+args.powerMod+'}} {{levelTier='+args.tier+'}} {{result=[['+base_attack+' * ('+args.wpnPower+' + ('+args.powerMod+' * '+args.tier+')]]}}');
+            sendChat(msg.who, '&{template:attack} {{name=Attack Roll}} {{base='+base_attack+'}} {{diceMod='+args.diceMod+'}} {{wpnPower='+args.wpnPower+'}} {{powerMod='+args.powerMod+'}} {{levelTier='+args.tier+'}} {{result=[['+base_attack+' * ('+args.wpnPower+' + ('+args.powerMod+' * '+args.tier+'))]]}}');
 
         }
         
+        //Stat Action
         if(msg.content.includes("!statroll")){
             
             const hasValue = ["statName", "statValue", "toggle", "tier", "diceMod", "powerMod"];
