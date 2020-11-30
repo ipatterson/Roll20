@@ -8,8 +8,8 @@
                 <button type="action" name="act_buildSheet">Build</button>
                 <button type="action" name="act_weaponSheet">Weapons</button>
                 <button type="action" name="act_armorSheet">Armor</button>
-                <button type="action" name="act_inventorySheet">Inventory</button>
                 <button type="action" name="act_skillSheet">Skills</button>
+                <button type="action" name="act_inventorySheet">Inventory</button>
             </div>
         </span>
     </div>
@@ -213,7 +213,7 @@
             </span>
             <!-- Column Two -->
             <span class="section-tabs">
-                <input type='hidden' class='tabstoggle' name='attr_sheetTab' value='armorSheet'>
+                <input type='hidden' class='tabstoggle' name='attr_sheetTab' value='skillSheet'>
                 <!------------------------ BUILD -------------------------------------->
                 <div class="buildSheet">
                     <h1>Roles & Traits</h1>
@@ -975,13 +975,115 @@
                         </div>
                     </fieldset>
                 </div>
+                <!----------------------- SKILLS ------------------------------------->
+                <div class="skillSheet">
+                    <h1>Skills Coming Soon</h1>
+
+                    <div class="paradigm-grid">
+                        <span>Paradigm</span>
+                        <span>Forceful</span>
+                        <span>Cunning</span>
+                        <span>Inspiring</span>
+                        <span>Max Total: 
+                            <span name='attr_paradigm_max'>3</span>
+                            <input type="hidden" name="attr_paradigm_max" readonly>
+                        </span>
+
+                        <!-- Forceful Value -->
+                        <span>
+                            <div class="skill-grid">
+                                <span style="font-family: 'Pictos'"><button type="action" name='act_decr-forceful' class='skill-val-button skill-decr-val'>}</button></span>
+                                <span name='attr_forceful'></span>
+                                <input type='hidden' name='attr_forceful' value='0' readonly>
+                                <span style="font-family: 'Pictos'"><button type="action" name='act_incr-forceful' class='skill-val-button skill-incr-val'>{</button></span>
+                            </div>
+                        </span>
+
+                        <!-- Cunning Value -->
+                        <span>
+                            <div class="skill-grid">
+                                <span style="font-family: 'Pictos'"><button type="action" name='act_decr-cunning' class='skill-val-button skill-decr-val'>}</button></span>
+                                <span name='attr_cunning'></span>
+                                <input type='hidden' name='attr_cunning' value='0' readonly>
+                                <span style="font-family: 'Pictos'"><button type="action" name='act_incr-cunning' class='skill-val-button skill-incr-val'>{</button></span>
+                            </div>
+                        </span>
+
+                        <!-- Inspiring Value -->
+                        <span>
+                            <div class="skill-grid">
+                                <span style="font-family: 'Pictos'"><button type="action" name='act_decr-inspiring' class='skill-val-button skill-decr-val'>}</button></span>
+                                <span name='attr_inspiring'></span>
+                                <input type='hidden' name='attr_inspiring' value='0' readonly>
+                                <span style="font-family: 'Pictos'"><button type="action" name='act_incr-inspiring' class='skill-val-button skill-incr-val'>{</button></span>
+                            </div>
+                        </span> 
+                    </div>
+
+                    <hr/>
+
+                    <div class="domain-grid">
+                        <span>Domains</span>
+                        <span>Max Total: 
+                            <span name='attr_domain_max'>3</span>
+                            <input type="hidden" name="attr_domain_max" readonly>
+                        </span>
+                        <span>Forceful</span>
+                        <span>Cunning</span>
+                        <span>Inspiring</span>
+
+                        <span>Athletics</span>
+                        <span class='dom-athl-val'>0</span>
+                        <span class='dom-athl-for'>0</span>
+                        <span class='dom-athl-cun'>0</span>
+                        <span class='dom-athl-ins'>0</span>
+
+                        <span>Arcana</span>
+                        <span class='dom-arca-val'>0</span>
+                        <span class='dom-arca-for'>0</span>
+                        <span class='dom-arca-cun'>0</span>
+                        <span class='dom-arca-ins'>0</span>
+
+                        <span>Craft</span>
+                        <span class='dom-craf-val'>0</span>
+                        <span class='dom-craf-for'>0</span>
+                        <span class='dom-craf-cun'>0</span>
+                        <span class='dom-craf-ins'>0</span>
+
+                        <span>Culture</span>
+                        <span class='dom-cult-val'>0</span>
+                        <span class='dom-cult-for'>0</span>
+                        <span class='dom-cult-cun'>0</span>
+                        <span class='dom-cult-ins'>0</span>
+
+                        <span>Influence</span>
+                        <span class='dom-infl-val'>0</span>
+                        <span class='dom-infl-for'>0</span>
+                        <span class='dom-infl-cun'>0</span>
+                        <span class='dom-infl-ins'>0</span>
+
+                        <span>Science</span>
+                        <span class='dom-sci-val'>0</span>
+                        <span class='dom-sci-for'>0</span>
+                        <span class='dom-sci-cun'>0</span>
+                        <span class='dom-sci-ins'>0</span>
+
+                        <span>Skulduggery</span>
+                        <span class='dom-skul-val'>0</span>
+                        <span class='dom-skul-for'>0</span>
+                        <span class='dom-skul-cun'>0</span>
+                        <span class='dom-skul-ins'>0</span>
+
+                        <span>Survival</span>
+                        <span class='dom-surv-val'>0</span>
+                        <span class='dom-surv-for'>0</span>
+                        <span class='dom-surv-cun'>0</span>
+                        <span class='dom-surv-ins'>0</span>
+                    </div>
+                </div>
                 <!----------------------- INVENTORY ------------------------------------->
                 <div class="inventorySheet">
                     <h1>Inventory Coming Soon</h1>
-                </div>
-                <!----------------------- Skills ------------------------------------->
-                <div class="skillSheet">
-                    <h1>Skills Coming Soon</h1>
                 </div>
             </span>
         </div>
@@ -1072,7 +1174,8 @@
         "wpn_range", "wpn_block", "wpn_power",
         "armorhp_mod",  "armorap_mod",  "tier_mod",
         "hp_max",   "mp_max", "ap_max",
-        "player_level", "player_level_mod"];
+        "player_level", "player_level_mod",
+        "forceful", "cunning", "inspiring"];
 
     var attribute_totals = {
         "brawn" :0, "magic"  :0, "mastery"  :0, "impact"  :0, "resist":0,
@@ -1081,7 +1184,8 @@
         "wpn_range" :0, "wpn_block" :0, "wpn_power": 0,
         "armorhp_mod" : 0,"armorap_mod" : 0, "tier_mod": 0,
         "hp_max": 0,      "mp_max": 0,      "ap_max": 0,
-        "player_level": 0, "player_level_mod" :0};
+        "player_level": 0, "player_level_mod" :0,
+        "forceful": 0, "cunning": 0, "inspiring": 0};
         
     const currentPoints = ["hp", "mp", "ap"];
     const maxPoints = ["hp_max", "mp_max", "ap_max"];
@@ -1110,6 +1214,8 @@
         attributes.forEach(function(attr){
             
             getAttrs([attr], function(values){
+
+                console.log("Checking attribute " + attr);
                 
                 attribute_totals[attr] = parseInt(values[attr]);
                 //Set Attributes back (get written as Ints?)
@@ -1120,7 +1226,8 @@
             });
             
         });
-        
+         
+
         getAttrs(["eq_wpn_source", "eq_wpn_feature", "eq_wpn_type"], function(values){
             var source = values["eq_wpn_source"].toLowerCase();
             var feature = values["eq_wpn_feature"].toLowerCase();
@@ -1131,8 +1238,6 @@
             equippedWeapon.feature = feature;
         });
     });
-
-   
 
     /* -------------------------- Gear Management ------------------------------------*/
     on("change:repeating_weapons", function (e) { console.log("Adding Weapon"); });
@@ -1503,4 +1608,36 @@
     function capitalizeWord(string) {
       return string.charAt(0).toUpperCase() + string.slice(1);
     }
+
+    /* Skill Sheet Functions */
+
+    const skill_incr = ["incr-forceful", "incr-cunning", "incr-inspiring"];
+    const skill_decr = ["decr-forceful", "decr-cunning", "decr-inspiring"];
+
+    skill_incr.forEach(button => {
+       on('clicked:'+[button], function(){
+
+          var skill = button.substring(5);
+
+          attribute_totals[skill] += 1;
+
+          setAttrs({
+            [skill] : attribute_totals[skill]
+          });
+       });
+
+    });
+
+    skill_decr.forEach(button => {
+       on('clicked:'+[button], function(){
+          var skill = button.substring(5);
+
+          attribute_totals[skill] -= 1;
+
+          setAttrs({
+            [skill] : attribute_totals[skill]
+          });
+       });
+    });
+
 </script>

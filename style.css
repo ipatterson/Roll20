@@ -2,6 +2,10 @@
     font-family: Tahoma;
 }
 
+*:focus {
+    outline: none;
+}
+
 /* Tooltip container */
 .sheet-help-text {
   border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
@@ -571,6 +575,14 @@ input.sheet-radio-ability[value="ability"]:checked ~ button.sheet-btn-attr{
     display:none;
 }
 
+.sheet-btn-attr:hover{
+    border: 1px solid black;
+    border-radius: 12px;
+    transition-duration: 0.4s;
+    -webkit-text-fill-color: white;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
 /* Attack Grid */
 .sheet-action-grid{
     display: grid;
@@ -938,3 +950,54 @@ select.sheet-select-wgt{ width: 120px;}
 .sheet-rolltemplate-attack .sheet-template-result,
 .sheet-rolltemplate-stat .sheet-template-result
 {grid-area: tmpResult;}
+
+.sheet-paradigm-grid{
+    display: grid;
+    column-gap: 20px;
+    row-gap: 10px;
+    font-size: 16px;
+    justify-items: center;
+    grid-template-columns: repeat(4, auto);
+}
+
+.sheet-domain-grid{
+    display: grid;
+    grid-gap: 2px;
+    font-size: 16px;
+    grid-template-columns: repeat(5, auto);
+}
+
+.sheet-skill-grid{
+    display: grid;
+    grid-gap: 2px;
+    justify-items: center;
+    grid-template-columns: 10px 10px 10px;
+}
+
+.sheet-skill-decr-val{
+    margin-right: 10px;
+}
+
+.sheet-skill-incr-val{
+    margin-left: 10px;
+}
+
+.sheet-skill-val-button{
+    border: none;
+    background-image: none;
+    background: none;
+    border-radius: 0px;
+    font-size: 16px;
+    -webkit-text-fill-color: black;
+    -webkit-tap-highlight-color: none;
+    text-shadow: none;
+}
+
+.sheet-skill-val-button:hover{
+    border: none;
+    background-image: none;
+    background: none;
+    color: #f88379;
+    -webkit-text-fill-color: #f88379;
+    transition-duration: 0s;
+}
