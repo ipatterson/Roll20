@@ -993,8 +993,8 @@
                         <span>
                             <div class="skill-grid">
                                 <span style="font-family: 'Pictos'"><button type="action" name='act_decr-forceful' class='skill-val-button skill-decr-val'>}</button></span>
-                                <span name='attr_forceful'></span>
-                                <input type='hidden' name='attr_forceful' value='0' readonly>
+                                <span name='attr_forceful'>0</span>
+                                    <input type='hidden' name='attr_forceful' value='0' readonly>
                                 <span style="font-family: 'Pictos'"><button type="action" name='act_incr-forceful' class='skill-val-button skill-incr-val'>{</button></span>
                             </div>
                         </span>
@@ -1003,8 +1003,8 @@
                         <span>
                             <div class="skill-grid">
                                 <span style="font-family: 'Pictos'"><button type="action" name='act_decr-cunning' class='skill-val-button skill-decr-val'>}</button></span>
-                                <span name='attr_cunning'></span>
-                                <input type='hidden' name='attr_cunning' value='0' readonly>
+                                <span name='attr_cunning'>0</span>
+                                    <input type='hidden' name='attr_cunning' value='0' readonly>
                                 <span style="font-family: 'Pictos'"><button type="action" name='act_incr-cunning' class='skill-val-button skill-incr-val'>{</button></span>
                             </div>
                         </span>
@@ -1013,8 +1013,8 @@
                         <span>
                             <div class="skill-grid">
                                 <span style="font-family: 'Pictos'"><button type="action" name='act_decr-inspiring' class='skill-val-button skill-decr-val'>}</button></span>
-                                <span name='attr_inspiring'></span>
-                                <input type='hidden' name='attr_inspiring' value='0' readonly>
+                                <span name='attr_inspiring'>0</span>
+                                    <input type='hidden' name='attr_inspiring' value='0' readonly>
                                 <span style="font-family: 'Pictos'"><button type="action" name='act_incr-inspiring' class='skill-val-button skill-incr-val'>{</button></span>
                             </div>
                         </span> 
@@ -1023,20 +1023,30 @@
                     <hr/>
 
                     <div class="domain-grid">
-                        <span>Domains</span>
-                        <span>Max Total: 
-                            <span name='attr_domain_max'>3</span>
-                            <input type="hidden" name="attr_domain_max" readonly>
+                        <span>
+                            <div class='help-text'>Domains
+                            <span class='tooltip'>Splits points among Domains. Maximum allowed is 3.</span></div>
+                        </span>
+                        <span>Remaining: <span name='attr_domain_available_points'></span>
+                            <input type="hidden" name="attr_domain_available_points" value='0' readonly>
                         </span>
                         <span>Forceful</span>
                         <span>Cunning</span>
                         <span>Inspiring</span>
 
                         <span>Athletics</span>
-                        <span class='dom-athl-val'>0</span>
-                        <span class='dom-athl-for'>0</span>
-                        <span class='dom-athl-cun'>0</span>
-                        <span class='dom-athl-ins'>0</span>
+                        <div class="skill-grid">
+                            <span style="font-family: 'Pictos'"><button type="action" name='act_decr-athletics' class='skill-val-button skill-decr-val'>}</button></span>
+                            <span name='attr_athletics'>0</span>
+                                <input type='hidden' name='attr_athletics' value='0' readonly>
+                            <span style="font-family: 'Pictos'"><button type="action" name='act_incr-athletics' class='skill-val-button skill-incr-val'>{</button></span>
+                        </div>
+                        <span class='attr_atlethics-forceful'>0</span>
+                            <input type='hidden' name='attr_athletics-forceful' value='0' readonly>
+                        <span class='attr_athletics-cunning'>0</span>
+                            <input type='hidden' name='attr_athletics-cunning' value='0' readonly>
+                        <span class='attr_athletics-inspiring'>0</span>
+                            <input type='hidden' name='attr_inspiring' value='0' readonly>
 
                         <span>Arcana</span>
                         <span class='dom-arca-val'>0</span>
@@ -1175,7 +1185,8 @@
         "armorhp_mod",  "armorap_mod",  "tier_mod",
         "hp_max",   "mp_max", "ap_max",
         "player_level", "player_level_mod",
-        "forceful", "cunning", "inspiring"];
+        "forceful", "cunning", "inspiring",
+        "athletics"];
 
     var attribute_totals = {
         "brawn" :0, "magic"  :0, "mastery"  :0, "impact"  :0, "resist":0,
@@ -1185,7 +1196,8 @@
         "armorhp_mod" : 0,"armorap_mod" : 0, "tier_mod": 0,
         "hp_max": 0,      "mp_max": 0,      "ap_max": 0,
         "player_level": 0, "player_level_mod" :0,
-        "forceful": 0, "cunning": 0, "inspiring": 0};
+        "forceful": 0, "cunning": 0, "inspiring": 0,
+        "athletics": 0};
         
     const currentPoints = ["hp", "mp", "ap"];
     const maxPoints = ["hp_max", "mp_max", "ap_max"];
@@ -1218,6 +1230,8 @@
                 console.log("Checking attribute " + attr);
                 
                 attribute_totals[attr] = parseInt(values[attr]);
+
+                console.log("Found " + attribute_totals[attr]);
                 //Set Attributes back (get written as Ints?)
                 setAttrs({
                    [attr] : attribute_totals[attr]
@@ -1611,19 +1625,21 @@
 
     /* Skill Sheet Functions */
 
-    const skill_incr = ["incr-forceful", "incr-cunning", "incr-inspiring"];
-    const skill_decr = ["decr-forceful", "decr-cunning", "decr-inspiring"];
+    const skill_incr = ["incr-forceful", "incr-cunning", "incr-inspiring", "incr-athletics"];
+    const skill_decr = ["decr-forceful", "decr-cunning", "decr-inspiring", "decr-athletics"];
 
     skill_incr.forEach(button => {
        on('clicked:'+[button], function(){
 
           var skill = button.substring(5);
-
+          console.log("Increasing " + skill + "...")
           attribute_totals[skill] += 1;
 
           setAttrs({
             [skill] : attribute_totals[skill]
           });
+
+          console.log("Increase Done");
        });
 
     });
@@ -1631,13 +1647,15 @@
     skill_decr.forEach(button => {
        on('clicked:'+[button], function(){
           var skill = button.substring(5);
-
+          console.log("Decreasing " + skill + "...")
           attribute_totals[skill] -= 1;
 
           setAttrs({
             [skill] : attribute_totals[skill]
           });
        });
+
+       console.log("Decrease Done");
     });
 
 </script>
