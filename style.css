@@ -29,7 +29,7 @@
     width: 250px;
     margin-left: 0px;
     top: -150%;
-    left: -10%;   
+    left: -10%;
 }
 
 .sheet-help-text .sheet-tooltip,
@@ -165,7 +165,7 @@ h1, h2, h3, h4{
     text-align: center;
     padding-bottom: 5px;
     padding-top: 3px;
-    
+
     /*text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;*/
 }
 
@@ -189,7 +189,7 @@ h1, h2, h3, h4{
 /* Main Grid */
 .sheet-section-main{
     display:grid;
-    grid-template-columns: 320px 500px;
+    grid-template-columns: 320px 700px;
     grid-column-gap: 10px;
 }
 
@@ -210,7 +210,7 @@ h1, h2, h3, h4{
     grid-template-columns: auto 100px 100px auto;
     justify-items: center;
     grid-column-gap: 50px;
-    grid-template-areas: 
+    grid-template-areas:
     ". base1 base2 .";
 }
 
@@ -383,7 +383,7 @@ h1, h2, h3, h4{
     width: 25%;
     -webkit-text-fill-color: white;
     text-align: center;
-    
+
 }
 
 /* Base Setup Grid */
@@ -443,7 +443,7 @@ h1, h2, h3, h4{
     justify-content:center;
     align-items:stretch;
     margin-top: 10px;
-    grid-template-areas: 
+    grid-template-areas:
     "toggleAbl toggleAtk attribImpact attribResist attribEnergy"
     "attribBrawn attribBrawn attribMight attribBody attribVigor"
     "attribMagic attribMagic attribWill attribEgo attribEssence"
@@ -614,50 +614,92 @@ input.sheet-radio-ability[value="ability"]:checked ~ button.sheet-btn-attr{
 
 .sheet-rolegrid{
     display: grid;
-    text-size: 24px;
     text-align: center;
-    grid-template-columns: repeat(3, auto);
+    grid-template-columns: 40px repeat(3, 200px);
     grid-column-gap: 10px;
+    grid-row-gap: 5px;
+    padding: 3px;
     grid-template-areas:
-    ". role1 role2 role3 .";
+    ". role1 role2 role3"
+    "tier1split tier1split tier1split tier1split"
+    "numberLabel role1tier1 role2tier1 role3tier1"
+    "tier2split tier2split tier2split tier2split"
+    "tier3split tier3split tier3split tier3split";
 }
 
-.sheet-rolegrid select{ 
+.sheet-rolegrid select{
+  text-indent: 1px;
+  width: 150px;
+  background-position: 0 0;
+  background-size: 100%;
+}
+
+.sheet-role1 select,
+.sheet-role1tier1 select{background-image: linear-gradient(to bottom right, #ddc5c8, #714247) !important;
+}
+
+.sheet-role2 select,
+.sheet-role2tier1 select{
+  background-image: linear-gradient(to bottom right, #c9e0ee, #2b6588) !important;
+}
+
+.sheet-role3 select,
+.sheet-role3tier1 select{
+  background-image: linear-gradient(to bottom right, #aec6a4, #516E45) !important;
+}
+
+.sheet-rolegrid input{
     text-indent: 1px;
-    width: 100%;
+    width: 140px;
 }
 
-.sheet-rolegrid input{ 
-    text-indent: 1px;
-    width: 100%;
+/*Individual Trait Talent Format*/
+.sheet-roletiergrid{
+  display: grid;
+  grid-template-columns: 1;
+  align-conten: space-evenly;
+}
+
+.sheet-role1{grid-area: role1}
+
+.sheet-role1tier1{
+  grid-area: role1tier1;
+  display: grid;
+  grid-template-columns: 1;
+}
+
+.sheet-role2tier1{
+  grid-area: role2tier1;
+  display: grid;
+  grid-template-columns: 1;
+}
+
+.sheet-role3tier1{
+  grid-area: role3tier1;
+  display: grid;
+  grid-template-columns: 1;
+}
+
+.sheet-role2{grid-area: role2; background-color: rgba(255, 255, 255, 0.6)}
+.sheet-role3{grid-area: role3}
+
+.sheet-tier1split{grid-area: tier1split;}
+.sheet-tier2split{grid-area: tier2split;}
+.sheet-tier3split{grid-area: tier3split;}
+
+
+.sheet-tierSectionGrid{
+  grid-area: numberLabel;
+  grid-template-columns: 1;
+}
+
+.sheet-tierSectionGrid span{
+  font-size: 60px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.3);
 }
 
 
-.sheet-role1{grid-area: role1;}
-.sheet-role2{grid-area: role2;}
-.sheet-role3{grid-area: role3;}
-
-/* Tier Button Grid */
-
-.sheet-tier-button-grid{
-    display:grid;
-    justify-items:center;
-    grid-template-columns: auto 150px 150px 150px auto
-    grid-column-gap: 5px;
-    margin-bottom: 5px;
-    grid-template-areas:
-    ". tier1 tier2 tier3 .";
-}
-
-.sheet-tier1button{grid-area: tier1;}
-.sheet-tier2button{grid-area: tier2;}
-.sheet-tier3button{grid-area: tier3;}
-
-.sheet-tier-button-grid button{
-    font-size: 16px;
-    height: 24px;
-    font-weight: bold;
-}
 
 /* Tier Grid */
 
@@ -684,7 +726,7 @@ input.sheet-radio-ability[value="ability"]:checked ~ button.sheet-btn-attr{
     display: grid;
     grid-template-rows: repeat(3, auto);
     grid-row-gap: 5px;
-    grid-template-areas: 
+    grid-template-areas:
     "newWpnName newWpnNotes newWpnEquip"
     "newWpnSelect newWpnNotes newWpnEquip";
     border-bottom-style: dotted;
@@ -717,7 +759,7 @@ select.sheet-select-wpn{ width: 120px;}
     display: grid;
     grid-template-columns: auto 125px 175px auto;
     grid-row-gap: 5px;
-    grid-template-areas: 
+    grid-template-areas:
     ". newArName newArNotes newArEquip"
     ". newArSelect newArNotes newArEquip";
     border-bottom-style: dotted;

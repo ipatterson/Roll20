@@ -213,15 +213,37 @@
             </span>
             <!-- Column Two -->
             <span class="section-tabs">
-                <input type='hidden' class='tabstoggle' name='attr_sheetTab' value='skillSheet'>
-                <!------------------------ BUILD -------------------------------------->
+                <input type='hidden' class='tabstoggle' name='attr_sheetTab' value='buildSheet'>
+                <!------------------------ BUILD ----------------------------->
                 <div class="buildSheet">
+                  <h1> Starting Traits </h1>
+                  <div class="base-stat-grid">
+                      <span class="base-stat1select">
+                          <span class='select-new-arrow'><select name="attr_start-stat1">
+                                  <option value="def" selected="selected">Select</option>
+                                  <option value="brawn">Brawn</option>
+                                  <option value="magic">Magic</option>
+                                  <option value="mastery">Mastery</option>
+                              </select></span>
+                      </span>
+                      <span class="base-stat2select">
+                          <span class='select-new-arrow'><select name="attr_start-stat2">
+                                  <option value="def" selected="selected">Select</option>
+                                  <option value="impact">Impact</option>
+                                  <option value="resist">Resist</option>
+                                  <option value="energy">Energy</option>
+                              </select></span>
+                      </span>
+                  </div>
+                  <p>
                     <h1>Roles & Traits</h1>
                     <div class='rolegrid'>
+
+                        <!-- Role 1 -->
                         <span class='role1'>
                             <h4>Role 1</h4>
                             <span class='select-new-arrow'><select name="attr_role1" class="role">
-                                    <option value="def" selected="selected">Select</option>
+                                    <option value="def" selected="selected">Trait</option>
                                     <option value="blaster">Blaster</option>
                                     <option value="brute">Brute</option>
                                     <option value="defender">Defender</option>
@@ -242,10 +264,11 @@
                             <br />
                             <input placeholder="Core Talent 1" type="text">
                         </span>
+
                         <span class='role2'>
                             <h4>Role 2</h4>
                             <span class='select-new-arrow'><select name="attr_role2" class="role">
-                                    <option value="def" selected="selected">Select</option>
+                                    <option value="def" selected="selected">Trait</option>
                                     <option value="blaster">Blaster</option>
                                     <option value="brute">Brute</option>
                                     <option value="defender">Defender</option>
@@ -266,10 +289,11 @@
                             <br />
                             <input placeholder="Core Talent 2" type="text">
                         </span>
+
                         <span class='role3'>
                             <h4>Role 3</h4>
                             <span class='select-new-arrow'><select name="attr_role3" class="role">
-                                    <option value="def" selected="selected">Select</option>
+                                    <option value="def" selected="selected">Trait</option>
                                     <option value="blaster">Blaster</option>
                                     <option value="brute">Brute</option>
                                     <option value="defender">Defender</option>
@@ -290,40 +314,312 @@
                             <br />
                             <input placeholder="Core Talent 3" type="text">
                         </span>
+
+                        <div class='role1tier1'>
+
+                          <div class='roletiergrid'>
+                            <span class='role1tier1trait1' id='trait'>
+                              <span class='select-new-arrow'><select name="attr_tier1role1-trait1">
+                                      <option value="def" selected="selected">Trait</option>
+                                      <option value="brawn">Brawn</option>
+                                      <option value="magic">Magic</option>
+                                      <option value="mastery">Mastery</option>
+                                      <option value="impact">Impact</option>
+                                      <option value="resist">Resist</option>
+                                      <option value="energy">Energy</option>
+                                  </select></span>
+                            </span>
+                            <span class='role1tier1talent1' id='talent'>
+                              <span class='select-new-arrow'><select name="attr_tier1role1-talent1">
+                                  <option value="def" selected="selected">Talent</option>
+                                  <option value="role1tier1talent1option1">Placeholder 1</option>
+                                  <option value="role1tier1talent1option2">Placeholder 2</option>
+                                  <option value="role1tier1talent1option3">Placeholder 3</option>
+                                  <option value="role1tier1talent1option4">Placeholder 4</option>
+                                </select>
+                            </span>
+                          </div>
+
+                          <div class='roletiergrid'>
+                            <span class='role1tier1trait2'>
+                              <span class='select-new-arrow'><select name="attr_tier1role1-trait2">
+                                      <option value="def" selected="selected">Trait</option>
+                                      <option value="brawn">Brawn</option>
+                                      <option value="magic">Magic</option>
+                                      <option value="mastery">Mastery</option>
+                                      <option value="impact">Impact</option>
+                                      <option value="resist">Resist</option>
+                                      <option value="energy">Energy</option>
+                                  </select></span>
+                            </span>
+                            <span class='role1tier1talent2'>
+                              <span class='select-new-arrow'><select name="attr_tier1role1-talent2">
+                                <option value="def" selected="selected">Talent</option>
+                                <option value="role1tier1talent2option1">Placeholder 1</option>
+                                <option value="role1tier1talent2option2">Placeholder 2</option>
+                                <option value="role1tier1talent2option3">Placeholder 3</option>
+                                <option value="role1tier1talent2option4">Placeholder 4</option>
+                              </select>
+                            </span>
+                          </div>
+
+                          <div class='roletiergrid'>
+                            <span class='role1tier1trait3'>
+                              <span class='select-new-arrow'><select name="attr_tier1role1-trait3">
+                                      <option value="def" selected="selected">Trait</option>
+                                      <option value="brawn">Brawn</option>
+                                      <option value="magic">Magic</option>
+                                      <option value="mastery">Mastery</option>
+                                      <option value="impact">Impact</option>
+                                      <option value="resist">Resist</option>
+                                      <option value="energy">Energy</option>
+                                  </select></span>
+                            </span>
+                            <span class='role1tier1talent3'>
+                              <span class='select-new-arrow'><select name="attr_tier1role1-talent3">
+                                <option value="def" selected="selected">Talent</option>
+                                <option value="role1tier1talent3option1">Placeholder 1</option>
+                                <option value="role1tier1talent3option2">Placeholder 2</option>
+                                <option value="role1tier1talent3option3">Placeholder 3</option>
+                                <option value="role1tier1talent3option4">Placeholder 4</option>
+                              </select>
+                            </span>
+                          </div>
+
+                          <div class='roletiergrid'>
+                              <span class='role1tier1trait4'>
+                                <span class='select-new-arrow'><select name="attr_tier1role1-trait4">
+                                        <option value="def" selected="selected">Trait</option>
+                                        <option value="brawn">Brawn</option>
+                                        <option value="magic">Magic</option>
+                                        <option value="mastery">Mastery</option>
+                                        <option value="impact">Impact</option>
+                                        <option value="resist">Resist</option>
+                                        <option value="energy">Energy</option>
+                                    </select></span>
+                              </span>
+                              <span class='role1tier1talent4'>
+                                <span class='select-new-arrow'><select name="attr_tier1role1-talent4">
+                                  <option value="def" selected="selected">Talent</option>
+                                  <option value="role1tier1talent4option1">Placeholder 1</option>
+                                  <option value="role1tier1talent4option2">Placeholder 2</option>
+                                  <option value="role1tier1talent4option3">Placeholder 3</option>
+                                  <option value="role1tier1talent4option4">Placeholder 4</option>
+                                </select>
+                              </span>
+                          </div>
+
+                        </div>
+
+
+                        <div class='role2tier1'>
+
+                          <div class='roletiergrid'>
+                            <span class='role2tier1trait1'>
+                              <span class='select-new-arrow'><select name="attr_tier1role2-trait1">
+                                      <option value="def" selected="selected">Trait</option>
+                                      <option value="brawn">Brawn</option>
+                                      <option value="magic">Magic</option>
+                                      <option value="mastery">Mastery</option>
+                                      <option value="impact">Impact</option>
+                                      <option value="resist">Resist</option>
+                                      <option value="energy">Energy</option>
+                                  </select></span>
+                            </span>
+                            <span class='role2tier1talent1'>
+                              <span class='select-new-arrow'><select name="attr_tier1role2-talent1">
+                                <option value="def" selected="selected">Talent</option>
+                                <option value="role2tier1talent1option1">Placeholder 1</option>
+                                <option value="role2tier1talent1option2">Placeholder 2</option>
+                                <option value="role2tier1talent1option3">Placeholder 3</option>
+                                <option value="role2tier1talent1option4">Placeholder 4</option>
+                              </select>
+                            </span>
+                          </div>
+
+                          <div class='roletiergrid'>
+                            <span class='role2tier1trait2'>
+                              <span class='select-new-arrow'><select name="attr_tier1role2-trait2">
+                                      <option value="def" selected="selected">Trait</option>
+                                      <option value="brawn">Brawn</option>
+                                      <option value="magic">Magic</option>
+                                      <option value="mastery">Mastery</option>
+                                      <option value="impact">Impact</option>
+                                      <option value="resist">Resist</option>
+                                      <option value="energy">Energy</option>
+                                  </select></span>
+                            </span>
+                            <span class='role2tier1talent2'>
+                              <span class='select-new-arrow'><select name="attr_tier1role2-talent2">
+                                <option value="def" selected="selected">Talent</option>
+                                <option value="role2tier1talent2option1">Placeholder 1</option>
+                                <option value="role2tier1talent2option2">Placeholder 2</option>
+                                <option value="role2tier1talent2option3">Placeholder 3</option>
+                                <option value="role2tier1talent2option4">Placeholder 4</option>
+                              </select>
+                            </span>
+                          </div>
+
+                          <div class='roletiergrid'>
+                            <span class='role2tier1trait3'>
+                              <span class='select-new-arrow'><select name="attr_tier1role2-trait3">
+                                      <option value="def" selected="selected">Trait</option>
+                                      <option value="brawn">Brawn</option>
+                                      <option value="magic">Magic</option>
+                                      <option value="mastery">Mastery</option>
+                                      <option value="impact">Impact</option>
+                                      <option value="resist">Resist</option>
+                                      <option value="energy">Energy</option>
+                                  </select></span>
+                            </span>
+                            <span class='role2tier1talent3'>
+                              <span class='select-new-arrow'><select name="attr_tier1role2-talent3">
+                                <option value="def" selected="selected">Talent</option>
+                                <option value="role2tier1talent3option1">Placeholder 1</option>
+                                <option value="role2tier1talent3option2">Placeholder 2</option>
+                                <option value="role2tier1talent3option3">Placeholder 3</option>
+                                <option value="role2tier1talent3option4">Placeholder 4</option>
+                              </select>
+                            </span>
+                          </div>
+
+                          <div class='roletiergrid'>
+                            <span class='role2tier1trait4'>
+                              <span class='select-new-arrow'><select name="attr_tier1role2-trait4">
+                                      <option value="def" selected="selected">Trait</option>
+                                      <option value="brawn">Brawn</option>
+                                      <option value="magic">Magic</option>
+                                      <option value="mastery">Mastery</option>
+                                      <option value="impact">Impact</option>
+                                      <option value="resist">Resist</option>
+                                      <option value="energy">Energy</option>
+                                  </select></span>
+                            </span>
+                            <span class='role2tier1talent4'>
+                              <span class='select-new-arrow'><select name="attr_tier1role2-talent4">
+                                <option value="def" selected="selected">Talent</option>
+                                <option value="role2tier1talent4option1">Placeholder 1</option>
+                                <option value="role2tier1talent4option2">Placeholder 2</option>
+                                <option value="role2tier1talent4option3">Placeholder 3</option>
+                                <option value="role2tier1talent4option4">Placeholder 4</option>
+                              </select>
+                            </span>
+                          </div>
+
+                        </div>
+
+                        <div class='role3tier1'>
+
+                          <div class='roletiergrid'>
+                            <span class='role3tier1trait1'>
+                              <span class='select-new-arrow'><select name="attr_tier1role3-trait1">
+                                      <option value="def" selected="selected">Trait</option>
+                                      <option value="brawn">Brawn</option>
+                                      <option value="magic">Magic</option>
+                                      <option value="mastery">Mastery</option>
+                                      <option value="impact">Impact</option>
+                                      <option value="resist">Resist</option>
+                                      <option value="energy">Energy</option>
+                                  </select></span>
+                            </span>
+                            <span class='role3tier1talent1'>
+                              <span class='select-new-arrow'><select name="attr_tier1role3-talent1">
+                                <option value="def" selected="selected">Talent</option>
+                                <option value="role3tier1talent1option1">Placeholder 1</option>
+                                <option value="role3tier1talent1option2">Placeholder 2</option>
+                                <option value="role3tier1talent1option3">Placeholder 3</option>
+                                <option value="role3tier1talent1option4">Placeholder 4</option>
+                              </select>
+                            </span>
+                          </div>
+
+                          <div class='roletiergrid'>
+                            <span class='role3tier1trait2'>
+                              <span class='select-new-arrow'><select name="attr_tier1role3-trait2">
+                                      <option value="def" selected="selected">Trait</option>
+                                      <option value="brawn">Brawn</option>
+                                      <option value="magic">Magic</option>
+                                      <option value="mastery">Mastery</option>
+                                      <option value="impact">Impact</option>
+                                      <option value="resist">Resist</option>
+                                      <option value="energy">Energy</option>
+                                  </select></span>
+                            </span>
+                            <span class='role3tier1talent2'>
+                              <span class='select-new-arrow'><select name="attr_tier1role3-talent2">
+                                <option value="def" selected="selected">Talent</option>
+                                <option value="role3tier1talent2option1">Placeholder 1</option>
+                                <option value="role3tier1talent2option2">Placeholder 2</option>
+                                <option value="role3tier1talent2option3">Placeholder 3</option>
+                                <option value="role3tier1talent2option4">Placeholder 4</option>
+                              </select>
+                            </span>
+                          </div>
+
+                          <div class='roletiergrid'>
+                            <span class='role3tier1trait3'>
+                              <span class='select-new-arrow'><select name="attr_tier1role3-trait3">
+                                      <option value="def" selected="selected">Trait</option>
+                                      <option value="brawn">Brawn</option>
+                                      <option value="magic">Magic</option>
+                                      <option value="mastery">Mastery</option>
+                                      <option value="impact">Impact</option>
+                                      <option value="resist">Resist</option>
+                                      <option value="energy">Energy</option>
+                                  </select></span>
+                            </span>
+                            <span class='role3tier1talent3'>
+                              <span class='select-new-arrow'><select name="attr_tier1role3-talent3">
+                                <option value="def" selected="selected">Talent</option>
+                                <option value="role3tier1talent3option1">Placeholder 1</option>
+                                <option value="role3tier1talent3option2">Placeholder 2</option>
+                                <option value="role3tier1talent3option3">Placeholder 3</option>
+                                <option value="role3tier1talent3option4">Placeholder 4</option>
+                              </select>
+                            </span>
+                          </div>
+
+                          <div class='roletiergrid'>
+                            <span class='role3tier1trait4'>
+                              <span class='select-new-arrow'><select name="attr_tier1role3-trait4">
+                                      <option value="def" selected="selected">Trait</option>
+                                      <option value="brawn">Brawn</option>
+                                      <option value="magic">Magic</option>
+                                      <option value="mastery">Mastery</option>
+                                      <option value="impact">Impact</option>
+                                      <option value="resist">Resist</option>
+                                      <option value="energy">Energy</option>
+                                  </select></span>
+                            </span>
+                            <span class='role3tier1talent4'>
+                              <span class='select-new-arrow'><select name="attr_tier1role3-talent4">
+                                <option value="def" selected="selected">Talent</option>
+                                <option value="role3tier1talent4option1">Placeholder 1</option>
+                                <option value="role3tier1talent4option2">Placeholder 2</option>
+                                <option value="role3tier1talent4option3">Placeholder 3</option>
+                                <option value="role3tier1talent4option4">Placeholder 4</option>
+                              </select>
+                            </span>
+                          </div>
+
+
+                        </div>
+
+                        <span class='tier1split'><h2>Tier 1</h2></span>
+                        <span class='tier2split'><h2>Tier 2</h2></span>
+                        <span class='tier3split'><h2>Tier 3</h2></span>
+
+                        <div class='tierSectionGrid'>
+                          <span>1</span>
+                          <span>2</span>
+                          <span>3</span>
+                          <span>4</span>
+                        </div>
+
                     </div>
                     <hr>
-                    <h1> Starting Traits </h1>
-                    <div class="base-stat-grid">
-                        <span class="base-stat1select">
-                            <span class='select-new-arrow'><select name="attr_start-stat1">
-                                    <option value="def" selected="selected">Select</option>
-                                    <option value="brawn">Brawn</option>
-                                    <option value="magic">Magic</option>
-                                    <option value="mastery">Mastery</option>
-                                </select></span>
-                        </span>
-                        <span class="base-stat2select">
-                            <span class='select-new-arrow'><select name="attr_start-stat2">
-                                    <option value="def" selected="selected">Select</option>
-                                    <option value="impact">Impact</option>
-                                    <option value="resist">Resist</option>
-                                    <option value="energy">Energy</option>
-                                </select></span>
-                        </span>
-                    </div>
-                    <hr>
-                    <input type='hidden' class='tier_tabstoggle' name='attr_tierTab' value='tier1tab'>
-                    <div class="tier-button-grid">
-                        <span class="tier1button">
-                            <button type="action" name="act_tier1tab">Tier 1</button>
-                        </span>
-                        <span class="tier2button">
-                            <button type="action" name="act_tier2tab">Tier 2</button>
-                        </span>
-                        <span class="tier3button">
-                            <button type="action" name="act_tier3tab">Tier 3</button>
-                        </span>
-                    </div>
+
+
                     <div class="tier1tab">
                         <h1>Tier 1</h1>
                         <div class='tier-grid'>
@@ -892,7 +1188,7 @@
                         </div>
                     </div>
                 </div>
-                <!------------------------ WEAPONS -------------------------------------->
+                <!------------------------ WEAPONS --------------------------->
                 <div class="weaponSheet">
                     <h1>Weapons</h1>
                     <fieldset class="repeating_weapons">
@@ -932,7 +1228,7 @@
                         </div>
                     </fieldset>
                 </div>
-                <!------------------------ ARMOR -------------------------------------->
+                <!------------------------ ARMOR ----------------------------->
                 <div class="armorSheet">
                     <h1>Armor</h1>
                     <div class='ar-info-grid'>
@@ -975,16 +1271,16 @@
                         </div>
                     </fieldset>
                 </div>
-                <!----------------------- SKILLS ------------------------------------->
+                <!----------------------- SKILLS ----------------------------->
                 <div class="skillSheet">
-                    <h1>Skills Coming Soon</h1>
+                    <h1>Skills</h1>
 
                     <div class="paradigm-grid">
                         <span>Paradigm</span>
                         <span>Forceful</span>
                         <span>Cunning</span>
                         <span>Inspiring</span>
-                        <span>Max Total: 
+                        <span>Max Total:
                             <span name='attr_paradigm_max'>3</span>
                             <input type="hidden" name="attr_paradigm_max" readonly>
                         </span>
@@ -1017,7 +1313,7 @@
                                     <input type='hidden' name='attr_inspiring' value='0' readonly>
                                 <span style="font-family: 'Pictos'"><button type="action" name='act_incr-inspiring' class='skill-val-button skill-incr-val'>{</button></span>
                             </div>
-                        </span> 
+                        </span>
                     </div>
 
                     <hr/>
@@ -1036,62 +1332,166 @@
 
                         <span>Athletics</span>
                         <div class="skill-grid">
-                            <span style="font-family: 'Pictos'"><button type="action" name='act_decr-athletics' class='skill-val-button skill-decr-val'>}</button></span>
+                            <span style="font-family: 'Pictos'">
+                              <button type="action" name='act_decr-athletics' class='skill-val-button skill-decr-val'>}</button>
+                            </span>
                             <span name='attr_athletics'>0</span>
                                 <input type='hidden' name='attr_athletics' value='0' readonly>
-                            <span style="font-family: 'Pictos'"><button type="action" name='act_incr-athletics' class='skill-val-button skill-incr-val'>{</button></span>
+                            <span style="font-family: 'Pictos'">
+                              <button type="action" name='act_incr-athletics' class='skill-val-button skill-incr-val'>{</button>
+                              </span>
                         </div>
-                        <span class='attr_atlethics-forceful'>0</span>
-                            <input type='hidden' name='attr_athletics-forceful' value='0' readonly>
-                        <span class='attr_athletics-cunning'>0</span>
-                            <input type='hidden' name='attr_athletics-cunning' value='0' readonly>
-                        <span class='attr_athletics-inspiring'>0</span>
-                            <input type='hidden' name='attr_inspiring' value='0' readonly>
+
+                        <span name='attr_athleticsForceful'>0</span>
+                            <input type='hidden' name='attr_athleticsForceful' value='0' readonly>
+                        <span name='attr_athleticsCunning'>0</span>
+                            <input type='hidden' name='attr_athleticsCunning' value='0' readonly>
+                        <span name='attr_athleticsInspiring'>0</span>
+                            <input type='hidden' name='attr_athleticsInspiring' value='0' readonly>
 
                         <span>Arcana</span>
-                        <span class='dom-arca-val'>0</span>
-                        <span class='dom-arca-for'>0</span>
-                        <span class='dom-arca-cun'>0</span>
-                        <span class='dom-arca-ins'>0</span>
+
+                        <div class="skill-grid">
+                            <span style="font-family: 'Pictos'">
+                              <button type="action" name='act_decr-arcana' class='skill-val-button skill-decr-val'>}</button>
+                            </span>
+                            <span name='attr_arcana'>0</span>
+                                <input type='hidden' name='attr_arcana' value='0' readonly>
+                            <span style="font-family: 'Pictos'">
+                              <button type="action" name='act_incr-arcana' class='skill-val-button skill-incr-val'>{</button>
+                              </span>
+                        </div>
+
+                        <span name='attr_arcanaForceful'>0</span>
+                            <input type='hidden' name='attr_arcanaForceful' value='0' readonly>
+                        <span name='attr_arcanaCunning'>0</span>
+                            <input type='hidden' name='attr_arcanaCunning' value='0' readonly>
+                        <span name='attr_arcanaInspiring'>0</span>
+                            <input type='hidden' name='attr_arcanaInspiring' value='0' readonly>
 
                         <span>Craft</span>
-                        <span class='dom-craf-val'>0</span>
-                        <span class='dom-craf-for'>0</span>
-                        <span class='dom-craf-cun'>0</span>
-                        <span class='dom-craf-ins'>0</span>
+
+                        <div class="skill-grid">
+                            <span style="font-family: 'Pictos'">
+                              <button type="action" name='act_decr-craft' class='skill-val-button skill-decr-val'>}</button>
+                            </span>
+                            <span name='attr_craft'>0</span>
+                                <input type='hidden' name='attr_craft' value='0' readonly>
+                            <span style="font-family: 'Pictos'">
+                              <button type="action" name='act_incr-craft' class='skill-val-button skill-incr-val'>{</button>
+                              </span>
+                        </div>
+
+                        <span name='attr_craftForceful'>0</span>
+                            <input type='hidden' name='attr_craftForceful' value='0' readonly>
+                        <span name='attr_craftCunning'>0</span>
+                            <input type='hidden' name='attr_craftCunning' value='0' readonly>
+                        <span name='attr_craftInspiring'>0</span>
+                            <input type='hidden' name='attr_craftInspiring' value='0' readonly>
 
                         <span>Culture</span>
-                        <span class='dom-cult-val'>0</span>
-                        <span class='dom-cult-for'>0</span>
-                        <span class='dom-cult-cun'>0</span>
-                        <span class='dom-cult-ins'>0</span>
+
+                        <div class="skill-grid">
+                            <span style="font-family: 'Pictos'">
+                              <button type="action" name='act_decr-culture' class='skill-val-button skill-decr-val'>}</button>
+                            </span>
+                            <span name='attr_culture'>0</span>
+                                <input type='hidden' name='attr_culture' value='0' readonly>
+                            <span style="font-family: 'Pictos'">
+                              <button type="action" name='act_incr-culture' class='skill-val-button skill-incr-val'>{</button>
+                              </span>
+                        </div>
+
+                        <span name='attr_cultureForceful'>0</span>
+                            <input type='hidden' name='attr_cultureForceful' value='0' readonly>
+                        <span name='attr_cultureCunning'>0</span>
+                            <input type='hidden' name='attr_cultureCunning' value='0' readonly>
+                        <span name='attr_cultureInspiring'>0</span>
+                            <input type='hidden' name='attr_cultureInspiring' value='0' readonly>
 
                         <span>Influence</span>
-                        <span class='dom-infl-val'>0</span>
-                        <span class='dom-infl-for'>0</span>
-                        <span class='dom-infl-cun'>0</span>
-                        <span class='dom-infl-ins'>0</span>
+
+                        <div class="skill-grid">
+                            <span style="font-family: 'Pictos'">
+                              <button type="action" name='act_decr-influence' class='skill-val-button skill-decr-val'>}</button>
+                            </span>
+                            <span name='attr_influence'>0</span>
+                                <input type='hidden' name='attr_influence' value='0' readonly>
+                            <span style="font-family: 'Pictos'">
+                              <button type="action" name='act_incr-influence' class='skill-val-button skill-incr-val'>{</button>
+                              </span>
+                        </div>
+
+                        <span name='attr_influenceForceful'>0</span>
+                            <input type='hidden' name='attr_influenceForceful' value='0' readonly>
+                        <span name='attr_influenceCunning'>0</span>
+                            <input type='hidden' name='attr_influenceCunning' value='0' readonly>
+                        <span name='attr_influenceInspiring'>0</span>
+                            <input type='hidden' name='attr_influenceInspiring' value='0' readonly>
 
                         <span>Science</span>
-                        <span class='dom-sci-val'>0</span>
-                        <span class='dom-sci-for'>0</span>
-                        <span class='dom-sci-cun'>0</span>
-                        <span class='dom-sci-ins'>0</span>
+
+                        <div class="skill-grid">
+                            <span style="font-family: 'Pictos'">
+                              <button type="action" name='act_decr-science' class='skill-val-button skill-decr-val'>}</button>
+                            </span>
+                            <span name='attr_science'>0</span>
+                                <input type='hidden' name='attr_science' value='0' readonly>
+                            <span style="font-family: 'Pictos'">
+                              <button type="action" name='act_incr-science' class='skill-val-button skill-incr-val'>{</button>
+                              </span>
+                        </div>
+
+                        <span name='attr_scienceForceful'>0</span>
+                            <input type='hidden' name='attr_scienceForceful' value='0' readonly>
+                        <span name='attr_scienceCunning'>0</span>
+                            <input type='hidden' name='attr_scienceCunning' value='0' readonly>
+                        <span name='attr_scienceInspiring'>0</span>
+                            <input type='hidden' name='attr_scienceInspiring' value='0' readonly>
 
                         <span>Skulduggery</span>
-                        <span class='dom-skul-val'>0</span>
-                        <span class='dom-skul-for'>0</span>
-                        <span class='dom-skul-cun'>0</span>
-                        <span class='dom-skul-ins'>0</span>
+
+                        <div class="skill-grid">
+                            <span style="font-family: 'Pictos'">
+                              <button type="action" name='act_decr-skulduggery' class='skill-val-button skill-decr-val'>}</button>
+                            </span>
+                            <span name='attr_skulduggery'>0</span>
+                                <input type='hidden' name='attr_skulduggery' value='0' readonly>
+                            <span style="font-family: 'Pictos'">
+                              <button type="action" name='act_incr-skulduggery' class='skill-val-button skill-incr-val'>{</button>
+                              </span>
+                        </div>
+
+                        <span name='attr_skulduggeryForceful'>0</span>
+                            <input type='hidden' name='attr_skulduggeryForceful' value='0' readonly>
+                        <span name='attr_skulduggeryCunning'>0</span>
+                            <input type='hidden' name='attr_skulduggeryCunning' value='0' readonly>
+                        <span name='attr_skulduggeryInspiring'>0</span>
+                            <input type='hidden' name='attr_skulduggeryInspiring' value='0' readonly>
 
                         <span>Survival</span>
-                        <span class='dom-surv-val'>0</span>
-                        <span class='dom-surv-for'>0</span>
-                        <span class='dom-surv-cun'>0</span>
-                        <span class='dom-surv-ins'>0</span>
+
+                        <div class="skill-grid">
+                            <span style="font-family: 'Pictos'">
+                              <button type="action" name='act_decr-survival' class='skill-val-button skill-decr-val'>}</button>
+                            </span>
+                            <span name='attr_survival'>0</span>
+                                <input type='hidden' name='attr_survival' value='0' readonly>
+                            <span style="font-family: 'Pictos'">
+                              <button type="action" name='act_incr-survival' class='skill-val-button skill-incr-val'>{</button>
+                              </span>
+                        </div>
+
+                        <span name='attr_survivalForceful'>0</span>
+                            <input type='hidden' name='attr_survivalForceful' value='0' readonly>
+                        <span name='attr_survivalCunning'>0</span>
+                            <input type='hidden' name='attr_survivalCunning' value='0' readonly>
+                        <span name='attr_survivalInspiring'>0</span>
+                            <input type='hidden' name='attr_survivalInspiring' value='0' readonly>
+
                     </div>
                 </div>
-                <!----------------------- INVENTORY ------------------------------------->
+                <!----------------------- INVENTORY -------------------------->
                 <div class="inventorySheet">
                     <h1>Inventory Coming Soon</h1>
                 </div>
@@ -1137,8 +1537,6 @@
 
     const button_list = ["inventorySheet", "buildSheet", "weaponSheet", "armorSheet", "skillSheet"];
 
-    const tier_list = ["tier1tab", "tier2tab", "tier3tab"];
-
     //Page Toggle
     button_list.forEach(button => {
        on('clicked:'+[button], function(){
@@ -1148,16 +1546,7 @@
        });
     });
 
-    //Tier Tab Toggle
-    tier_list.forEach(button => {
-       on('clicked:'+[button], function(){
-          setAttrs({
-                tierTab: button
-            });
-       });
-    });
-
-    /* ------------------------------------------ Logic Variables -------------------------------------------------------------*/
+    /* ------------------------------------------ Tier Logic -------------------------------------------------------------*/
 
     const tier1_trait_changes = [
         "change:tier1role1trait1",  "change:tier1role2trait1",  "change:tier1role3trait1",
@@ -1176,29 +1565,118 @@
         "change:tier3role1trait2",  "change:tier3role2trait2",  "change:tier3role3trait2",
         "change:tier3role1trait3",  "change:tier3role2trait3",  "change:tier3role3trait3",
         "change:tier3role1trait4",  "change:tier3role2trait4",  "change:tier3role3trait4"];
-        
+
+    const role_list = ["role1", "role2", "role3"];
+
+    role_list.forEach(role => {
+      on('change:'+[role], function(){
+        console.log("Change Detected on " + role + ". Resetting Traits and Talents for that tier.")
+      });
+    });
+
+    on("change:start-stat1 change:start-stat2", function(eventInfo){
+        var oldValue = eventInfo.previousValue;
+        var newValue = eventInfo.newValue;
+        updateAttributes(oldValue, newValue);
+
+        getAttrs(["start-stat1", "start-stat2"], function(values){
+
+            var trait1 = "None";
+            switch(values["start-stat1"]){
+                    case "brawn":     trait1 = "Brawn";    break;
+                    case "magic":     trait1 = "Magic";    break;
+                    case "mastery":   trait1 = "Mastery";  break;
+                };
+
+            var trait2 = "None";
+            switch(values["start-stat2"]){
+                    case "impact":    trait2 = "Impact";  break;
+                    case "resist":    trait2 = "Resist";  break;
+                    case "energy":    trait2 = "Energy";  break;
+                };
+
+            setAttrs({
+                startbonus1 : trait1,
+                startbonus2 : trait2
+            });
+        });
+    });
+
+    //Tier 1 Tally
+    on(tier1_trait_changes.join(" "), function(eventInfo){
+        var oldTrait = eventInfo.previousValue;
+        var newTrait = eventInfo.newValue;
+
+        updateLevel(oldTrait, newTrait);
+        updateAttributes(oldTrait, newTrait);
+    });
+
+    //Tier 2 Tally
+    on(tier2_trait_changes.join(" "), function(eventInfo){
+        var oldTrait = eventInfo.previousValue;
+        var newTrait = eventInfo.newValue;
+
+        updateLevel(oldTrait, newTrait);
+        updateAttributes(oldTrait, newTrait);
+    });
+
+    //Tier 3 Tally
+    on(tier3_trait_changes.join(" "), function(eventInfo){
+        var oldTrait = eventInfo.previousValue;
+        var newTrait = eventInfo.newValue;
+
+        updateLevel(oldTrait, newTrait);
+        updateAttributes(oldTrait, newTrait);
+    });
+/* ------------------------------------------ Logic Variables -------------------------------------------------------------*/
+
     const attributes = [
         "brawn",  "magic",      "mastery",    "impact",     "resist",
         "energy", "might",      "body",       "vigor",      "will",
         "ego",    "essence",    "technique",  "instinct",   "focus",
+        "hp", "mp", "ap", "hp_max","mp_max", "ap_max",
         "wpn_range", "wpn_block", "wpn_power",
         "armorhp_mod",  "armorap_mod",  "tier_mod",
-        "hp_max",   "mp_max", "ap_max",
-        "player_level", "player_level_mod",
-        "forceful", "cunning", "inspiring",
-        "athletics"];
+        "player_level",         "player_level_mod",
+        "atk_roll_dice_mod",    "atk_roll_dice_mod_ready",
+        "atk_roll_power_mod",   "atk_roll_power_mod_ready",
+        "stat_roll_power_mod",  "stat_roll_power_mod_ready",
+        "forceful",   "cunning",    "inspiring",
+        "athletics",  "arcana",   "craft",       "culture",
+        "influence",  "science",  "skulduggery", "survival",
+        "athleticsForceful",   "athleticsCunning",    "athleticsInspiring",
+        "arcanaForceful",      "arcanaCunning",       "arcanaInspiring",
+        "craftForceful",       "craftCunning",        "craftInspiring",
+        "cultureForceful",     "cultureCunning",      "cultureInspiring",
+        "influenceForceful",   "influenceCunning",    "influenceInspiring",
+        "scienceForceful",     "scienceCunning",      "scienceInspiring",
+        "skulduggeryForceful", "skulduggeryCunning",  "skulduggeryInspiring",
+        "survivalForceful",    "survivalCunning",     "survivalInspiring"];
 
     var attribute_totals = {
         "brawn" :0, "magic"  :0, "mastery"  :0, "impact"  :0, "resist":0,
         "energy":0, "might"  :0, "body"     :0, "vigor"   :0, "will"  :0,
         "ego"   :0, "essence":0, "technique":0, "instinct":0, "focus" :0,
-        "wpn_range" :0, "wpn_block" :0, "wpn_power": 0,
-        "armorhp_mod" : 0,"armorap_mod" : 0, "tier_mod": 0,
-        "hp_max": 0,      "mp_max": 0,      "ap_max": 0,
-        "player_level": 0, "player_level_mod" :0,
-        "forceful": 0, "cunning": 0, "inspiring": 0,
-        "athletics": 0};
-        
+        "hp" :0, "mp" :0, "ap" :0, "hp_max" :0, "mp_max" :0, "ap_max" :0,
+        "wpn_range"   :0, "wpn_block"   :0, "wpn_power"   :0,
+        "armorhp_mod" :0, "armorap_mod" :0, "tier_mod"    :0,
+        "player_level"        :0, "player_level_mod"          :0,
+        "atk_roll_dice_mod"   :0, "atk_roll_dice_mod_ready"   :0,
+        "atk_roll_power_mod"  :0, "atk_roll_power_mod_ready"  :0,
+        "stat_roll_power_mod" :0, "stat_roll_power_mod_ready" :0,
+        "forceful"  :0, "cunning" :0, "inspiring"   :0,
+        "athletics" :0, "arcana"  :0, "craft"       :0, "culture"  :0,
+        "influence" :0, "science" :0, "skulduggery" :0, "survival" :0,
+        "athleticsForceful":0, "athleticsCunning":0, "athleticsInspiring":0,
+        "arcanaForceful"   :0, "arcanaCunning"   :0, "arcanaInspiring"   :0,
+        "craftForceful"    :0, "craftCunning"    :0, "craftInspiring"    :0,
+        "cultureForceful"  :0, "cultureCunning"  :0, "cultureInspiring"  :0,
+        "influenceForceful":0, "influenceCunning":0, "influenceInspiring":0,
+        "scienceForceful"  :0, "scienceCunning"  :0, "scienceInspiring"  :0,
+        "skulduggeryForceful" :0, "skulduggeryCunning" :0,
+        "skulduggeryInspiring" :0,
+        "survivalForceful" :0, "survivalCunning" :0, "survivalInspiring" :0};
+
     const currentPoints = ["hp", "mp", "ap"];
     const maxPoints = ["hp_max", "mp_max", "ap_max"];
 
@@ -1222,14 +1700,16 @@
 
     //Read Attributes on Page Load
     on('sheet:opened', function(){
-        
+
         attributes.forEach(function(attr){
-            
+
             getAttrs([attr], function(values){
 
                 console.log("Checking attribute " + attr);
-                
-                attribute_totals[attr] = parseInt(values[attr]);
+
+                const parsed = parseInt(values[attr]);
+
+                attribute_totals[attr] = isNaN(parsed) ? 0 : parsed;
 
                 console.log("Found " + attribute_totals[attr]);
                 //Set Attributes back (get written as Ints?)
@@ -1238,9 +1718,9 @@
                 });
 
             });
-            
+
         });
-         
+
 
         getAttrs(["eq_wpn_source", "eq_wpn_feature", "eq_wpn_type"], function(values){
             var source = values["eq_wpn_source"].toLowerCase();
@@ -1250,6 +1730,24 @@
             console.log("Feature: " + feature);
             equippedWeapon.source = source;
             equippedWeapon.feature = feature;
+        });
+
+        getAttrs(["creationDone"], function(values){
+            var parsed = parseInt(values["creationDone"]);
+            if (isNaN(parsed)){
+              console.log("Running First Time Calculations...");
+              equippedArmorWgt = "light";
+              updateOtherAttributes();
+              calculatePointTotals();
+              calculateWeaponBonuses();
+              calculateArmorBonuses();
+
+              updateAllAttributeTotals();
+
+              setAttrs({
+                "creationDone" : 1
+              });
+            };
         });
     });
 
@@ -1261,9 +1759,9 @@
     on("remove:repeating_armor", function (e) { console.log("Armor Removed");});
 
     on("clicked:repeating_weapons:equip-weapon", function(){
-        
+
         getAttrs(["repeating_weapons_wpn_name", "repeating_weapons_wpn_source", "repeating_weapons_wpn_feature"], function(values){
-            
+
             var wpnName = values["repeating_weapons_wpn_name"];
             var wpnSource = values["repeating_weapons_wpn_source"];
             var wpnFeature = values["repeating_weapons_wpn_feature"];
@@ -1293,9 +1791,9 @@
     });
 
     on("clicked:repeating_armor:equip-armor", function(){
-        
+
         getAttrs(["repeating_armor_ar_name", "repeating_armor_armor_type"], function(values){
-            
+
             var arName = values["repeating_armor_ar_name"];
             var arWeight = values["repeating_armor_armor_type"];
 
@@ -1319,78 +1817,31 @@
         });
     });
 
-    
-    /* -------------------- Level/Attribute Management ------------------------------*/
 
-    on("change:start-stat1 change:start-stat2", function(eventInfo){
-        var oldValue = eventInfo.previousValue;
-        var newValue = eventInfo.newValue;
-        updateAttributes(oldValue, newValue);
-        
-        getAttrs(["start-stat1", "start-stat2"], function(values){
-            
-            var trait1 = "None";
-            switch(values["start-stat1"]){
-                    case "brawn":     trait1 = "Brawn";    break;
-                    case "magic":     trait1 = "Magic";    break;
-                    case "mastery":   trait1 = "Mastery";  break;
-                };
-            
-            var trait2 = "None";    
-            switch(values["start-stat2"]){
-                    case "impact":    trait2 = "Impact";  break;
-                    case "resist":    trait2 = "Resist";  break;
-                    case "energy":    trait2 = "Energy";  break;
-                };
-                
-            setAttrs({
-                startbonus1 : trait1,
-                startbonus2 : trait2
-            });
-        });
-    });
-
-    //Tier 1 Tally
-    on(tier1_trait_changes.join(" "), function(eventInfo){
-        var oldTrait = eventInfo.previousValue;
-        var newTrait = eventInfo.newValue;
-        
-        updateLevel(oldTrait, newTrait);
-        updateAttributes(oldTrait, newTrait);
-    });
-
-    //Tier 2 Tally
-    on(tier2_trait_changes.join(" "), function(eventInfo){
-        var oldTrait = eventInfo.previousValue;
-        var newTrait = eventInfo.newValue;
-        
-        updateLevel(oldTrait, newTrait);
-        updateAttributes(oldTrait, newTrait);
-    });
-
-    //Tier 3 Tally
-    on(tier3_trait_changes.join(" "), function(eventInfo){
-        var oldTrait = eventInfo.previousValue;
-        var newTrait = eventInfo.newValue;
-        
-        updateLevel(oldTrait, newTrait);
-        updateAttributes(oldTrait, newTrait);
-    });
+    /* -------------------- Level/Attribute Management ----------------------*/
 
     function updateLevel(oldTrait, newTrait){
+      console.log("-----------------Updating Level--------------------");
+      console.log("Old Trait: " + oldTrait);
+      console.log("New Trait: " + newTrait);
         if (newTrait == "def") {
             attribute_totals["player_level"] > 0 ? attribute_totals["player_level"] -= 1 : attribute_totals["player_level"];
-        } else if (oldTrait == "def"){
+        } else if (oldTrait == "def" || (oldTrait === newTrait)){
             attribute_totals["player_level"] += 1;
         }
 
+        setAttrs({
+          player_level  : attribute_totals["player_level"]
+        });
+
         calculatePlayerLevelMod();
         calculateTierMod();
+        console.log("----------------Done------------------------------");
     }
 
     function updateAttributes(oldTrait, newTrait){
-        
-        if(oldTrait != "def"){
+
+        if(oldTrait != "def" && oldTrait != newTrait){
             console.log("-----------------Changing Old Trait--------------------");
             console.log("Trait: " + oldTrait);
             console.log("Current Value: " + attribute_totals[oldTrait]);
@@ -1399,7 +1850,7 @@
             console.log("--------------------------------------------------------");
         }
 
-        if (newTrait != "def") {
+        if (newTrait != "def" || oldTrait === newTrait) {
             console.log("-----------------Changing New Trait--------------------");
             console.log("Trait: " + newTrait);
             console.log("Current Value: " + attribute_totals[newTrait]);
@@ -1407,13 +1858,13 @@
             console.log("New Value: " + attribute_totals[newTrait]);
             console.log("--------------------------------------------------------");
         }
-            
-        
+
+
         updateOtherAttributes();
         calculatePointTotals();
         calculateWeaponBonuses();
         calculateArmorBonuses();
-        
+
         updateAllAttributeTotals();
     }
 
@@ -1437,7 +1888,7 @@
         });
     }
 
-    /* ------------------ Roller Modifier Logic ------------------------------------*/
+    /* ------------------ Roller Modifier Logic ----------------------------*/
 
     on("change:stat_roller_toggle", function(){
         console.log("Radio Button Change");
@@ -1489,7 +1940,7 @@
         });
     });
 
-    /* ------------------ Formula Calculations ----------------------------------*/    
+    /* ------------------ Formula Calculations ---------------------------*/
 
     function calculateArmorBonuses(){
         var hp_mod = 0;
@@ -1509,7 +1960,7 @@
         attribute_totals["armorap_mod"] = ap_mod;
 
         calculatePointTotals();
-           
+
            setAttrs({
                armorhp_mod : hp_mod,
                armorap_mod : ap_mod
@@ -1517,26 +1968,27 @@
     }
 
     function calculateWeaponBonuses(){
-        if(!["None", "def"].includes(equippedWeapon.source) && !["None", "def"].includes(equippedWeapon.feature)){
-            
-            var bonus = equippedWeapon.source == "might" ? 
-                                            1 + wpnFeatBonus[equippedWeapon.feature].bonus: 
+        if(!["none", "def"].includes(equippedWeapon.source) && !["none", "def"].includes(equippedWeapon.feature)){
+
+            var bonus = equippedWeapon.source == "might" ?
+                                            1 + wpnFeatBonus[equippedWeapon.feature].bonus:
                                             wpnFeatBonus[equippedWeapon.feature].bonus;
-                                            
+
+            console.log("Weapon Bonus: " + bonus);
             attribute_totals["wpn_range"] = 1 + wpnFeatBonus[equippedWeapon.feature].range;
-            
+
             attribute_totals["wpn_block"] = wpnFeatBonus[equippedWeapon.feature].block * attribute_totals["tier_mod"];
-            
-            attribute_totals["wpn_power"] = attribute_totals[equippedWeapon.source] + 
+
+            attribute_totals["wpn_power"] = attribute_totals[equippedWeapon.source] +
                                         (attribute_totals["tier_mod"] * bonus);
-                                        
+
             getAttrs(["stat_roll_dice_mod_ready"], function(values){
                 calculateAttackBaseRoll(values["stat_roll_dice_mod_ready"]);
             });
         }
     };
 
-    /* Recalculate Base Rolls */
+    /* --------------- Recalculate Base Rolls -------------------------- */
 
     function calculateAttackBaseRoll(playerModDie){
         var base_attack;
@@ -1549,7 +2001,7 @@
             base_attack = (Math.abs(diceMod) + 3) + "d20>8kl3";
         } else{
             base_attack = (diceMod + 3) + "d20>8";
-        }   
+        }
 
         console.log("Base Attack is: " + base_attack);
 
@@ -1623,39 +2075,106 @@
       return string.charAt(0).toUpperCase() + string.slice(1);
     }
 
-    /* Skill Sheet Functions */
+    /* ------------- Skill Sheet Functions ----------------------------- */
 
-    const skill_incr = ["incr-forceful", "incr-cunning", "incr-inspiring", "incr-athletics"];
-    const skill_decr = ["decr-forceful", "decr-cunning", "decr-inspiring", "decr-athletics"];
+    const skill_incr = [
+      "incr-forceful", "incr-cunning", "incr-inspiring", "incr-athletics",
+      "incr-arcana",   "incr-craft",   "incr-culture",   "incr-influence",
+      "incr-science",  "incr-skulduggery", "incr-survival"
+    ];
+    const skill_decr = [
+      "decr-forceful", "decr-cunning", "decr-inspiring", "decr-athletics",
+      "decr-arcana",   "decr-craft",   "decr-culture",   "decr-influence",
+      "decr-science",  "decr-skulduggery", "decr-survival"
+    ];
+    const domains = [
+      "athletics", "arcana", "craft", "culture",
+      "influence", "science", "skulduggery", "survival"];
 
     skill_incr.forEach(button => {
-       on('clicked:'+[button], function(){
+      on('clicked:'+[button], function(){
+        var skill = button.substring(5);
+        console.log("Increasing " + skill + "...")
+        attribute_totals[skill] += 1;
 
-          var skill = button.substring(5);
-          console.log("Increasing " + skill + "...")
-          attribute_totals[skill] += 1;
+        if(IsParadigm(skill)){
+          UpdateDomains(skill);
+        }else{
+          UpdateParadigms(skill);
+        }
 
-          setAttrs({
-            [skill] : attribute_totals[skill]
-          });
-
-          console.log("Increase Done");
-       });
-
+      });
     });
 
     skill_decr.forEach(button => {
-       on('clicked:'+[button], function(){
-          var skill = button.substring(5);
-          console.log("Decreasing " + skill + "...")
-          attribute_totals[skill] -= 1;
+      on('clicked:'+[button], function(){
+        var skill = button.substring(5);
+        console.log("Decreasing " + skill + "...")
+        attribute_totals[skill] -= 1;
+
+        if(IsParadigm(skill)){
+          UpdateDomains(skill);
+        }else{
+          UpdateParadigms(skill);
+        }
+
+      });
+    });
+
+    function IsParadigm(skill){
+      return (skill === "forceful" || skill === "cunning" || skill === "inspiring");
+    }
+
+    function UpdateParadigms(skill){
+      var forcefulSkill = skill.concat("Forceful");
+      var cunningSkill = skill.concat("Cunning");
+      var inspiringSkill = skill.concat("Inspiring");
+
+      attribute_totals[forcefulSkill] = attribute_totals[skill] + attribute_totals["forceful"];
+      attribute_totals[cunningSkill] = attribute_totals[skill] + attribute_totals["cunning"];
+      attribute_totals[inspiringSkill] = attribute_totals[skill] + attribute_totals["inspiring"];
+
+      setAttrs({
+        [skill]   : attribute_totals[skill],
+        [forcefulSkill]  : attribute_totals[forcefulSkill],
+        [cunningSkill]   : attribute_totals[cunningSkill],
+        [inspiringSkill] : attribute_totals[inspiringSkill]
+      });
+    }
+
+    function UpdateDomains(skill){
+      var paradigm = skill.charAt(0).toUpperCase() + skill.slice(1);
+
+      domains.forEach(function(domain){
+
+        getAttrs([domain], function(values){
+
+          const domainValue = attribute_totals[domain];
+          const domainParadigm = domain.concat(paradigm);
+          attribute_totals[domainParadigm] = domainValue + attribute_totals[skill];
 
           setAttrs({
-            [skill] : attribute_totals[skill]
+            [skill]   : attribute_totals[skill],
+            [domainParadigm] : attribute_totals[domainParadigm]
           });
-       });
 
-       console.log("Decrease Done");
-    });
+          console.log("New Value: " + attribute_totals[domainParadigm]);
+
+        });
+
+      });
+/*
+            getAttrs([domain], function(values){
+              console.log("Domain Call " + domain);
+                const domainValue = attribute_totals[domain];
+                const domainParadigm = domain.concat(paradigm);
+                attribute_totals[domainParadigm] = domainValue + attribute_totals[skill];
+
+                setAttrs({
+                   [domainParadigm] : attribute_totals[skill]
+                });
+            });
+*/
+    }
 
 </script>
