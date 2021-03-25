@@ -616,7 +616,6 @@ input.sheet-radio-ability[value="ability"]:checked ~ button.sheet-btn-attr{
     display: grid;
     text-align: center;
     grid-template-columns: 40px repeat(3, 200px);
-    grid-column-gap: 10px;
     grid-row-gap: 5px;
     padding: 3px;
     grid-template-areas:
@@ -632,6 +631,7 @@ input.sheet-radio-ability[value="ability"]:checked ~ button.sheet-btn-attr{
   width: 150px;
   background-position: 0 0;
   background-size: 100%;
+  margin-bottom: 3px;
 }
 
 .sheet-role1 select,
@@ -656,28 +656,31 @@ input.sheet-radio-ability[value="ability"]:checked ~ button.sheet-btn-attr{
 /*Individual Trait Talent Format*/
 .sheet-roletiergrid{
   display: grid;
-  grid-template-columns: 1;
-  align-conten: space-evenly;
+  grid-template-columns: auto;
 }
+
+.sheet-roletiergrid #sheet-trait{align-self: end;}
+.sheet-roletiergrid #sheet-talent{align-self: start;}
 
 .sheet-role1{grid-area: role1}
 
 .sheet-role1tier1{
   grid-area: role1tier1;
   display: grid;
-  grid-template-columns: 1;
+  grid-template-columns: auto;
+
 }
 
 .sheet-role2tier1{
   grid-area: role2tier1;
   display: grid;
-  grid-template-columns: 1;
+  grid-template-columns: auto;
 }
 
 .sheet-role3tier1{
   grid-area: role3tier1;
   display: grid;
-  grid-template-columns: 1;
+  grid-template-columns: auto;
 }
 
 .sheet-role2{grid-area: role2; background-color: rgba(255, 255, 255, 0.6)}
@@ -686,7 +689,7 @@ input.sheet-radio-ability[value="ability"]:checked ~ button.sheet-btn-attr{
 .sheet-tier1split{grid-area: tier1split;}
 .sheet-tier2split{grid-area: tier2split;}
 .sheet-tier3split{grid-area: tier3split;}
-
+.sheet-tierMiniSplit{border-bottom: 5px solid coral; align-self: baseline;}
 
 .sheet-tierSectionGrid{
   grid-area: numberLabel;
