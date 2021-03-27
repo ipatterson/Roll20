@@ -11,7 +11,10 @@
   border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
 }
 
+.sheet-help-text-tier{border-bottom: 2px dashed black;}
+
 .sheet-help-text,
+.sheet-help-text-tier,
 .sheet-help-text-attb{
   position: relative;
   display: inline-block;
@@ -32,24 +35,33 @@
     left: -10%;
 }
 
+.sheet-help-text-tier .sheet-tooltip{
+    width: 300px;
+    margin-left: 0px;
+    top: -420%;
+    left: -130%;
+}
+
 .sheet-help-text .sheet-tooltip,
+.sheet-help-text-tier .sheet-tooltip,
 .sheet-help-text-attb .sheet-tooltip {
   visibility: hidden;
-  background-color: rgba(45, 148, 237, 1);
+  background-color: rgba(255, 255, 255, 0.7);
   border: 1px solid black;
   color: #fff;
   text-align: center;
-  padding: 2px 0;
+  padding: 1px 0;
   border-radius: 6px;
   position: absolute;
   z-index: 1;
-  font-size: 12px;
-  font-weight: normal;
+  font-size: 14px;
+  font-weight: bold;
   -webkit-text-fill-color: white;
   -webkit-text-stroke: 0px;
 }
 /* Show the tooltip text when you mouse over the tooltip container */
 .sheet-help-text:hover .sheet-tooltip,
+.sheet-help-text-tier:hover .sheet-tooltip,
 .sheet-help-text-attb:hover .sheet-tooltip {
   visibility: visible;
 }
@@ -74,7 +86,7 @@ input{
     font-weight:bold;
 }
 
-input::checked{
+input:checked{
     background-color: red;
 }
 
@@ -207,15 +219,24 @@ h1, h2, h3, h4{
 
 .sheet-base-stat-grid{
     display: grid;
-    grid-template-columns: auto 100px 100px auto;
+    grid-template-columns: auto 150px 150px auto;
     justify-items: center;
-    grid-column-gap: 50px;
+    grid-column-gap: 20px;
+    font-size: 16px;
+    text-align: center;
+    font-weight: bold;
+    line-height: 2;
     grid-template-areas:
     ". base1 base2 .";
 }
 
 .sheet-base-stat1select{grid-area: base1;}
 .sheet-base-stat2select{grid-area: base2;}
+
+.sheet-base-stat1select select,
+.sheet-base-stat2select select{
+  width: 135px;
+}
 
 /* Stats Grid */
 .sheet-stats-grid{
@@ -617,13 +638,16 @@ input.sheet-radio-ability[value="ability"]:checked ~ button.sheet-btn-attr{
     text-align: center;
     grid-template-columns: 40px repeat(3, 200px);
     grid-row-gap: 5px;
+    grid-column-gap: 0px;
     padding: 3px;
     grid-template-areas:
     ". role1 role2 role3"
     "tier1split tier1split tier1split tier1split"
-    "numberLabel role1tier1 role2tier1 role3tier1"
+    "numberLabel1 role1tier1 role2tier1 role3tier1"
     "tier2split tier2split tier2split tier2split"
-    "tier3split tier3split tier3split tier3split";
+    "numberLabel2 role1tier2 role2tier2 role3tier2"
+    "tier3split tier3split tier3split tier3split"
+    "numberLabel3 role1tier3 role2tier3 role3tier3";
 }
 
 .sheet-rolegrid select{
@@ -635,25 +659,32 @@ input.sheet-radio-ability[value="ability"]:checked ~ button.sheet-btn-attr{
 }
 
 .sheet-role1 select,
-.sheet-role1tier1 select{background-image: linear-gradient(to bottom right, #ddc5c8, #714247) !important;
+.sheet-role1tier1 select,
+.sheet-role1tier2 select,
+.sheet-role1tier3 select{background-image: linear-gradient(to bottom right, #ddc5c8, #714247) !important;
 }
 
 .sheet-role2 select,
-.sheet-role2tier1 select{
+.sheet-role2tier1 select,
+.sheet-role2tier2 select,
+.sheet-role2tier3 select{
   background-image: linear-gradient(to bottom right, #c9e0ee, #2b6588) !important;
 }
 
 .sheet-role3 select,
-.sheet-role3tier1 select{
+.sheet-role3tier1 select,
+.sheet-role3tier2 select,
+.sheet-role3tier3 select{
   background-image: linear-gradient(to bottom right, #aec6a4, #516E45) !important;
 }
 
 .sheet-rolegrid input{
     text-indent: 1px;
-    width: 140px;
+    width: 150px;
 }
 
 /*Individual Trait Talent Format*/
+.sheet-tierMiniSplit{border-bottom: 2px solid black; align-self: baseline;}
 .sheet-roletiergrid{
   display: grid;
   grid-template-columns: auto;
@@ -662,41 +693,51 @@ input.sheet-radio-ability[value="ability"]:checked ~ button.sheet-btn-attr{
 .sheet-roletiergrid #sheet-trait{align-self: end;}
 .sheet-roletiergrid #sheet-talent{align-self: start;}
 
-.sheet-role1{grid-area: role1}
+.sheet-role1{grid-area: role1;}
 
-.sheet-role1tier1{
-  grid-area: role1tier1;
-  display: grid;
-  grid-template-columns: auto;
-
-}
-
-.sheet-role2tier1{
-  grid-area: role2tier1;
-  display: grid;
-  grid-template-columns: auto;
-}
-
-.sheet-role3tier1{
-  grid-area: role3tier1;
+.sheet-role1tier1,
+.sheet-role2tier1,
+.sheet-role3tier1,
+.sheet-role1tier2,
+.sheet-role2tier2,
+.sheet-role3tier2,
+.sheet-role1tier3,
+.sheet-role2tier3,
+.sheet-role3tier3{
   display: grid;
   grid-template-columns: auto;
 }
 
-.sheet-role2{grid-area: role2; background-color: rgba(255, 255, 255, 0.6)}
-.sheet-role3{grid-area: role3}
+.sheet-role1tier1{grid-area: role1tier1;}
+.sheet-role2tier1{grid-area: role2tier1;}
+.sheet-role3tier1{grid-area: role3tier1;}
+.sheet-role1tier2{grid-area: role1tier2;}
+.sheet-role2tier2{grid-area: role2tier2;}
+.sheet-role3tier2{grid-area: role3tier2;}
+.sheet-role1tier3{grid-area: role1tier3;}
+.sheet-role2tier3{grid-area: role2tier3;}
+.sheet-role3tier3{grid-area: role3tier3;}
+
+.sheet-role1{grid-area: role1;}
+.sheet-role2{grid-area: role2;}
+.sheet-role3{grid-area: role3;}
 
 .sheet-tier1split{grid-area: tier1split;}
 .sheet-tier2split{grid-area: tier2split;}
 .sheet-tier3split{grid-area: tier3split;}
-.sheet-tierMiniSplit{border-bottom: 5px solid coral; align-self: baseline;}
 
-.sheet-tierSectionGrid{
-  grid-area: numberLabel;
+.sheet-tierSectionGrid1{grid-area: numberLabel1;}
+.sheet-tierSectionGrid2{grid-area: numberLabel2;}
+.sheet-tierSectionGrid3{grid-area: numberLabel3;}
+
+.sheet-tierSectionGrid1,
+.sheet-tierSectionGrid2,
+.sheet-tierSectionGrid3{
   grid-template-columns: 1;
 }
-
-.sheet-tierSectionGrid span{
+.sheet-tierSectionGrid1 span,
+.sheet-tierSectionGrid2 span,
+.sheet-tierSectionGrid3 span{
   font-size: 60px;
   font-weight: bold;
   color: rgba(0, 0, 0, 0.3);

@@ -216,19 +216,33 @@
                 <input type='hidden' class='tabstoggle' name='attr_sheetTab' value='buildSheet'>
                 <!------------------------ BUILD ----------------------------->
                 <div class="buildSheet">
-                  <h1> Starting Traits </h1>
+                  <h1> Character Build </h1>
+
+                  <div class="instructions">
+                    <ul>
+                      <li>Select two starting traits.</li>
+                      <li>Select three roles.</li>
+                      <li>During level progression, select a Trait to boost in a Tier section, followed by a Talent.</li>
+                    </ul>
+                  </div>
+
                   <div class="base-stat-grid">
+
                       <span class="base-stat1select">
-                          <span class='select-new-arrow'><select name="attr_start-stat1">
-                                  <option value="def" selected="selected">Select</option>
+                          Starting Trait 1<br/>
+                          <span class='select-new-arrow'>
+                              <select name="attr_start-stat1">
+                                  <option value="def" selected="selected">Trait 1</option>
                                   <option value="brawn">Brawn</option>
                                   <option value="magic">Magic</option>
                                   <option value="mastery">Mastery</option>
                               </select></span>
                       </span>
                       <span class="base-stat2select">
-                          <span class='select-new-arrow'><select name="attr_start-stat2">
-                                  <option value="def" selected="selected">Select</option>
+                          Starting Trait 2<br/>
+                          <span class='select-new-arrow'>
+                              <select name="attr_start-stat2">
+                                  <option value="def" selected="selected">Trait 2</option>
                                   <option value="impact">Impact</option>
                                   <option value="resist">Resist</option>
                                   <option value="energy">Energy</option>
@@ -292,7 +306,8 @@
 
                         <span class='role3'>
                             <h4>Role 3</h4>
-                            <span class='select-new-arrow'><select name="attr_role3" class="role">
+                            <span class='select-new-arrow'>
+                              <select name="attr_role3" class="role">
                                     <option value="def" selected="selected">Trait</option>
                                     <option value="blaster">Blaster</option>
                                     <option value="brute">Brute</option>
@@ -310,10 +325,20 @@
                                     <option value="venom">Venom</option>
                                     <option value="veteran">Veteran</option>
                                     <option value="warden">Warden</option>
-                                </select></span>
+                                </select>
+                              </span>
                             <br />
                             <input placeholder="Core Talent 3" type="text">
                         </span>
+
+                        <span class='tier1split'><h4>Tier 1</h4></span>
+
+                        <div class='tierSectionGrid1'>
+                          <span>1</span>
+                          <span>2</span>
+                          <span>3</span>
+                          <span>4</span>
+                        </div>
 
                         <div class='role1tier1'>
 
@@ -415,11 +440,10 @@
 
                         </div>
 
-
                         <div class='role2tier1'>
 
                           <div class='roletiergrid'>
-                            <span class='role2tier1trait1'>
+                            <span class='role2tier1trait1' id='trait'>
                               <span class='select-new-arrow'><select name="attr_tier1role2-trait1">
                                       <option value="def" selected="selected">Trait</option>
                                       <option value="brawn">Brawn</option>
@@ -430,7 +454,7 @@
                                       <option value="energy">Energy</option>
                                   </select></span>
                             </span>
-                            <span class='role2tier1talent1'>
+                            <span class='role2tier1talent1' id='talent'>
                               <span class='select-new-arrow'><select name="attr_tier1role2-talent1">
                                 <option value="def" selected="selected">Talent</option>
                                 <option value="role2tier1talent1option1">Placeholder 1</option>
@@ -439,11 +463,12 @@
                                 <option value="role2tier1talent1option4">Placeholder 4</option>
                               </select>
                             </span>
-                            <div class='tierMiniSplit'></div>
                           </div>
 
                           <div class='roletiergrid'>
-                            <span class='role2tier1trait2'>
+
+                            <div class='tierMiniSplit'></div>
+                            <span class='role2tier1trait2' id='trait'>
                               <span class='select-new-arrow'><select name="attr_tier1role2-trait2">
                                       <option value="def" selected="selected">Trait</option>
                                       <option value="brawn">Brawn</option>
@@ -454,7 +479,7 @@
                                       <option value="energy">Energy</option>
                                   </select></span>
                             </span>
-                            <span class='role2tier1talent2'>
+                            <span class='role2tier1talent2' id='talent'>
                               <span class='select-new-arrow'><select name="attr_tier1role2-talent2">
                                 <option value="def" selected="selected">Talent</option>
                                 <option value="role2tier1talent2option1">Placeholder 1</option>
@@ -463,11 +488,13 @@
                                 <option value="role2tier1talent2option4">Placeholder 4</option>
                               </select>
                             </span>
-                            <div class='tierMiniSplit'></div>
+
                           </div>
 
                           <div class='roletiergrid'>
-                            <span class='role2tier1trait3'>
+
+                            <div class='tierMiniSplit'></div>
+                            <span class='role2tier1trait3' id='trait'>
                               <span class='select-new-arrow'><select name="attr_tier1role2-trait3">
                                       <option value="def" selected="selected">Trait</option>
                                       <option value="brawn">Brawn</option>
@@ -478,7 +505,7 @@
                                       <option value="energy">Energy</option>
                                   </select></span>
                             </span>
-                            <span class='role2tier1talent3'>
+                            <span class='role2tier1talent3' id='talent'>
                               <span class='select-new-arrow'><select name="attr_tier1role2-talent3">
                                 <option value="def" selected="selected">Talent</option>
                                 <option value="role2tier1talent3option1">Placeholder 1</option>
@@ -487,11 +514,13 @@
                                 <option value="role2tier1talent3option4">Placeholder 4</option>
                               </select>
                             </span>
-                            <div class='tierMiniSplit'></div>
+
                           </div>
 
                           <div class='roletiergrid'>
-                            <span class='role2tier1trait4'>
+
+                            <div class='tierMiniSplit'></div>
+                            <span class='role2tier1trait4' id='trait'>
                               <span class='select-new-arrow'><select name="attr_tier1role2-trait4">
                                       <option value="def" selected="selected">Trait</option>
                                       <option value="brawn">Brawn</option>
@@ -502,7 +531,7 @@
                                       <option value="energy">Energy</option>
                                   </select></span>
                             </span>
-                            <span class='role2tier1talent4'>
+                            <span class='role2tier1talent4' id='talent'>
                               <span class='select-new-arrow'><select name="attr_tier1role2-talent4">
                                 <option value="def" selected="selected">Talent</option>
                                 <option value="role2tier1talent4option1">Placeholder 1</option>
@@ -511,6 +540,7 @@
                                 <option value="role2tier1talent4option4">Placeholder 4</option>
                               </select>
                             </span>
+
                           </div>
 
                         </div>
@@ -518,7 +548,8 @@
                         <div class='role3tier1'>
 
                           <div class='roletiergrid'>
-                            <span class='role3tier1trait1'>
+
+                            <span class='role3tier1trait1' id='trait'>
                               <span class='select-new-arrow'><select name="attr_tier1role3-trait1">
                                       <option value="def" selected="selected">Trait</option>
                                       <option value="brawn">Brawn</option>
@@ -529,7 +560,7 @@
                                       <option value="energy">Energy</option>
                                   </select></span>
                             </span>
-                            <span class='role3tier1talent1'>
+                            <span class='role3tier1talent1' id='talent'>
                               <span class='select-new-arrow'><select name="attr_tier1role3-talent1">
                                 <option value="def" selected="selected">Talent</option>
                                 <option value="role3tier1talent1option1">Placeholder 1</option>
@@ -538,11 +569,13 @@
                                 <option value="role3tier1talent1option4">Placeholder 4</option>
                               </select>
                             </span>
-                            <div class='tierMiniSplit'></div>
+
                           </div>
 
                           <div class='roletiergrid'>
-                            <span class='role3tier1trait2'>
+
+                            <div class='tierMiniSplit'></div>
+                            <span class='role3tier1trait2' id='trait'>
                               <span class='select-new-arrow'><select name="attr_tier1role3-trait2">
                                       <option value="def" selected="selected">Trait</option>
                                       <option value="brawn">Brawn</option>
@@ -553,7 +586,7 @@
                                       <option value="energy">Energy</option>
                                   </select></span>
                             </span>
-                            <span class='role3tier1talent2'>
+                            <span class='role3tier1talent2' id='talent'>
                               <span class='select-new-arrow'><select name="attr_tier1role3-talent2">
                                 <option value="def" selected="selected">Talent</option>
                                 <option value="role3tier1talent2option1">Placeholder 1</option>
@@ -562,11 +595,13 @@
                                 <option value="role3tier1talent2option4">Placeholder 4</option>
                               </select>
                             </span>
-                            <div class='tierMiniSplit'></div>
+
                           </div>
 
                           <div class='roletiergrid'>
-                            <span class='role3tier1trait3'>
+
+                            <div class='tierMiniSplit'></div>
+                            <span class='role3tier1trait3' id='trait'>
                               <span class='select-new-arrow'><select name="attr_tier1role3-trait3">
                                       <option value="def" selected="selected">Trait</option>
                                       <option value="brawn">Brawn</option>
@@ -577,7 +612,7 @@
                                       <option value="energy">Energy</option>
                                   </select></span>
                             </span>
-                            <span class='role3tier1talent3'>
+                            <span class='role3tier1talent3' id='talent'>
                               <span class='select-new-arrow'><select name="attr_tier1role3-talent3">
                                 <option value="def" selected="selected">Talent</option>
                                 <option value="role3tier1talent3option1">Placeholder 1</option>
@@ -586,11 +621,13 @@
                                 <option value="role3tier1talent3option4">Placeholder 4</option>
                               </select>
                             </span>
-                            <div class='tierMiniSplit'></div>
+
                           </div>
 
                           <div class='roletiergrid'>
-                            <span class='role3tier1trait4'>
+
+                            <div class='tierMiniSplit'></div>
+                            <span class='role3tier1trait4' id='trait'>
                               <span class='select-new-arrow'><select name="attr_tier1role3-trait4">
                                       <option value="def" selected="selected">Trait</option>
                                       <option value="brawn">Brawn</option>
@@ -601,7 +638,7 @@
                                       <option value="energy">Energy</option>
                                   </select></span>
                             </span>
-                            <span class='role3tier1talent4'>
+                            <span class='role3tier1talent4' id='talent'>
                               <span class='select-new-arrow'><select name="attr_tier1role3-talent4">
                                 <option value="def" selected="selected">Talent</option>
                                 <option value="role3tier1talent4option1">Placeholder 1</option>
@@ -610,21 +647,655 @@
                                 <option value="role3tier1talent4option4">Placeholder 4</option>
                               </select>
                             </span>
+
                           </div>
 
 
                         </div>
 
-                        <span class='tier1split'><h2>Tier 1</h2></span>
-                        <span class='tier2split'><h2>Tier 2</h2></span>
-                        <span class='tier3split'><h2>Tier 3</h2></span>
+                        <span class='tier2split'><h4>Tier 2</h4></span>
 
-                        <div class='tierSectionGrid'>
+                        <div class='tierSectionGrid2'>
                           <span>1</span>
                           <span>2</span>
                           <span>3</span>
                           <span>4</span>
                         </div>
+
+                        <div class='role1tier2'>
+
+                          <div class='roletiergrid'>
+                            <span class='role1tier2trait1' id='trait'>
+                              <span class='select-new-arrow'><select name="attr_tier2role1-trait1">
+                                      <option value="def" selected="selected">Trait</option>
+                                      <option value="brawn">Brawn</option>
+                                      <option value="magic">Magic</option>
+                                      <option value="mastery">Mastery</option>
+                                      <option value="impact">Impact</option>
+                                      <option value="resist">Resist</option>
+                                      <option value="energy">Energy</option>
+                                  </select></span>
+                            </span>
+                            <span class='role1tier2talent1' id='talent'>
+                              <span class='select-new-arrow'><select name="attr_tier2role1-talent1">
+                                  <option value="def" selected="selected">Talent</option>
+                                  <option value="role1tier2talent1option1">Placeholder 1</option>
+                                  <option value="role1tier2talent1option2">Placeholder 2</option>
+                                  <option value="role1tier2talent1option3">Placeholder 3</option>
+                                  <option value="role1tier2talent1option4">Placeholder 4</option>
+                                </select>
+                            </span>
+                          </div>
+
+                          <div class='roletiergrid'>
+                            <div class='tierMiniSplit'></div>
+                            <span class='role1tier2trait2' id='trait'>
+                              <span class='select-new-arrow'><select name="attr_tier2role1-trait2">
+                                      <option value="def" selected="selected">Trait</option>
+                                      <option value="brawn">Brawn</option>
+                                      <option value="magic">Magic</option>
+                                      <option value="mastery">Mastery</option>
+                                      <option value="impact">Impact</option>
+                                      <option value="resist">Resist</option>
+                                      <option value="energy">Energy</option>
+                                  </select></span>
+                            </span>
+                            <span class='role1tier2talent2' id='talent'>
+                              <span class='select-new-arrow'><select name="attr_tier2role1-talent2">
+                                <option value="def" selected="selected">Talent</option>
+                                <option value="role1tier2talent2option1">Placeholder 1</option>
+                                <option value="role1tier2talent2option2">Placeholder 2</option>
+                                <option value="role1tier2talent2option3">Placeholder 3</option>
+                                <option value="role1tier2talent2option4">Placeholder 4</option>
+                              </select>
+                            </span>
+
+                          </div>
+
+                          <div class='roletiergrid'>
+                            <div class='tierMiniSplit'></div>
+                            <span class='role1tier2trait3' id='trait'>
+                              <span class='select-new-arrow'><select name="attr_tier2role1-trait3">
+                                      <option value="def" selected="selected">Trait</option>
+                                      <option value="brawn">Brawn</option>
+                                      <option value="magic">Magic</option>
+                                      <option value="mastery">Mastery</option>
+                                      <option value="impact">Impact</option>
+                                      <option value="resist">Resist</option>
+                                      <option value="energy">Energy</option>
+                                  </select></span>
+                            </span>
+                            <span class='role1tier2talent3' id='talent'>
+                              <span class='select-new-arrow'><select name="attr_tier2role1-talent3">
+                                <option value="def" selected="selected">Talent</option>
+                                <option value="role1tier2talent3option1">Placeholder 1</option>
+                                <option value="role1tier2talent3option2">Placeholder 2</option>
+                                <option value="role1tier2talent3option3">Placeholder 3</option>
+                                <option value="role1tier2talent3option4">Placeholder 4</option>
+                              </select>
+                            </span>
+                          </div>
+
+                          <div class='roletiergrid'>
+                              <div class='tierMiniSplit'></div>
+                              <span class='role1tier2trait4' id='trait'>
+                                <span class='select-new-arrow'><select name="attr_tier2role1-trait4">
+                                        <option value="def" selected="selected">Trait</option>
+                                        <option value="brawn">Brawn</option>
+                                        <option value="magic">Magic</option>
+                                        <option value="mastery">Mastery</option>
+                                        <option value="impact">Impact</option>
+                                        <option value="resist">Resist</option>
+                                        <option value="energy">Energy</option>
+                                    </select></span>
+                              </span>
+                              <span class='role1tier2talent4' id='talent'>
+                                <span class='select-new-arrow'><select name="attr_tier2role1-talent4">
+                                  <option value="def" selected="selected">Talent</option>
+                                  <option value="role1tier2talent4option1">Placeholder 1</option>
+                                  <option value="role1tier2talent4option2">Placeholder 2</option>
+                                  <option value="role1tier2talent4option3">Placeholder 3</option>
+                                  <option value="role1tier2talent4option4">Placeholder 4</option>
+                                </select>
+                              </span>
+                          </div>
+
+                        </div>
+
+                        <div class='role2tier2'>
+
+                          <div class='roletiergrid'>
+                            <span class='role2tier2trait1' id='trait'>
+                              <span class='select-new-arrow'><select name="attr_tier2role2-trait1">
+                                      <option value="def" selected="selected">Trait</option>
+                                      <option value="brawn">Brawn</option>
+                                      <option value="magic">Magic</option>
+                                      <option value="mastery">Mastery</option>
+                                      <option value="impact">Impact</option>
+                                      <option value="resist">Resist</option>
+                                      <option value="energy">Energy</option>
+                                  </select></span>
+                            </span>
+                            <span class='role2tier2talent1' id='talent'>
+                              <span class='select-new-arrow'><select name="attr_tier2role2-talent1">
+                                <option value="def" selected="selected">Talent</option>
+                                <option value="role2tier2talent1option1">Placeholder 1</option>
+                                <option value="role2tier2talent1option2">Placeholder 2</option>
+                                <option value="role2tier2talent1option3">Placeholder 3</option>
+                                <option value="role2tier2talent1option4">Placeholder 4</option>
+                              </select>
+                            </span>
+                          </div>
+
+                          <div class='roletiergrid'>
+
+                            <div class='tierMiniSplit'></div>
+                            <span class='role2tier2trait2' id='trait'>
+                              <span class='select-new-arrow'><select name="attr_tier2role2-trait2">
+                                      <option value="def" selected="selected">Trait</option>
+                                      <option value="brawn">Brawn</option>
+                                      <option value="magic">Magic</option>
+                                      <option value="mastery">Mastery</option>
+                                      <option value="impact">Impact</option>
+                                      <option value="resist">Resist</option>
+                                      <option value="energy">Energy</option>
+                                  </select></span>
+                            </span>
+                            <span class='role2tier2talent2' id='talent'>
+                              <span class='select-new-arrow'><select name="attr_tier2role2-talent2">
+                                <option value="def" selected="selected">Talent</option>
+                                <option value="role2tier2talent2option1">Placeholder 1</option>
+                                <option value="role2tier2talent2option2">Placeholder 2</option>
+                                <option value="role2tier2talent2option3">Placeholder 3</option>
+                                <option value="role2tier2talent2option4">Placeholder 4</option>
+                              </select>
+                            </span>
+
+                          </div>
+
+                          <div class='roletiergrid'>
+
+                            <div class='tierMiniSplit'></div>
+                            <span class='role2tier2trait3' id='trait'>
+                              <span class='select-new-arrow'><select name="attr_tier2role2-trait3">
+                                      <option value="def" selected="selected">Trait</option>
+                                      <option value="brawn">Brawn</option>
+                                      <option value="magic">Magic</option>
+                                      <option value="mastery">Mastery</option>
+                                      <option value="impact">Impact</option>
+                                      <option value="resist">Resist</option>
+                                      <option value="energy">Energy</option>
+                                  </select></span>
+                            </span>
+                            <span class='role2tier2talent3' id='talent'>
+                              <span class='select-new-arrow'><select name="attr_tier2role2-talent3">
+                                <option value="def" selected="selected">Talent</option>
+                                <option value="role2tier2talent3option1">Placeholder 1</option>
+                                <option value="role2tier2talent3option2">Placeholder 2</option>
+                                <option value="role2tier2talent3option3">Placeholder 3</option>
+                                <option value="role2tier2talent3option4">Placeholder 4</option>
+                              </select>
+                            </span>
+
+                          </div>
+
+                          <div class='roletiergrid'>
+
+                            <div class='tierMiniSplit'></div>
+                            <span class='role2tier2trait4' id='trait'>
+                              <span class='select-new-arrow'><select name="attr_tier2role2-trait4">
+                                      <option value="def" selected="selected">Trait</option>
+                                      <option value="brawn">Brawn</option>
+                                      <option value="magic">Magic</option>
+                                      <option value="mastery">Mastery</option>
+                                      <option value="impact">Impact</option>
+                                      <option value="resist">Resist</option>
+                                      <option value="energy">Energy</option>
+                                  </select></span>
+                            </span>
+                            <span class='role2tier2talent4' id='talent'>
+                              <span class='select-new-arrow'><select name="attr_tier2role2-talent4">
+                                <option value="def" selected="selected">Talent</option>
+                                <option value="role2tier2talent4option1">Placeholder 1</option>
+                                <option value="role2tier2talent4option2">Placeholder 2</option>
+                                <option value="role2tier2talent4option3">Placeholder 3</option>
+                                <option value="role2tier2talent4option4">Placeholder 4</option>
+                              </select>
+                            </span>
+
+                          </div>
+
+                        </div>
+
+                        <div class='role3tier2'>
+
+                          <div class='roletiergrid'>
+
+                            <span class='role3tier2trait1' id='trait'>
+                              <span class='select-new-arrow'><select name="attr_tier2role3-trait1">
+                                      <option value="def" selected="selected">Trait</option>
+                                      <option value="brawn">Brawn</option>
+                                      <option value="magic">Magic</option>
+                                      <option value="mastery">Mastery</option>
+                                      <option value="impact">Impact</option>
+                                      <option value="resist">Resist</option>
+                                      <option value="energy">Energy</option>
+                                  </select></span>
+                            </span>
+                            <span class='role3tier2talent1' id='talent'>
+                              <span class='select-new-arrow'><select name="attr_tier2role3-talent1">
+                                <option value="def" selected="selected">Talent</option>
+                                <option value="role3tier2talent1option1">Placeholder 1</option>
+                                <option value="role3tier2talent1option2">Placeholder 2</option>
+                                <option value="role3tier2talent1option3">Placeholder 3</option>
+                                <option value="role3tier2talent1option4">Placeholder 4</option>
+                              </select>
+                            </span>
+
+                          </div>
+
+                          <div class='roletiergrid'>
+
+                            <div class='tierMiniSplit'></div>
+                            <span class='role3tier2trait2' id='trait'>
+                              <span class='select-new-arrow'><select name="attr_tier2role3-trait2">
+                                      <option value="def" selected="selected">Trait</option>
+                                      <option value="brawn">Brawn</option>
+                                      <option value="magic">Magic</option>
+                                      <option value="mastery">Mastery</option>
+                                      <option value="impact">Impact</option>
+                                      <option value="resist">Resist</option>
+                                      <option value="energy">Energy</option>
+                                  </select></span>
+                            </span>
+                            <span class='role3tier2talent2' id='talent'>
+                              <span class='select-new-arrow'><select name="attr_tier2role3-talent2">
+                                <option value="def" selected="selected">Talent</option>
+                                <option value="role3tier2talent2option1">Placeholder 1</option>
+                                <option value="role3tier2talent2option2">Placeholder 2</option>
+                                <option value="role3tier2talent2option3">Placeholder 3</option>
+                                <option value="role3tier2talent2option4">Placeholder 4</option>
+                              </select>
+                            </span>
+
+                          </div>
+
+                          <div class='roletiergrid'>
+
+                            <div class='tierMiniSplit'></div>
+                            <span class='role3tier2trait3' id='trait'>
+                              <span class='select-new-arrow'><select name="attr_tier2role3-trait3">
+                                      <option value="def" selected="selected">Trait</option>
+                                      <option value="brawn">Brawn</option>
+                                      <option value="magic">Magic</option>
+                                      <option value="mastery">Mastery</option>
+                                      <option value="impact">Impact</option>
+                                      <option value="resist">Resist</option>
+                                      <option value="energy">Energy</option>
+                                  </select></span>
+                            </span>
+                            <span class='role3tier2talent3' id='talent'>
+                              <span class='select-new-arrow'><select name="attr_tier2role3-talent3">
+                                <option value="def" selected="selected">Talent</option>
+                                <option value="role3tier2talent3option1">Placeholder 1</option>
+                                <option value="role3tier2talent3option2">Placeholder 2</option>
+                                <option value="role3tier2talent3option3">Placeholder 3</option>
+                                <option value="role3tier2talent3option4">Placeholder 4</option>
+                              </select>
+                            </span>
+
+                          </div>
+
+                          <div class='roletiergrid'>
+
+                            <div class='tierMiniSplit'></div>
+                            <span class='role3tier2trait4' id='trait'>
+                              <span class='select-new-arrow'><select name="attr_tier2role3-trait4">
+                                      <option value="def" selected="selected">Trait</option>
+                                      <option value="brawn">Brawn</option>
+                                      <option value="magic">Magic</option>
+                                      <option value="mastery">Mastery</option>
+                                      <option value="impact">Impact</option>
+                                      <option value="resist">Resist</option>
+                                      <option value="energy">Energy</option>
+                                  </select></span>
+                            </span>
+                            <span class='role3tier2talent4' id='talent'>
+                              <span class='select-new-arrow'><select name="attr_tier2role3-talent4">
+                                <option value="def" selected="selected">Talent</option>
+                                <option value="role3tier2talent4option1">Placeholder 1</option>
+                                <option value="role3tier2talent4option2">Placeholder 2</option>
+                                <option value="role3tier2talent4option3">Placeholder 3</option>
+                                <option value="role3tier2talent4option4">Placeholder 4</option>
+                              </select>
+                            </span>
+
+                          </div>
+
+                        </div>
+
+                        <span class='tier3split'><h4>Tier 3</h4></span>
+
+                        <div class='tierSectionGrid3'>
+                          <span>1</span>
+                          <span>2</span>
+                          <span>3</span>
+                          <span>4</span>
+                        </div>
+
+                        <div class='role1tier3'>
+
+                          <div class='roletiergrid'>
+                            <span class='role1tier3trait1' id='trait'>
+                              <span class='select-new-arrow'><select name="attr_tier3role1-trait1">
+                                      <option value="def" selected="selected">Trait</option>
+                                      <option value="brawn">Brawn</option>
+                                      <option value="magic">Magic</option>
+                                      <option value="mastery">Mastery</option>
+                                      <option value="impact">Impact</option>
+                                      <option value="resist">Resist</option>
+                                      <option value="energy">Energy</option>
+                                  </select></span>
+                            </span>
+                            <span class='role1tier3talent1' id='talent'>
+                              <span class='select-new-arrow'><select name="attr_tier3role1-talent1">
+                                  <option value="def" selected="selected">Talent</option>
+                                  <option value="role1tier3talent1option1">Placeholder 1</option>
+                                  <option value="role1tier3talent1option2">Placeholder 2</option>
+                                  <option value="role1tier3talent1option3">Placeholder 3</option>
+                                  <option value="role1tier3talent1option4">Placeholder 4</option>
+                                </select>
+                            </span>
+                          </div>
+
+                          <div class='roletiergrid'>
+                            <div class='tierMiniSplit'></div>
+                            <span class='role1tier3trait2' id='trait'>
+                              <span class='select-new-arrow'><select name="attr_tier3role1-trait2">
+                                      <option value="def" selected="selected">Trait</option>
+                                      <option value="brawn">Brawn</option>
+                                      <option value="magic">Magic</option>
+                                      <option value="mastery">Mastery</option>
+                                      <option value="impact">Impact</option>
+                                      <option value="resist">Resist</option>
+                                      <option value="energy">Energy</option>
+                                  </select></span>
+                            </span>
+                            <span class='role1tier3talent2' id='talent'>
+                              <span class='select-new-arrow'><select name="attr_tier3role1-talent2">
+                                <option value="def" selected="selected">Talent</option>
+                                <option value="role1tier3talent2option1">Placeholder 1</option>
+                                <option value="role1tier3talent2option2">Placeholder 2</option>
+                                <option value="role1tier3talent2option3">Placeholder 3</option>
+                                <option value="role1tier3talent2option4">Placeholder 4</option>
+                              </select>
+                            </span>
+
+                          </div>
+
+                          <div class='roletiergrid'>
+                            <div class='tierMiniSplit'></div>
+                            <span class='role1tier3trait3' id='trait'>
+                              <span class='select-new-arrow'><select name="attr_tier3role1-trait3">
+                                      <option value="def" selected="selected">Trait</option>
+                                      <option value="brawn">Brawn</option>
+                                      <option value="magic">Magic</option>
+                                      <option value="mastery">Mastery</option>
+                                      <option value="impact">Impact</option>
+                                      <option value="resist">Resist</option>
+                                      <option value="energy">Energy</option>
+                                  </select></span>
+                            </span>
+                            <span class='role1tier3talent3' id='talent'>
+                              <span class='select-new-arrow'><select name="attr_tier3role1-talent3">
+                                <option value="def" selected="selected">Talent</option>
+                                <option value="role1tier3talent3option1">Placeholder 1</option>
+                                <option value="role1tier3talent3option2">Placeholder 2</option>
+                                <option value="role1tier3talent3option3">Placeholder 3</option>
+                                <option value="role1tier3talent3option4">Placeholder 4</option>
+                              </select>
+                            </span>
+                          </div>
+
+                          <div class='roletiergrid'>
+                              <div class='tierMiniSplit'></div>
+                              <span class='role1tier3trait4' id='trait'>
+                                <span class='select-new-arrow'><select name="attr_tier3role1-trait4">
+                                        <option value="def" selected="selected">Trait</option>
+                                        <option value="brawn">Brawn</option>
+                                        <option value="magic">Magic</option>
+                                        <option value="mastery">Mastery</option>
+                                        <option value="impact">Impact</option>
+                                        <option value="resist">Resist</option>
+                                        <option value="energy">Energy</option>
+                                    </select></span>
+                              </span>
+                              <span class='role1tier3talent4' id='talent'>
+                                <span class='select-new-arrow'><select name="attr_tier3role1-talent4">
+                                  <option value="def" selected="selected">Talent</option>
+                                  <option value="role1tier3talent4option1">Placeholder 1</option>
+                                  <option value="role1tier3talent4option2">Placeholder 2</option>
+                                  <option value="role1tier3talent4option3">Placeholder 3</option>
+                                  <option value="role1tier3talent4option4">Placeholder 4</option>
+                                </select>
+                              </span>
+                          </div>
+
+                        </div>
+
+                        <div class='role2tier3'>
+
+                          <div class='roletiergrid'>
+                            <span class='role2tier3trait1' id='trait'>
+                              <span class='select-new-arrow'><select name="attr_tier3role2-trait1">
+                                      <option value="def" selected="selected">Trait</option>
+                                      <option value="brawn">Brawn</option>
+                                      <option value="magic">Magic</option>
+                                      <option value="mastery">Mastery</option>
+                                      <option value="impact">Impact</option>
+                                      <option value="resist">Resist</option>
+                                      <option value="energy">Energy</option>
+                                  </select></span>
+                            </span>
+                            <span class='role2tier3talent1' id='talent'>
+                              <span class='select-new-arrow'><select name="attr_tier3role2-talent1">
+                                <option value="def" selected="selected">Talent</option>
+                                <option value="role2tier3talent1option1">Placeholder 1</option>
+                                <option value="role2tier3talent1option2">Placeholder 2</option>
+                                <option value="role2tier3talent1option3">Placeholder 3</option>
+                                <option value="role2tier3talent1option4">Placeholder 4</option>
+                              </select>
+                            </span>
+                          </div>
+
+                          <div class='roletiergrid'>
+
+                            <div class='tierMiniSplit'></div>
+                            <span class='role2tier3trait2' id='trait'>
+                              <span class='select-new-arrow'><select name="attr_tier3role2-trait2">
+                                      <option value="def" selected="selected">Trait</option>
+                                      <option value="brawn">Brawn</option>
+                                      <option value="magic">Magic</option>
+                                      <option value="mastery">Mastery</option>
+                                      <option value="impact">Impact</option>
+                                      <option value="resist">Resist</option>
+                                      <option value="energy">Energy</option>
+                                  </select></span>
+                            </span>
+                            <span class='role2tier3talent2' id='talent'>
+                              <span class='select-new-arrow'><select name="attr_tier3role2-talent2">
+                                <option value="def" selected="selected">Talent</option>
+                                <option value="role2tier3talent2option1">Placeholder 1</option>
+                                <option value="role2tier3talent2option2">Placeholder 2</option>
+                                <option value="role2tier3talent2option3">Placeholder 3</option>
+                                <option value="role2tier3talent2option4">Placeholder 4</option>
+                              </select>
+                            </span>
+
+                          </div>
+
+                          <div class='roletiergrid'>
+
+                            <div class='tierMiniSplit'></div>
+                            <span class='role2tier3trait3' id='trait'>
+                              <span class='select-new-arrow'><select name="attr_tier3role2-trait3">
+                                      <option value="def" selected="selected">Trait</option>
+                                      <option value="brawn">Brawn</option>
+                                      <option value="magic">Magic</option>
+                                      <option value="mastery">Mastery</option>
+                                      <option value="impact">Impact</option>
+                                      <option value="resist">Resist</option>
+                                      <option value="energy">Energy</option>
+                                  </select></span>
+                            </span>
+                            <span class='role2tier3talent3' id='talent'>
+                              <span class='select-new-arrow'><select name="attr_tier3role2-talent3">
+                                <option value="def" selected="selected">Talent</option>
+                                <option value="role2tier3talent3option1">Placeholder 1</option>
+                                <option value="role2tier3talent3option2">Placeholder 2</option>
+                                <option value="role2tier3talent3option3">Placeholder 3</option>
+                                <option value="role2tier3talent3option4">Placeholder 4</option>
+                              </select>
+                            </span>
+
+                          </div>
+
+                          <div class='roletiergrid'>
+
+                            <div class='tierMiniSplit'></div>
+                            <span class='role2tier3trait4' id='trait'>
+                              <span class='select-new-arrow'><select name="attr_tier3role2-trait4">
+                                      <option value="def" selected="selected">Trait</option>
+                                      <option value="brawn">Brawn</option>
+                                      <option value="magic">Magic</option>
+                                      <option value="mastery">Mastery</option>
+                                      <option value="impact">Impact</option>
+                                      <option value="resist">Resist</option>
+                                      <option value="energy">Energy</option>
+                                  </select></span>
+                            </span>
+                            <span class='role2tier3talent4' id='talent'>
+                              <span class='select-new-arrow'><select name="attr_tier3role2-talent4">
+                                <option value="def" selected="selected">Talent</option>
+                                <option value="role2tier3talent4option1">Placeholder 1</option>
+                                <option value="role2tier3talent4option2">Placeholder 2</option>
+                                <option value="role2tier3talent4option3">Placeholder 3</option>
+                                <option value="role2tier3talent4option4">Placeholder 4</option>
+                              </select>
+                            </span>
+
+                          </div>
+
+                        </div>
+
+                        <div class='role3tier3'>
+
+                          <div class='roletiergrid'>
+
+                            <span class='role3tier3trait1' id='trait'>
+                              <span class='select-new-arrow'><select name="attr_tier3role3-trait1">
+                                      <option value="def" selected="selected">Trait</option>
+                                      <option value="brawn">Brawn</option>
+                                      <option value="magic">Magic</option>
+                                      <option value="mastery">Mastery</option>
+                                      <option value="impact">Impact</option>
+                                      <option value="resist">Resist</option>
+                                      <option value="energy">Energy</option>
+                                  </select></span>
+                            </span>
+                            <span class='role3tier3talent1' id='talent'>
+                              <span class='select-new-arrow'><select name="attr_tier3role3-talent1">
+                                <option value="def" selected="selected">Talent</option>
+                                <option value="role3tier3talent1option1">Placeholder 1</option>
+                                <option value="role3tier3talent1option2">Placeholder 2</option>
+                                <option value="role3tier3talent1option3">Placeholder 3</option>
+                                <option value="role3tier3talent1option4">Placeholder 4</option>
+                              </select>
+                            </span>
+
+                          </div>
+
+                          <div class='roletiergrid'>
+
+                            <div class='tierMiniSplit'></div>
+                            <span class='role3tier3trait2' id='trait'>
+                              <span class='select-new-arrow'><select name="attr_tier3role3-trait2">
+                                      <option value="def" selected="selected">Trait</option>
+                                      <option value="brawn">Brawn</option>
+                                      <option value="magic">Magic</option>
+                                      <option value="mastery">Mastery</option>
+                                      <option value="impact">Impact</option>
+                                      <option value="resist">Resist</option>
+                                      <option value="energy">Energy</option>
+                                  </select></span>
+                            </span>
+                            <span class='role3tier3talent2' id='talent'>
+                              <span class='select-new-arrow'><select name="attr_tier3role3-talent2">
+                                <option value="def" selected="selected">Talent</option>
+                                <option value="role3tier3talent2option1">Placeholder 1</option>
+                                <option value="role3tier3talent2option2">Placeholder 2</option>
+                                <option value="role3tier3talent2option3">Placeholder 3</option>
+                                <option value="role3tier3talent2option4">Placeholder 4</option>
+                              </select>
+                            </span>
+
+                          </div>
+
+                          <div class='roletiergrid'>
+
+                            <div class='tierMiniSplit'></div>
+                            <span class='role3tier3trait3' id='trait'>
+                              <span class='select-new-arrow'><select name="attr_tier3role3-trait3">
+                                      <option value="def" selected="selected">Trait</option>
+                                      <option value="brawn">Brawn</option>
+                                      <option value="magic">Magic</option>
+                                      <option value="mastery">Mastery</option>
+                                      <option value="impact">Impact</option>
+                                      <option value="resist">Resist</option>
+                                      <option value="energy">Energy</option>
+                                  </select></span>
+                            </span>
+                            <span class='role3tier3talent3' id='talent'>
+                              <span class='select-new-arrow'><select name="attr_tier3role3-talent3">
+                                <option value="def" selected="selected">Talent</option>
+                                <option value="role3tier3talent3option1">Placeholder 1</option>
+                                <option value="role3tier3talent3option2">Placeholder 2</option>
+                                <option value="role3tier3talent3option3">Placeholder 3</option>
+                                <option value="role3tier3talent3option4">Placeholder 4</option>
+                              </select>
+                            </span>
+
+                          </div>
+
+                          <div class='roletiergrid'>
+
+                            <div class='tierMiniSplit'></div>
+                            <span class='role3tier3trait4' id='trait'>
+                              <span class='select-new-arrow'><select name="attr_tier3role3-trait4">
+                                      <option value="def" selected="selected">Trait</option>
+                                      <option value="brawn">Brawn</option>
+                                      <option value="magic">Magic</option>
+                                      <option value="mastery">Mastery</option>
+                                      <option value="impact">Impact</option>
+                                      <option value="resist">Resist</option>
+                                      <option value="energy">Energy</option>
+                                  </select></span>
+                            </span>
+                            <span class='role3tier3talent4' id='talent'>
+                              <span class='select-new-arrow'><select name="attr_tier3role3-talent4">
+                                <option value="def" selected="selected">Talent</option>
+                                <option value="role3tier3talent4option1">Placeholder 1</option>
+                                <option value="role3tier3talent4option2">Placeholder 2</option>
+                                <option value="role3tier3talent4option3">Placeholder 3</option>
+                                <option value="role3tier3talent4option4">Placeholder 4</option>
+                              </select>
+                            </span>
+
+                          </div>
+
+                        </div>
+
+                        <!-- <span class='tier1split'><h4><div class='help-text-tier'>Tier 1<span class='tooltip'>Select a Trait to boost.<br />Talents will be made available after a selection is made.</span></div></h4></span> -->
 
                     </div>
                     <hr>
