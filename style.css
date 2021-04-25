@@ -636,18 +636,18 @@ input.sheet-radio-ability[value="ability"]:checked ~ button.sheet-btn-attr{
 .sheet-rolegrid{
     display: grid;
     text-align: center;
-    grid-template-columns: 40px repeat(3, 200px);
+    grid-template-columns: repeat(3, 200px);
     grid-row-gap: 5px;
     grid-column-gap: 0px;
     padding: 3px;
     grid-template-areas:
-    ". role1 role2 role3"
-    "tier1split tier1split tier1split tier1split"
-    "numberLabel1 role1tier1 role2tier1 role3tier1"
-    "tier2split tier2split tier2split tier2split"
-    "numberLabel2 role1tier2 role2tier2 role3tier2"
-    "tier3split tier3split tier3split tier3split"
-    "numberLabel3 role1tier3 role2tier3 role3tier3";
+    "role1 role2 role3"
+    "tier1split tier1split tier1split"
+    "role1tier1 role2tier1 role3tier1"
+    "tier2split tier2split tier2split"
+    "role1tier2 role2tier2 role3tier2"
+    "tier3split tier3split tier3split"
+    "role1tier3 role2tier3 role3tier3";
 }
 
 .sheet-rolegrid select{
@@ -658,10 +658,13 @@ input.sheet-radio-ability[value="ability"]:checked ~ button.sheet-btn-attr{
   margin-bottom: 3px;
 }
 
+/*------------------------ Trait Dropdown Formats ----------------------------*/
+
 .sheet-role1 select,
 .sheet-role1tier1 select,
 .sheet-role1tier2 select,
-.sheet-role1tier3 select{background-image: linear-gradient(to bottom right, #ddc5c8, #714247) !important;
+.sheet-role1tier3 select{
+  background-image: linear-gradient(to bottom right, #ddc5c8, #714247) !important;
 }
 
 .sheet-role2 select,
@@ -678,22 +681,67 @@ input.sheet-radio-ability[value="ability"]:checked ~ button.sheet-btn-attr{
   background-image: linear-gradient(to bottom right, #aec6a4, #516E45) !important;
 }
 
-.sheet-rolegrid input{
-    text-indent: 1px;
-    width: 150px;
+.sheet-role1tier1 select,
+.sheet-role1tier2 select,
+.sheet-role1tier3 select,
+.sheet-role2tier1 select,
+.sheet-role2tier2 select,
+.sheet-role2tier3 select,
+.sheet-role3tier1 select,
+.sheet-role3tier2 select,
+.sheet-role3tier3 select{
+  width: 80px;
+  line-height: 10px;
+  font-size: 11px;
+  height: auto;
 }
 
-/*Individual Trait Talent Format*/
-.sheet-tierMiniSplit{border-bottom: 2px solid black; align-self: baseline;}
-.sheet-roletiergrid{
-  display: grid;
-  grid-template-columns: auto;
+/*----------------- Trait Talent Formats --------------------*/
+
+.sheet-tier_coretalent{
+  grid-column: span 3;
+  padding-bottom: 15px;
+  font-size: 14px;
+  font-weight: bold;
 }
 
-.sheet-roletiergrid #sheet-trait{align-self: end;}
-.sheet-roletiergrid #sheet-talent{align-self: start;}
+.sheet-core_talent1_lbl,
+.sheet-core_talent2_lbl,
+.sheet-core_talent3_lbl{
 
-.sheet-role1{grid-area: role1;}
+}
+
+.sheet-tier1role1talent1_lbl,
+.sheet-tier1role1talent2_lbl,
+.sheet-tier1role1talent3_lbl,
+.sheet-tier1role1talent4_lbl,
+.sheet-tier1role2talent1_lbl,
+.sheet-tier1role2talent2_lbl,
+.sheet-tier1role2talent3_lbl,
+.sheet-tier1role2talent4_lbl
+.sheet-tier1role3talent1_lbl,
+.sheet-tier1role3talent2_lbl,
+.sheet-tier1role3talent3_lbl,
+.sheet-tier1role3talent4_lbl{
+  color: black;
+}
+
+.sheet-tier1role1trait1_sel:not([value="def"]) + .sheet-tier1role1talent1_lbl,
+.sheet-tier1role1trait2_sel:not([value="def"]) + .sheet-tier1role1talent2_lbl,
+.sheet-tier1role1trait3_sel:not([value="def"]) + .sheet-tier1role1talent3_lbl,
+.sheet-tier1role1trait4_sel:not([value="def"]) + .sheet-tier1role1talent4_lbl,
+.sheet-tier2role1trait1_sel:not([value="def"]) + .sheet-tier2role1talent1_lbl,
+.sheet-tier2role1trait2_sel:not([value="def"]) + .sheet-tier2role1talent2_lbl,
+.sheet-tier2role1trait3_sel:not([value="def"]) + .sheet-tier2role1talent3_lbl,
+.sheet-tier2role1trait4_sel:not([value="def"]) + .sheet-tier2role1talent4_lbl,
+.sheet-tier3role1trait1_sel:not([value="def"]) + .sheet-tier3role1talent1_lbl,
+.sheet-tier3role1trait2_sel:not([value="def"]) + .sheet-tier3role1talent2_lbl,
+.sheet-tier3role1trait3_sel:not([value="def"]) + .sheet-tier3role1talent3_lbl,
+.sheet-tier3role1trait4_sel:not([value="def"]) + .sheet-tier3role1talent4_lbl{
+  color: maroon;
+}
+
+/*----------------- Trait Grid Formats --------------------*/
 
 .sheet-role1tier1,
 .sheet-role2tier1,
@@ -718,6 +766,28 @@ input.sheet-radio-ability[value="ability"]:checked ~ button.sheet-btn-attr{
 .sheet-role2tier3{grid-area: role2tier3;}
 .sheet-role3tier3{grid-area: role3tier3;}
 
+
+.sheet-role1tier1grid,
+.sheet-role2tier1grid,
+.sheet-role3tier1grid,
+.sheet-role1tier2grid,
+.sheet-role2tier2grid,
+.sheet-role3tier2grid,
+.sheet-role1tier3grid,
+.sheet-role2tier3grid,
+.sheet-role3tier3grid{
+  display: grid;
+  grid-column-gap: 1px;
+}
+
+.sheet-role2,
+.sheet-role2tier1grid,
+.sheet-role2tier2grid,
+.sheet-role2tier3grid{
+  border-right-style: dotted;
+  border-left-style: dotted;
+}
+
 .sheet-role1{grid-area: role1;}
 .sheet-role2{grid-area: role2;}
 .sheet-role3{grid-area: role3;}
@@ -725,23 +795,6 @@ input.sheet-radio-ability[value="ability"]:checked ~ button.sheet-btn-attr{
 .sheet-tier1split{grid-area: tier1split;}
 .sheet-tier2split{grid-area: tier2split;}
 .sheet-tier3split{grid-area: tier3split;}
-
-.sheet-tierSectionGrid1{grid-area: numberLabel1;}
-.sheet-tierSectionGrid2{grid-area: numberLabel2;}
-.sheet-tierSectionGrid3{grid-area: numberLabel3;}
-
-.sheet-tierSectionGrid1,
-.sheet-tierSectionGrid2,
-.sheet-tierSectionGrid3{
-  grid-template-columns: 1;
-}
-.sheet-tierSectionGrid1 span,
-.sheet-tierSectionGrid2 span,
-.sheet-tierSectionGrid3 span{
-  font-size: 60px;
-  font-weight: bold;
-  color: rgba(0, 0, 0, 0.3);
-}
 
 
 
@@ -926,15 +979,15 @@ select.sheet-select-wgt{ width: 120px;}
     background: rgba(150,150,150,0.6);
 }
 
+
+/* ----------- Tab Toggling CSS ----------------*/
+
 /*Configure the tab buttons*/
 .sheet-buildSheet,
 .sheet-weaponSheet,
 .sheet-armorSheet,
 .sheet-inventorySheet,
-.sheet-skillSheet,
-.sheet-tier1tab,
-.sheet-tier2tab,
-.sheet-tier3tab {
+.sheet-skillSheet {
     display: none;
 }
 
@@ -947,11 +1000,8 @@ select.sheet-select-wgt{ width: 120px;}
     display: block;
 }
 
-.sheet-tier_tabstoggle[value="tier1tab"] ~ div.sheet-tier1tab,
-.sheet-tier_tabstoggle[value="tier2tab"] ~ div.sheet-tier2tab,
-.sheet-tier_tabstoggle[value="tier3tab"] ~ div.sheet-tier3tab {
-    display: block;
-}
+
+/* ----------- Roll Template CSS  ----------- */
 
 .sheet-rolltemplate-attack .sheet-template-container-attack,
 .sheet-rolltemplate-attack .sheet-template-container-stat,
