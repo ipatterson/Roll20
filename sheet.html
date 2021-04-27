@@ -224,6 +224,9 @@
                       <li>Select three roles.</li>
                       <li>During level progression, select a Trait to boost in a Tier section, followed by a Talent.</li>
                       <li><b>TODO</b> Set up reference doc to Roles and Trait Descriptions</li>
+                      <li><button type="roll" name="roll_url_strength" class="sheet-hyperlink" value="[Role Description](http://journal.roll20.net/handout/-MZA40aocSpmutToWX9P)">
+                          Test Button
+                            </button></li>
                     </ul>
                   </div>
 
@@ -335,14 +338,18 @@
                         <div class='role1tier1'>
 
                           <div class='role1tier1grid'>
+                              <span class='tier_coretalent'>
+                                <div class='help-text-talent'>
+                                  <span class='core_talent1_lbl' name="attr_coretalent_role1tier1"></span>
+                                  <input type="hidden" name="attr_coretalent_role1tier1" value="Tier 1 Talent Placeholder" readonly>
 
-                            <span class='tier_coretalent'>
-                                  <span class='core_talent1_lbl' name="attr_role1tier1_coretalent"></span>
-                                  <input type="hidden" name="attr_role1tier1_coretalent" value="Tier 1 Talent Placeholder" readonly>
-                            </span>
+                                  <span class='tooltip' name='attr_coretalent_role1tier1_tooltip'></span>
+                                  <input type='hidden' name='attr_coretalent_role1tier1_tooltip' value='Role 1 Tier 1 Core Talent' readonly>
+                                </div>
+                              </span>
 
                             <span class='select-new-arrow'>
-                              <select name="attr_tier1role1-trait1" class="tier1role1trait1_sel">
+                              <select name="attr_tier1role1-trait1" class="role1tier1trait1_sel">
                                     <option value="def" selected="selected">Trait 1</option>
                                     <option value="brawn">Brawn</option>
                                     <option value="magic">Magic</option>
@@ -356,13 +363,19 @@
                             <span style="font-family: 'Pictos'">]</span>
 
                             <span>
-                              <input type="hidden" name="attr_tier1role1-trait1" class="tier1role1trait1_sel">
-                              <span name="attr_tier1role1_talent1" class="tier1role1talent1_lbl"></span>
-                              <input type="hidden" name="attr_tier1role1_talent1" value="Placeholder 1" readonly>
+                              <div class='help-text-talent'>
+                                <input type="hidden" name="attr_tier1role1-trait1" class="role1tier1trait1_sel">
+                                <span name="attr_tier1role1_talent1" class="role1tiertalent1_lbl"></span>
+                                <input type="hidden" name="attr_tier1role1_talent1" value="Placeholder 1" readonly>
+
+                                <span class='tooltip' name='attr_role1tier1talent1_ttip'></span>
+                                <input type='hidden' name='attr_role1tier1talent1_ttip' value='Role 1 Tier 1 Talent 1' readonly>
+                              </div>
+
                             </span>
 
                             <span class='select-new-arrow'>
-                              <select name="attr_tier1role1-trait2" class="tier1role1trait2_sel">
+                              <select name="attr_tier1role1-trait2" class="role1tier1trait2_sel">
                                     <option value="def" selected="selected">Trait 2</option>
                                     <option value="brawn">Brawn</option>
                                     <option value="magic">Magic</option>
@@ -376,13 +389,18 @@
                             <span style="font-family: 'Pictos'">]</span>
 
                             <span>
-                              <input type="hidden" name="attr_tier1role1-trait2" class="tier1role1trait2_sel">
-                              <span name="attr_tier1role1_talent2" class="tier1role1talent2_lbl"></span>
-                              <input type="hidden" name="attr_tier1role1_talent2" value="Placeholder 2" readonly>
+                              <div class='help-text-talent'>
+                                <input type="hidden" name="attr_tier1role1-trait2" class="role1tier1trait2_sel">
+                                <span name="attr_tier1role1_talent2" class="role1tiertalent2_lbl"></span>
+                                <input type="hidden" name="attr_tier1role1_talent2" value="Placeholder 2" readonly>
+
+                                <span class='tooltip' name='attr_role1tier1talent2_ttip'></span>
+                                <input type='hidden' name='attr_role1tier1talent2_ttip' value='Role 1 Tier 1 Talent 2' readonly>
+                              </div>
                             </span>
 
                             <span class='select-new-arrow'>
-                              <select name="attr_tier1role1-trait3" class="tier1role1trait3_sel">
+                              <select name="attr_tier1role1-trait3" class="role1tier1trait3_sel">
                                     <option value="def" selected="selected">Trait 3</option>
                                     <option value="brawn">Brawn</option>
                                     <option value="magic">Magic</option>
@@ -396,13 +414,18 @@
                             <span style="font-family: 'Pictos'">]</span>
 
                             <span>
-                              <input type="hidden" name="attr_tier1role1-trait3" class="tier1role1trait3_sel">
-                              <span name="attr_tier1role1_talent3" class="tier1role1talent3_lbl"></span>
-                              <input type="hidden" name="attr_tier1role1_talent3" value="Placeholder 3" readonly>
+                              <div class='help-text-talent'>
+                                <input type="hidden" name="attr_tier1role1-trait3" class="role1tier1trait3_sel">
+                                <span name="attr_tier1role1_talent3" class="role1tiertalent3_lbl"></span>
+                                <input type="hidden" name="attr_tier1role1_talent3" value="Placeholder 3" readonly>
+
+                                <span class='tooltip' name='attr_role1tier1talent3_ttip'></span>
+                                <input type='hidden' name='attr_role1tier1talent3_ttip' value='Role 1 Tier 1 Talent 3' readonly>
+                              </div>
                             </span>
 
                             <span class='select-new-arrow'>
-                              <select name="attr_tier1role1-trait4" class="tier1role1trait4_sel">
+                              <select name="attr_tier1role1-trait4" class="role1tier1trait4_sel">
                                     <option value="def" selected="selected">Trait 4</option>
                                     <option value="brawn">Brawn</option>
                                     <option value="magic">Magic</option>
@@ -416,9 +439,14 @@
                             <span style="font-family: 'Pictos'">]</span>
 
                             <span>
-                              <input type="hidden" name="attr_tier1role1-trait4" class="tier1role1trait4_sel">
-                              <span name="attr_tier1role1_talent4" class="tier1role1talent4_lbl"></span>
-                              <input type="hidden" name="attr_tier1role1_talent4" value="Placeholder 4" readonly>
+                              <div class='help-text-talent'>
+                                <input type="hidden" name="attr_tier1role1-trait4" class="role1tier1trait4_sel">
+                                <span name="attr_tier1role1_talent4" class="role1tiertalent4_lbl"></span>
+                                <input type="hidden" name="attr_tier1role1_talent4" value="Placeholder 4" readonly>
+
+                                <span class='tooltip' name='attr_role1tier1talent4_ttip'></span>
+                                <input type='hidden' name='attr_role1tier1talent4_ttip' value='Role 1 Tier 1 Talent 4' readonly>
+                              </div>
                             </span>
 
                           </div>
@@ -435,7 +463,7 @@
                             </span>
 
                             <span class='select-new-arrow'>
-                              <select name="attr_tier1role2-trait1">
+                              <select name="attr_tier1role2-trait1" class="role2tier1trait1_sel">
                                     <option value="def" selected="selected">Trait 1</option>
                                     <option value="brawn">Brawn</option>
                                     <option value="magic">Magic</option>
@@ -449,12 +477,17 @@
                             <span style="font-family: 'Pictos'">]</span>
 
                             <span>
-                                  <span name="attr_tier1role2_talent1" class="tier1role2talent1_lbl"></span>
-                                  <input type="hidden" name="attr_tier1role2_talent1" value="Placeholder 1" readonly>
+                              <div class='help-text-talent'>
+                                <input type="hidden" name="attr_tier1role2-trait1" class="role2tier1trait1_sel">
+                                <span name="attr_tier1role2_talent1" class="role2tier1talent1_lbl"></span>
+                                <input type="hidden" name="attr_tier1role2_talent1" value="Placeholder 1" readonly>
+
+                                <span class='tooltip'>Splits points among Domains. Maximum allowed is 3.</span>
+                              </div>
                             </span>
 
                             <span class='select-new-arrow'>
-                              <select name="attr_tier1role2-trait2">
+                              <select name="attr_tier1role2-trait2" class="role2tier1trait2_sel">
                                     <option value="def" selected="selected">Trait 2</option>
                                     <option value="brawn">Brawn</option>
                                     <option value="magic">Magic</option>
@@ -468,12 +501,13 @@
                             <span style="font-family: 'Pictos'">]</span>
 
                             <span>
-                                  <span name="attr_tier1role2_talent2" class="tier1role2talent2_lbl"></span>
-                                  <input type="hidden" name="attr_tier1role2_talent2" value="Placeholder 2" readonly>
+                              <input type="hidden" name="attr_tier1role2-trait2" class="role2tier1trait2_sel">
+                              <span name="attr_tier1role2_talent2" class="role2tier1talent2_lbl"></span>
+                              <input type="hidden" name="attr_tier1role2_talent2" value="Placeholder 2" readonly>
                             </span>
 
                             <span class='select-new-arrow'>
-                              <select name="attr_tier1role2-trait3">
+                              <select name="attr_tier1role2-trait3" class="role2tier1trait3_sel">
                                     <option value="def" selected="selected">Trait 3</option>
                                     <option value="brawn">Brawn</option>
                                     <option value="magic">Magic</option>
@@ -487,12 +521,13 @@
                             <span style="font-family: 'Pictos'">]</span>
 
                             <span>
-                                  <span name="attr_tier1role2_talent3" class="tier1role2talent3_lbl"></span>
-                                  <input type="hidden" name="attr_tier1role2_talent3" value="Placeholder 3" readonly>
+                              <input type="hidden" name="attr_tier1role2-trait3" class="role2tier1trait3_sel">
+                              <span name="attr_tier1role2_talent3" class="role2tier1talent3_lbl"></span>
+                              <input type="hidden" name="attr_tier1role2_talent3" value="Placeholder 3" readonly>
                             </span>
 
                             <span class='select-new-arrow'>
-                              <select name="attr_tier1role2-trait4">
+                              <select name="attr_tier1role2-trait4" class="role2tier1trait4_sel">
                                     <option value="def" selected="selected">Trait 4</option>
                                     <option value="brawn">Brawn</option>
                                     <option value="magic">Magic</option>
@@ -506,8 +541,9 @@
                             <span style="font-family: 'Pictos'">]</span>
 
                             <span>
-                                  <span name="attr_tier1role2_talent4" class="tier1role2talent4_lbl"></span>
-                                  <input type="hidden" name="attr_tier1role2_talent4" value="Placeholder 4" readonly>
+                              <input type="hidden" name="attr_tier1role2-trait4" class="role2tier1trait4_sel">
+                              <span name="attr_tier1role2_talent4" class="role2tier1talent4_lbl"></span>
+                              <input type="hidden" name="attr_tier1role2_talent4" value="Placeholder 4" readonly>
                             </span>
 
                           </div>
@@ -524,7 +560,7 @@
                             </span>
 
                             <span class='select-new-arrow'>
-                              <select name="attr_tier1role3-trait1">
+                              <select name="attr_tier1role3-trait1"  class="role3tier1trait1_sel">
                                     <option value="def" selected="selected">Trait 1</option>
                                     <option value="brawn">Brawn</option>
                                     <option value="magic">Magic</option>
@@ -538,12 +574,13 @@
                             <span style="font-family: 'Pictos'">]</span>
 
                             <span>
-                                  <span name="attr_tier1role3_talent1" class="tier1role3talent1_lbl"></span>
-                                  <input type="hidden" name="attr_tier1role3_talent1" value="Placeholder 1" readonly>
+                                <input type="hidden" name="attr_tier1role3-trait1" class="role3tier1trait1_sel">
+                                <span name="attr_tier1role3_talent1" class="role3tier1talent1_lbl"></span>
+                                <input type="hidden" name="attr_tier1role3_talent1" value="Placeholder 1" readonly>
                             </span>
 
                             <span class='select-new-arrow'>
-                              <select name="attr_tier1role3-trait2">
+                              <select name="attr_tier1role3-trait2" class="role3tier1trait2_sel">
                                     <option value="def" selected="selected">Trait 2</option>
                                     <option value="brawn">Brawn</option>
                                     <option value="magic">Magic</option>
@@ -557,12 +594,13 @@
                             <span style="font-family: 'Pictos'">]</span>
 
                             <span>
-                                  <span name="attr_tier1role3_talent2" class="tier1role3talent2_lbl"></span>
-                                  <input type="hidden" name="attr_tier1role3_talent2" value="Placeholder 2" readonly>
+                              <input type="hidden" name="attr_tier1role3-trait2" class="role3tier1trait2_sel">
+                              <span name="attr_tier1role3_talent2" class="role3tier2talent2_lbl"></span>
+                              <input type="hidden" name="attr_tier1role3_talent2" value="Placeholder 2" readonly>
                             </span>
 
                             <span class='select-new-arrow'>
-                              <select name="attr_tier1role3-trait3">
+                              <select name="attr_tier1role3-trait3" class="role3tier1trait3_sel">
                                     <option value="def" selected="selected">Trait 3</option>
                                     <option value="brawn">Brawn</option>
                                     <option value="magic">Magic</option>
@@ -576,12 +614,13 @@
                             <span style="font-family: 'Pictos'">]</span>
 
                             <span>
-                                  <span name="attr_tier1role3_talent3" class="tier1role3talent3_lbl"></span>
-                                  <input type="hidden" name="attr_tier1role3_talent3" value="Placeholder 3" readonly>
+                              <input type="hidden" name="attr_tier1role3-trait3" class="role3tier1trait3_sel">
+                              <span name="attr_tier1role3_talent3" class="role3tier1talent3_lbl"></span>
+                              <input type="hidden" name="attr_tier1role3_talent3" value="Placeholder 3" readonly>
                             </span>
 
                             <span class='select-new-arrow'>
-                              <select name="attr_tier1role3-trait4">
+                              <select name="attr_tier1role3-trait4" class="role3tier1trait4_sel">
                                     <option value="def" selected="selected">Trait 4</option>
                                     <option value="brawn">Brawn</option>
                                     <option value="magic">Magic</option>
@@ -595,8 +634,9 @@
                             <span style="font-family: 'Pictos'">]</span>
 
                             <span>
-                                  <span name="attr_tier1role3_talent4" class="tier1role3talent4_lbl"></span>
-                                  <input type="hidden" name="attr_tier1role3_talent4" value="Placeholder 4" readonly>
+                              <input type="hidden" name="attr_tier1role3-trait4" class="role3tier1trait4_sel">
+                              <span name="attr_tier1role3_talent4" class="role3tier1talent4_lbl"></span>
+                              <input type="hidden" name="attr_tier1role3_talent4" value="Placeholder 4" readonly>
                             </span>
 
                           </div>
@@ -610,8 +650,8 @@
                           <div class='role1tier2grid'>
 
                             <span class='tier_coretalent'>
-                                  <span class='core_talent_lbl' name="attr_role1tier2_coretalent"></span>
-                                  <input type="hidden" name="attr_role1tier2_coretalent" value="Tier 2 Talent Placeholder" readonly>
+                                  <span class='core_talent_lbl' name="attr_coretalent_role1tier2"></span>
+                                  <input type="hidden" name="attr_coretalent_role1tier2" value="Tier 2 Talent Placeholder" readonly>
                             </span>
 
                             <span class='select-new-arrow'>
@@ -879,8 +919,8 @@
                           <div class='role1tier3grid'>
 
                             <span class='tier_coretalent'>
-                                  <span class='core_talent_lbl' name="attr_role1tier3_coretalent"></span>
-                                  <input type="hidden" name="attr_role1tier3_coretalent" value="Tier 3 Talent Placeholder" readonly>
+                                  <span class='core_talent_lbl' name="attr_coretalent_role1tier3"></span>
+                                  <input type="hidden" name="attr_coretalent_role1tier3" value="Tier 3 Talent Placeholder" readonly>
                             </span>
 
                             <span class='select-new-arrow'>
@@ -968,8 +1008,8 @@
                           <div class='role2tier3grid'>
 
                             <span class='tier_coretalent'>
-                                  <span class='core_talent_lbl' name="attr_role2tier3_coretalent"></span>
-                                  <input type="hidden" name="attr_role2tier3_coretalent" value="Tier 3 Talent Placeholder" readonly>
+                                  <span class='core_talent_lbl' name="attr_coretalent_role2tier3"></span>
+                                  <input type="hidden" name="attr_coretalent_role2tier3" value="Tier 3 Talent Placeholder" readonly>
                             </span>
 
                             <span class='select-new-arrow'>
@@ -1057,8 +1097,8 @@
                           <div class='role3tier3grid'>
 
                             <span class='tier_coretalent'>
-                                  <span class='core_talent_lbl' name="attr_role3tier3_coretalent"></span>
-                                  <input type="hidden" name="attr_role3tier3_coretalent" value="Tier 3 Talent Placeholder" readonly>
+                                  <span class='core_talent_lbl' name="attr_coretalent_role3tier3"></span>
+                                  <input type="hidden" name="attr_coretalent_role3tier3" value="Tier 3 Talent Placeholder" readonly>
                             </span>
 
                             <span class='select-new-arrow'>
@@ -1279,7 +1319,8 @@
                     <div class="domain-grid">
                         <span>
                             <div class='help-text'>Domains
-                            <span class='tooltip'>Splits points among Domains. Maximum allowed is 3.</span></div>
+                            <span class='tooltip'>Splits points among Domains. Maximum allowed is 3.</span>
+                            </div>
                         </span>
                         <span>Remaining: <span name='attr_domain_available_points'></span>
                             <input type="hidden" name="attr_domain_available_points" value='0' readonly>
@@ -1490,10 +1531,6 @@
     </div>
 </rolltemplate>
 
-<!--****************************TALENT DROPDOWNS************************************-->
-
-
-
 <!--*******************************SHEETWORKERS*************************************-->
 <script type="text/worker">
     /* ---------------------------- Page Toggle --------------------------------*/
@@ -1519,9 +1556,12 @@
         "tier3role1-trait1", "tier3role1-trait2", "tier3role1-trait3", "tier3role1-trait4"];
 
     const role1_talents = [
-        "role1tier1_coretalent","tier1role1_talent1", "tier1role1_talent2", "tier1role1_talent3", "tier1role1_talent4",
-        "role1tier2_coretalent","tier2role1_talent1", "tier2role1_talent2", "tier2role1_talent3", "tier2role1_talent4",
-        "role1tier3_coretalent","tier3role1_talent1", "tier3role1_talent2", "tier3role1_talent3", "tier3role1_talent4"];
+        "coretalent_role1tier1","tier1role1_talent1", "tier1role1_talent2", "tier1role1_talent3", "tier1role1_talent4",
+        "coretalent_role1tier2","tier2role1_talent1", "tier2role1_talent2", "tier2role1_talent3", "tier2role1_talent4",
+        "coretalent_role1tier3","tier3role1_talent1", "tier3role1_talent2", "tier3role1_talent3", "tier3role1_talent4"];
+
+    const role1_tooltips = [
+        "coretalent_role1tier1_tooltip","role1tier1talent1_ttip","role1tier1talent2_ttip","role1tier1talent3_ttip","role1tier1talent4_ttip"];
 
     const role2_traits = [
         "tier1role2-trait1", "tier1role2-trait2", "tier1role2-trait3", "tier1role2-trait4",
@@ -1531,7 +1571,7 @@
     const role2_talents = [
         "role2tier1_coretalent","tier1role2_talent1", "tier1role2_talent2", "tier1role2_talent3", "tier1role2_talent4",
         "role2tier2_coretalent","tier2role2_talent1", "tier2role2_talent2", "tier2role2_talent3", "tier2role2_talent4",
-        "role2tier3_coretalent","tier3role2_talent1", "tier3role2_talent2", "tier3role2_talent3", "tier3role2_talent4"];
+        "coretalent_role2tier3","tier3role2_talent1", "tier3role2_talent2", "tier3role2_talent3", "tier3role2_talent4"];
 
     const role3_traits = [
         "tier1role3-trait1", "tier1role3-trait2", "tier1role3-trait3", "tier1role3-trait4",
@@ -1541,7 +1581,7 @@
     const role3_talents = [
         "role3tier1_coretalent","tier1role3_talent1", "tier1role3_talent2", "tier1role3_talent3", "tier1role3_talent4",
         "role3tier2_coretalent","tier2role3_talent1", "tier2role3_talent2", "tier2role3_talent3", "tier2role3_talent4",
-        "role3tier3_coretalent","tier3role3_talent1", "tier3role3_talent2", "tier3role3_talent3", "tier3role3_talent4"];
+        "coretalent_role3tier3","tier3role3_talent1", "tier3role3_talent2", "tier3role3_talent3", "tier3role3_talent4"];
 
     const talent_swap_list = [
       "default", "blaster", "brute", "defender", "element",
@@ -1556,10 +1596,11 @@
         var selectedRole = eventInfo.newValue;
         var traits = getRoleTraits(role);
         var talents = getRoleTalents(role);
+        var tooltips = getRoleTooltips(role);
 
         resetTraits(traits);
         resetTalents(selectedRole, talents);
-
+        resetTooltips(selectedRole, tooltips);
       });
     });
 
@@ -1598,6 +1639,17 @@
       return talents;
     }
 
+    function getRoleTooltips(role){
+      var tooltips;
+      switch(true){
+              case role === "role1":  tooltips = role1_tooltips; break;
+              case role === "role2":  tooltips = role2_tooltips; break;
+              case role === "role3":  tooltips = role3_tooltips; break;
+          }
+
+      return tooltips;
+    }
+
     function resetTraits(traits){
       console.log("Resetting traits...");
 
@@ -1618,6 +1670,22 @@
         console.log("Writing onto: " + [talent]);
         console.log("Writing with: " + newTalents[i]);
         setAttrs({[talent]:newTalents[i]});
+        i++;
+      });
+    };
+
+    function resetTooltips(selectedRole, tooltips){
+      console.log("Resetting tooltips for " + selectedRole + "...");
+
+      //Retrieve the pool of tooltips based on the chosen role
+      var newTooltips = eval("tooltips_" + selectedRole);
+
+      //Write the values based on the chosen role
+      var i = 0;
+      tooltips.forEach(function(tooltip){
+        console.log("Writing onto: " + [tooltip]);
+        console.log("Writing with: " + tooltips[i]);
+        setAttrs({[tooltip]:newTooltips[i]});
         i++;
       });
     };
@@ -1762,6 +1830,43 @@
     "Fortify",            "Protection",         "Bolster",        "Deflect",          "Anticipation",
     "Force Sanctuary",    "Status Lock",        "Ego Fortress",   "Isolation",        "Hostile Territory",
     "Heart Guard",        "Antimagic Field",    "Chaff",          "Defense Field",    "Stasis Field"];
+
+/* ----------------------------------- Tooltip Swapping --------------------------------------*/
+
+const tooltips_blaster = [
+  "Blaster Tier 1 Core Talent",
+  "Blaster Tier 1 Talent 1",
+  "Blaster Tier 1 Talent 2",
+  "Blaster Tier 1 Talent 3",
+  "Blaster Tier 1 Talent 4",
+  "Blaster Tier 2 Core Talent",
+  "Blaster Tier 2 Talent 1",
+  "Blaster Tier 2 Talent 2",
+  "Blaster Tier 2 Talent 3",
+  "Blaster Tier 2 Talent 4",
+  "Blaster Tier 3 Core Talent",
+  "Blaster Tier 3 Talent 1",
+  "Blaster Tier 3 Talent 2",
+  "Blaster Tier 3 Talent 3",
+  "Blaster Tier 3 Talent 4"];
+
+  const tooltips_brute = [
+    "Brute Tier 1 Core Talent",
+    "Brute Tier 1 Talent 1",
+    "Brute Tier 1 Talent 2",
+    "Brute Tier 1 Talent 3",
+    "Brute Tier 1 Talent 4",
+    "Brute Tier 2 Core Talent",
+    "Brute Tier 2 Talent 1",
+    "Brute Tier 2 Talent 2",
+    "Brute Tier 2 Talent 3",
+    "Brute Tier 2 Talent 4",
+    "Brute Tier 3 Core Talent",
+    "Brute Tier 3 Talent 1",
+    "Brute Tier 3 Talent 2",
+    "Brute Tier 3 Talent 3",
+    "Brute Tier 3 Talent 4"];
+
 /* ------------------------------------- Logic Variables ------------------------------------*/
 
     const attributes = [

@@ -15,7 +15,8 @@
 
 .sheet-help-text,
 .sheet-help-text-tier,
-.sheet-help-text-attb{
+.sheet-help-text-attb,
+.sheet-help-text-talent{
   position: relative;
   display: inline-block;
 }
@@ -59,10 +60,12 @@
   -webkit-text-fill-color: white;
   -webkit-text-stroke: 0px;
 }
+
 /* Show the tooltip text when you mouse over the tooltip container */
 .sheet-help-text:hover .sheet-tooltip,
 .sheet-help-text-tier:hover .sheet-tooltip,
-.sheet-help-text-attb:hover .sheet-tooltip {
+.sheet-help-text-attb:hover .sheet-tooltip,
+.sheet-help-text-talent:hover .sheet-tooltip {
   visibility: visible;
 }
 
@@ -660,24 +663,15 @@ input.sheet-radio-ability[value="ability"]:checked ~ button.sheet-btn-attr{
 
 /*------------------------ Trait Dropdown Formats ----------------------------*/
 
-.sheet-role1 select,
-.sheet-role1tier1 select,
-.sheet-role1tier2 select,
-.sheet-role1tier3 select{
+select[class^='sheet-role1']{
   background-image: linear-gradient(to bottom right, #ddc5c8, #714247) !important;
 }
 
-.sheet-role2 select,
-.sheet-role2tier1 select,
-.sheet-role2tier2 select,
-.sheet-role2tier3 select{
+select[class^='sheet-role2']{
   background-image: linear-gradient(to bottom right, #c9e0ee, #2b6588) !important;
 }
 
-.sheet-role3 select,
-.sheet-role3tier1 select,
-.sheet-role3tier2 select,
-.sheet-role3tier3 select{
+select[class^='sheet-role3']{
   background-image: linear-gradient(to bottom right, #aec6a4, #516E45) !important;
 }
 
@@ -696,7 +690,32 @@ input.sheet-radio-ability[value="ability"]:checked ~ button.sheet-btn-attr{
   height: auto;
 }
 
-/*----------------- Trait Talent Formats --------------------*/
+/*----------------- Talent Formats --------------------*/
+
+/* Tooltip container */
+.sheet-help-text-talent {
+  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.sheet-help-text-talent .sheet-tooltip {
+    visibility: hidden;
+    width: 200px;
+    margin-left: -160px;
+    margin-top: -100px;
+    top: 100%;
+    left: 50%;
+    background-color: rgba(63, 29, 94, 0.9);
+    border: 1px solid black;
+    color: #fff;
+    text-align: center;
+    padding: 1px 0;
+    border-radius: 6px;
+    position: absolute;
+    font-size: 14px;
+    font-weight: bold;
+    z-index: 1000;
+}
 
 .sheet-tier_coretalent{
   grid-column: span 3;
@@ -705,40 +724,37 @@ input.sheet-radio-ability[value="ability"]:checked ~ button.sheet-btn-attr{
   font-weight: bold;
 }
 
-.sheet-core_talent1_lbl,
-.sheet-core_talent2_lbl,
-.sheet-core_talent3_lbl{
+.sheet-help-text-talent:hover {
+  background-color: yellow;
+  cursor: help;
+  z-index: 0;
+}
+
+div.sheet-rolegrid span[class^='sheet-core_talent']{
 
 }
 
-.sheet-tier1role1talent1_lbl,
-.sheet-tier1role1talent2_lbl,
-.sheet-tier1role1talent3_lbl,
-.sheet-tier1role1talent4_lbl,
-.sheet-tier1role2talent1_lbl,
-.sheet-tier1role2talent2_lbl,
-.sheet-tier1role2talent3_lbl,
-.sheet-tier1role2talent4_lbl
-.sheet-tier1role3talent1_lbl,
-.sheet-tier1role3talent2_lbl,
-.sheet-tier1role3talent3_lbl,
-.sheet-tier1role3talent4_lbl{
+div.sheet-rolegrid span[class^='sheet-role']{
   color: black;
+  font-size: 10px;
 }
 
-.sheet-tier1role1trait1_sel:not([value="def"]) + .sheet-tier1role1talent1_lbl,
-.sheet-tier1role1trait2_sel:not([value="def"]) + .sheet-tier1role1talent2_lbl,
-.sheet-tier1role1trait3_sel:not([value="def"]) + .sheet-tier1role1talent3_lbl,
-.sheet-tier1role1trait4_sel:not([value="def"]) + .sheet-tier1role1talent4_lbl,
-.sheet-tier2role1trait1_sel:not([value="def"]) + .sheet-tier2role1talent1_lbl,
-.sheet-tier2role1trait2_sel:not([value="def"]) + .sheet-tier2role1talent2_lbl,
-.sheet-tier2role1trait3_sel:not([value="def"]) + .sheet-tier2role1talent3_lbl,
-.sheet-tier2role1trait4_sel:not([value="def"]) + .sheet-tier2role1talent4_lbl,
-.sheet-tier3role1trait1_sel:not([value="def"]) + .sheet-tier3role1talent1_lbl,
-.sheet-tier3role1trait2_sel:not([value="def"]) + .sheet-tier3role1talent2_lbl,
-.sheet-tier3role1trait3_sel:not([value="def"]) + .sheet-tier3role1talent3_lbl,
-.sheet-tier3role1trait4_sel:not([value="def"]) + .sheet-tier3role1talent4_lbl{
-  color: maroon;
+input[class^='sheet-role1']:not([value="def"]) + span[class^='sheet-role']{
+  color: red;
+  font-weight: bolder;
+  font-size: 10px;
+}
+
+input[class^='sheet-role2']:not([value="def"]) + span[class^='sheet-role']{
+  color: blue;
+  font-weight: bolder;
+  font-size: 10px;
+}
+
+input[class^='sheet-role3']:not([value="def"]) + span[class^='sheet-role']{
+  color: green;
+  font-weight: bolder;
+  font-size: 10px;
 }
 
 /*----------------- Trait Grid Formats --------------------*/
@@ -795,8 +811,6 @@ input.sheet-radio-ability[value="ability"]:checked ~ button.sheet-btn-attr{
 .sheet-tier1split{grid-area: tier1split;}
 .sheet-tier2split{grid-area: tier2split;}
 .sheet-tier3split{grid-area: tier3split;}
-
-
 
 /* Tier Grid */
 
