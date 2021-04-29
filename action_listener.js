@@ -1,7 +1,13 @@
 on("chat:message", function(msg) {
+
+    if('!w'){
+        var link = msg.content.split('--')[1];
+
+        sendChat('Helper Bot',"/w " + msg.who + " " + link + "\" style=\"color:blue\")");
+    }
     //Read the chat message for API commands and execute based on the command given
     if(msg.type == "api"){
-        
+
         //Steady Action - Player recharges AP
         if (msg.content.includes("!steady")) {
             var playerChar = findObjs({ type: 'character', name: msg.who })[0];
@@ -24,7 +30,7 @@ on("chat:message", function(msg) {
 
             } else { sendChat(msg.who, "Action Failed because <b>I should be sending chat messages as my character!</b>"); }
         }
-        
+
         parseOpts = function(content, hasValue){
             return content.replace(/\s+$/g, "") //Remove spaces
                 .split(/\s+--/) //Split string, turn each '--' into a section
@@ -39,18 +45,18 @@ on("chat:message", function(msg) {
                     return m;
                 }, {});
         }
-        
+
         createBaseAttackRoll = function(diceMod){
             if(diceMod < 0){
                 return (Math.abs(diceMod) + 3) + "d20>8kl3";
             } else{
                 return (diceMod + 3) + "d20>8";
-            }   
+            }
         }
-        
+
         createBaseStatRoll = function(diceMod, toggle){
             var base_roll = (Math.abs(diceMod) + 3) + "d20";
-    
+
             if(toggle == "attack"){
                 if(diceMod < 0){
                     base_roll = base_roll.concat(">8kl3");
@@ -64,7 +70,7 @@ on("chat:message", function(msg) {
                     base_roll = base_roll.concat("k3");
                 }
             }
-            
+
             return base_roll;
         }
 
@@ -74,16 +80,16 @@ on("chat:message", function(msg) {
             const hasValue = ["wpnPower", "tier", "diceMod", "powerMod"];
 
             var args = parseOpts(msg.content.substring(7),hasValue);
-            
+
             var base_attack = createBaseAttackRoll(parseInt(args.diceMod));
-            
+
             sendChat(msg.who, '&{template:attack} {{name=Attack Roll}} {{base='+base_attack+'}} {{diceMod='+args.diceMod+'}} {{wpnPower='+args.wpnPower+'}} {{powerMod='+args.powerMod+'}} {{levelTier='+args.tier+'}} {{result=[['+base_attack+' * ('+args.wpnPower+' + ('+args.powerMod+' * '+args.tier+'))]]}}');
 
         }
-        
+
         //Stat Action
         if(msg.content.includes("!statroll")){
-            
+
             const hasValue = ["statName", "statValue", "toggle", "tier", "diceMod", "powerMod"];
 
             var args = parseOpts(msg.content.substring(9), hasValue);
@@ -109,4 +115,3 @@ on("chat:message", function(msg) {
         }
     }
 });
-
