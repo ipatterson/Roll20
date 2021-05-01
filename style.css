@@ -760,19 +760,22 @@ input.sheet-enable_tier3_css[value='0'] ~ div.sheet-role3tier3{
 
 /* Update core talent colors when conditions are met  */
 input.sheet-role1_sel:not([value="def"]) + span.sheet-core_talent1_lbl,
-input.sheet-enable_tier2_css[value='1'] ~ div.sheet-role1tier2 span[name='attr_coretalent_role1tier2']{
+input.sheet-enable_tier2_css[value='1'] ~ div.sheet-role1tier2 span[name='attr_coretalent_role1tier2'],
+input.sheet-enable_tier3_css[value='1'] ~ div.sheet-role1tier3 span[name='attr_coretalent_role1tier3']{
   color: red;
   font-weight: bolder;
 }
 
 input.sheet-role2_sel:not([value="def"]) + span.sheet-core_talent2_lbl,
-input.sheet-enable_tier2_css[value='1'] ~ div.sheet-role2tier2 span[name='attr_coretalent_role2tier2']{
+input.sheet-enable_tier2_css[value='1'] ~ div.sheet-role2tier2 span[name='attr_coretalent_role2tier2'],
+input.sheet-enable_tier3_css[value='1'] ~ div.sheet-role2tier3 span[name='attr_coretalent_role2tier3']{
   color: blue;
   font-weight: bolder;
 }
 
 input.sheet-role3_sel:not([value="def"]) + span.sheet-core_talent3_lbl,
-input.sheet-enable_tier2_css[value='1'] ~ div.sheet-role3tier2 span[name='attr_coretalent_role3tier2']{
+input.sheet-enable_tier2_css[value='1'] ~ div.sheet-role3tier2 span[name='attr_coretalent_role3tier2'],
+input.sheet-enable_tier3_css[value='1'] ~ div.sheet-role3tier3 span[name='attr_coretalent_role3tier3']{
   color: green;
   font-weight: bolder;
 }
