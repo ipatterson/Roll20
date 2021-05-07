@@ -294,8 +294,9 @@
                                     <option value="warden">Warden</option>
                                 </select>
                             </span>
-                            <button type="roll" name="roll_role1_desc" class="role1desc" value="!w --http://journal.roll20.net/handout/-MZA40aocSpmutToWX9P">
-                                Test Button
+                            <input type="hidden" name="role1_desc" value="">
+                            <button type="roll" name="roll_role1_desc" class="role1desc" value="!w --@{role1_desc}">
+                                Description
                             </button>
                         </span>
 
@@ -322,8 +323,9 @@
                                     <option value="warden">Warden</option>
                                 </select>
                             </span>
-                            <button type="roll" name="roll_role2_desc" class="role2desc" value="!w --http://journal.roll20.net/handout/-MZA40aocSpmutToWX9P">
-                                Test Button
+                            <input type="hidden" name="role2_desc" value="">
+                            <button type="roll" name="roll_role2_desc" class="role2desc" value="!w --@{role2_desc}">
+                                Description
                             </button>
                         </span>
 
@@ -350,8 +352,9 @@
                                     <option value="warden">Warden</option>
                                 </select>
                             </span>
-                            <button type="roll" name="roll_role3_desc" class="role3desc" value="!w --http://journal.roll20.net/handout/-MZA40aocSpmutToWX9P">
-                                Test Button
+                            <input type="hidden" name="role3_desc" value="">
+                            <button type="roll" name="roll_role3_desc" class="role3desc" value="!w --@{role3_desc}">
+                                Description
                             </button>
                         </span>
 
@@ -1876,7 +1879,7 @@
         resetTraits(traits);
         resetTalents(selectedRole, talents);
         resetTooltips(selectedRole, tooltips);
-        //resetCounter(selectedRole);
+        setDescriptionButton(selectedRole, role);
 
         console.log("=====================================================================");
       });
@@ -1992,12 +1995,13 @@
       });
     };
 
-    function resetCounter(selectedRole){
-      console.log("Resetting counter...");
+    function setDescriptionButton(selectedRole, roleNum){
+      console.log("Setting Desecription Button...");
 
-      var counter = selectedRole + "_trait_counter";
-      attribute_totals[counter] = 0;
-      setAttrs({[counter]:0});
+      var descriptionLink = role_descriptions[selectedRole];
+      var descriptionButton = roleNum+"_desc";
+
+      setAttrs({[descriptionButton]:descriptionLink});
     }
 
     function checkTierCounts(){
@@ -2044,6 +2048,28 @@
             });
         });
     });
+
+/* ------------------------------------- Description Swapping ------------------------------------*/
+
+const role_descriptions = {
+  "def":        "http://journal.roll20.net/handout/-M_3skcN4nbuP1fzIw7k",
+  "blaster":    "http://journal.roll20.net/handout/-MZz9-4ppn6ACJL9RmTg",
+  "brute":      "http://journal.roll20.net/handout/-MZz9VShCz_LtWTIw2ct",
+  "defender":   "http://journal.roll20.net/handout/-MZACbWkJKuvfv2fkTnz",
+  "element":    "http://journal.roll20.net/handout/-M_3XY9aPg8UMUS8JWv7",
+  "healer":     "http://journal.roll20.net/handout/-M_3hF-LsIeAf2D8ZK23",
+  "hex":        "http://journal.roll20.net/handout/-M_3skcN4nbuP1fzIw7k",
+  "kata":       "http://journal.roll20.net/handout/-M_3skcN4nbuP1fzIw7k",
+  "marksman":   "http://journal.roll20.net/handout/-M_3skcN4nbuP1fzIw7k",
+  "proxy":      "http://journal.roll20.net/handout/-M_3skcN4nbuP1fzIw7k",
+  "stealth":    "http://journal.roll20.net/handout/-M_3skcN4nbuP1fzIw7k",
+  "striker":    "http://journal.roll20.net/handout/-M_3skcN4nbuP1fzIw7k",
+  "support":    "http://journal.roll20.net/handout/-M_3skcN4nbuP1fzIw7k",
+  "tactician":  "http://journal.roll20.net/handout/-M_3skcN4nbuP1fzIw7k",
+  "venom":      "http://journal.roll20.net/handout/-M_3skcN4nbuP1fzIw7k",
+  "veteran":    "http://journal.roll20.net/handout/-M_3skcN4nbuP1fzIw7k",
+  "warden":     "http://journal.roll20.net/handout/-M_3skcN4nbuP1fzIw7k",
+}
 
 /* ------------------------------------- Talent Swapping ------------------------------------*/
 

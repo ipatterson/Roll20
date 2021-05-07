@@ -678,6 +678,12 @@ button.sheet-role3desc{
   background-image: linear-gradient(to bottom right, #aec6a4, #516E45) !important;
 }
 
+button[class^='sheet-role']
+{
+  width: 135px;
+  font-weight: bold;
+}
+
 .sheet-role1tier1 select,
 .sheet-role1tier2 select,
 .sheet-role1tier3 select,
