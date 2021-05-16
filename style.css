@@ -47,7 +47,7 @@
 .sheet-help-text-tier .sheet-tooltip,
 .sheet-help-text-attb .sheet-tooltip {
   visibility: hidden;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(50, 50, 50, 0.7);
   border: 1px solid black;
   color: #fff;
   text-align: center;

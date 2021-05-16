@@ -609,8 +609,8 @@
                                 <span class='core_talent3_lbl' name="attr_coretalent_role3tier1"></span>
                                 <input type="hidden" name="attr_coretalent_role3tier1" value="Tier 3 Talent Placeholder" readonly>
 
-                                <span class='tooltip' name='attr_coretalent_role2tier1_tooltip'></span>
-                                <input type='hidden' name='attr_coretalent_role2tier1_tooltip' value='n/a' readonly>
+                                <span class='tooltip' name='attr_coretalent_role3tier1_tooltip'></span>
+                                <input type='hidden' name='attr_coretalent_role3tier1_tooltip' value='n/a' readonly>
                               </div>
                             </span>
 
@@ -2716,8 +2716,6 @@ const tooltips_warden = [
 
     var minimumTraitVal = 2;
 
-    console.log("Brawn: " + mainAttrs["brawn"]);
-
     //Subtract from the old attribute, but don't go lower than the minimum
     switch(true){
       case "def":   break;
@@ -2970,7 +2968,7 @@ const tooltips_warden = [
   };
 
   function calculatePointTotals(){
-      attribute_totals["hp_max"] = attribute_totals["armorhp_mod"] * attribute_totals["vigor"];
+      attribute_totals["hp_max"] = (attribute_totals["vigor"] + attribute_totals["tier_mod"]) * attribute_totals["armorhp_mod"];
       attribute_totals["mp_max"] = attribute_totals["essence"] * 2;
       attribute_totals["ap_max"] = (attribute_totals["armorap_mod"] * attribute_totals["tier_mod"]) + attribute_totals["focus"];
 
