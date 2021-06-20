@@ -1058,7 +1058,7 @@ select.sheet-select-wgt{ width: 120px;}
 /* Story Grid */
 .sheet-story-grid{
     display: grid;
-    grid-template-columns: auto 100px 350px auto;
+    grid-template-columns: auto 120px 350px auto;
     grid-row-gap: 25px;
     grid-column-gap: 5px;
     grid-template-areas:
