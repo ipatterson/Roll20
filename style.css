@@ -1055,6 +1055,27 @@ select.sheet-select-wgt{ width: 120px;}
     background: rgba(150,150,150,0.6);
 }
 
+/* Story Grid */
+.sheet-story-grid{
+    display: grid;
+    grid-template-columns: auto 100px 350px auto;
+    grid-row-gap: 25px;
+    grid-column-gap: 5px;
+    grid-template-areas:
+    ". storyTag storyDesc .";
+    padding-top: 10px;
+}
+
+.sheet-storyTagBlock{
+  grid-area: storyTag;
+  font-size: 18px;
+  font-weight: bold;
+}
+.sheet-storyDescBlock{grid-area: storyDesc;}
+
+input.sheet-input-storyDesc {
+  width: 400px;
+}
 
 /* ----------- Tab Toggling CSS ----------------*/
 
@@ -1063,7 +1084,8 @@ select.sheet-select-wgt{ width: 120px;}
 .sheet-weaponSheet,
 .sheet-armorSheet,
 .sheet-inventorySheet,
-.sheet-skillSheet {
+.sheet-skillSheet,
+.sheet-storySheet {
     display: none;
 }
 
@@ -1072,7 +1094,8 @@ select.sheet-select-wgt{ width: 120px;}
 .sheet-tabstoggle[value="weaponSheet"] ~ div.sheet-weaponSheet,
 .sheet-tabstoggle[value="armorSheet"] ~ div.sheet-armorSheet,
 .sheet-tabstoggle[value="inventorySheet"] ~ div.sheet-inventorySheet,
-.sheet-tabstoggle[value="skillSheet"] ~ div.sheet-skillSheet {
+.sheet-tabstoggle[value="skillSheet"] ~ div.sheet-skillSheet,
+.sheet-tabstoggle[value="storySheet"] ~ div.sheet-storySheet {
     display: block;
 }
 
