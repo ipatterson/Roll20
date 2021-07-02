@@ -3,7 +3,7 @@ on("chat:message", function(msg) {
     if('!w'){
         var link = msg.content.split('--')[1];
 
-        sendChat('Helper Bot',"/w " + msg.who + " " + link + "\" style=\"color:blue\")");
+        sendChat('Helper Bot',"/w " + msg.who + " [Role Description](" + link + "\" style=\"color:blue\")");
     }
     //Read the chat message for API commands and execute based on the command given
     if(msg.type == "api"){
