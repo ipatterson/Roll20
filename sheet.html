@@ -228,29 +228,29 @@
                       <li>Debug: <br>
                           <table style="width: 50%">
                               <tr>
-                                <td>Brawn: <span name="attr_debug_brawn"></span><input type="hidden" value="0" name="attr_debug_brawn" readonly></td>
-                                <td>Magic: <span name="attr_debug_magic"></span><input type="hidden" value="0" name="attr_debug_magic" readonly></td>
-                                <td>Mastery: <span name="attr_debug_mastery"></span><input type="hidden" value="0" name="attr_debug_mastery" readonly></td>
+                                <td>Brawn: <span name="attr_recorded_brawn"></span><input type="hidden" value="0" name="attr_recorded_brawn" readonly></td>
+                                <td>Magic: <span name="attr_recorded_magic"></span><input type="hidden" value="0" name="attr_recorded_magic" readonly></td>
+                                <td>Mastery: <span name="attr_recorded_mastery"></span><input type="hidden" value="0" name="attr_recorded_mastery" readonly></td>
                               </tr>
                               <tr>
-                                <td>Impact: <span name="attr_debug_impact"></span><input type="hidden" value="0" name="attr_debug_impact" readonly></td>
-                                <td>Resist: <span name="attr_debug_resist"></span><input type="hidden" value="0" name="attr_debug_resist" readonly></td>
-                                <td>Energy: <span name="attr_debug_energy"></span><input type="hidden" value="0" name="attr_debug_energy" readonly></td>
+                                <td>Impact: <span name="attr_recorded_impact"></span><input type="hidden" value="0" name="attr_recorded_impact" readonly></td>
+                                <td>Resist: <span name="attr_recorded_resist"></span><input type="hidden" value="0" name="attr_recorded_resist" readonly></td>
+                                <td>Energy: <span name="attr_recorded_energy"></span><input type="hidden" value="0" name="attr_recorded_energy" readonly></td>
                               </tr>
                               <tr>
-                                <td>Might: <span name="attr_debug_might"></span><input type="hidden" value="0" name="attr_debug_might" readonly></td>
-                                <td>Body: <span name="attr_debug_body"></span><input type="hidden" value="0" name="attr_debug_body" readonly></td>
-                                <td>Vigor: <span name="attr_debug_vigor"></span><input type="hidden" value="0" name="attr_debug_vigor" readonly></td>
+                                <td>Might: <span name="attr_recorded_might"></span><input type="hidden" value="0" name="attr_recorded_might" readonly></td>
+                                <td>Body: <span name="attr_recorded_body"></span><input type="hidden" value="0" name="attr_recorded_body" readonly></td>
+                                <td>Vigor: <span name="attr_recorded_vigor"></span><input type="hidden" value="0" name="attr_recorded_vigor" readonly></td>
                               </tr>
                               <tr>
-                                <td>Will: <span name="attr_debug_will"></span><input type="hidden" value="0" name="attr_debug_will" readonly></td>
-                                <td>Ego: <span name="attr_debug_ego"></span><input type="hidden" value="0" name="attr_debug_ego" readonly></td>
-                                <td>Essence: <span name="attr_debug_essence"></span><input type="hidden" value="0" name="attr_debug_essence" readonly></td>
+                                <td>Will: <span name="attr_recorded_will"></span><input type="hidden" value="0" name="attr_recorded_will" readonly></td>
+                                <td>Ego: <span name="attr_recorded_ego"></span><input type="hidden" value="0" name="attr_recorded_ego" readonly></td>
+                                <td>Essence: <span name="attr_recorded_essence"></span><input type="hidden" value="0" name="attr_recorded_essence" readonly></td>
                               </tr>
                               <tr>
-                                <td>Technique: <span name="attr_debug_tech"></span><input type="hidden" value="0" name="attr_debug_tech" readonly></td>
-                                <td>Instinct: <span name="attr_debug_instinct"></span><input type="hidden" value="0" name="attr_debug_instinct" readonly></td>
-                                <td>Focus: <span name="attr_debug_focus"></span><input type="hidden" value="0" name="attr_debug_focus" readonly></td>
+                                <td>Technique: <span name="attr_recorded_tech"></span><input type="hidden" value="0" name="attr_recorded_tech" readonly></td>
+                                <td>Instinct: <span name="attr_recorded_instinct"></span><input type="hidden" value="0" name="attr_recorded_instinct" readonly></td>
+                                <td>Focus: <span name="attr_recorded_focus"></span><input type="hidden" value="0" name="attr_recorded_focus" readonly></td>
                               </tr>
                             </table>
                     </ul>
@@ -1932,7 +1932,7 @@
       Capture all values into memory on page load. Brute Force calculations in UpdateAttributes
     */
     const allTraits = role1_traits.concat(role2_traits, role3_traits, "start-stat1", "start-stat2");
-    const mainAttrs = {"brawn": 2, "magic": 2, "mastery": 2, "impact": 2, "resist": 2, "energy": 2};
+    //const mainAttrs = {"brawn": 2, "magic": 2, "mastery": 2, "impact": 2, "resist": 2, "energy": 2};
 
     //Logic Variables
     var selectedRole_traitCheck = 'def';
@@ -1964,37 +1964,43 @@
     role_traits.forEach(trait => {
       on('change:'+[trait], function(eventInfo){
 
-        //Debug Things: Get Trait and Tier Number
-        var traitNum = trait[trait.length-1];
-        var tierNum = trait.charAt(4);
+        //Perform singular leveling logic
+        if(eventInfo.sourceType == "player"){
 
-        console.log("==== Role Change Detected on Trait " + traitNum + ", Tier " + tierNum + " ====");
+          //Debug Things: Get Trait and Tier Number
+          var traitNum = trait[trait.length-1];
+          var tierNum = trait.charAt(4);
 
-        //Grab Old and New values
-        var oldTrait = eventInfo.previousValue;
-        var newTrait = eventInfo.newValue;
+          console.log("==== Role Change Detected on Trait " + traitNum + ", Tier " + tierNum + " ====");
 
-        console.log("Old Trait: " + oldTrait + " | New Trait: " + newTrait);
+          //Grab Old and New values
+          var oldTrait = eventInfo.previousValue;
+          var newTrait = eventInfo.newValue;
 
-        //Update the selected tier count
-        var tierCounter = trait.substring(0, 5) + "_trait_counter";
+          if(oldTrait != "def"){
 
-        if(oldTrait == "def"){
-          console.log("Raise Counter");
-          attribute_totals[tierCounter] += 1;
-        }
+          }
 
-        if (newTrait == "def" && attribute_totals[tierCounter] > 0){
-          console.log("Lower Counter");
-          attribute_totals[tierCounter] -= 1;
-        }
+          console.log("Old Trait: " + oldTrait + " | New Trait: " + newTrait);
 
-        checkTierCounts(); //Evaluate count to determine access to next Tier
+          //Update the selected tier count
+          var tierCounter = trait.substring(0, 5) + "_trait_counter";
 
-        updateLevel(oldTrait, newTrait);
-        updateAttributes(oldTrait, newTrait);
+          if(oldTrait == "def"){
+            console.log("Raise Counter");
+            attribute_totals[tierCounter] += 1;
+          }
 
-        console.log("=====================================================================");
+          if (newTrait == "def" && attribute_totals[tierCounter] > 0){
+            console.log("Lower Counter");
+            attribute_totals[tierCounter] -= 1;
+          }
+
+          checkTierCounts(); //Evaluate count to determine access to next Tier
+
+          updateLevel();
+          updateAttributes(oldTrait, newTrait);
+        };
       });
     });
 
@@ -2034,9 +2040,93 @@
     function resetTraits(traits){
       console.log("Resetting traits...");
 
+      var traitsRecorded = 0;
+      var allTraitsRecorded = 12;
+
       traits.forEach(function(trait){
-        setAttrs({[trait]:'def'});
+
+        var attrDict = {"brawn": 0, "magic": 0, "mastery": 0, "impact": 0, "resist": 0, "energy": 0};
+        //Iterate through each trait and record what was selected
+        getAttrs([trait], function(values){
+          var traitValue = values[trait];
+
+          if(traitValue != 'def'){ //Record the levels and attributes needed to be removed
+
+            //Demote from the tier total
+            var tierCounter = trait.substring(0, 5) + "_trait_counter";
+            attribute_totals[tierCounter]--;
+
+            switch(traitValue){
+              case "brawn":   attribute_totals["brawn"]--;    break;
+              case "magic":   attribute_totals["magic"]--;    break;
+              case "mastery": attribute_totals["mastery"]--;  break;
+              case "impact":  attribute_totals["impact"]--;   break;
+              case "resist":  attribute_totals["resist"]--;   break;
+              case "energy":  attribute_totals["energy"]--;   break;
+            };
+
+            setAttrs({[trait]:'def'});
+
+          };
+
+          traitsRecorded++;
+
+          //Forced Sync. Don't do anything else until all traits are recorded.
+          if(traitsRecorded == allTraitsRecorded){
+            console.log("#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=")
+            console.log("Attribute Totals: ")
+            console.log("Brawn "    + attribute_totals["brawn"]);
+            console.log("Magic "    + attribute_totals["magic"]);
+            console.log("Mastery "  + attribute_totals["mastery"]);
+            console.log("Impact "   + attribute_totals["impact"]);
+            console.log("Resist "   + attribute_totals["resist"]);
+            console.log("Energy "   + attribute_totals["energy"]);
+
+            console.log("Attribute Dictionary Before Change");
+            console.log(attrDict);
+
+            attrDict["brawn"] = attribute_totals["brawn"];
+            attrDict["magic"] = attribute_totals["magic"];
+            attrDict["mastery"] = attribute_totals["mastery"];
+            attrDict["impact"] = attribute_totals["impact"];
+            attrDict["resist"] = attribute_totals["resist"];
+            attrDict["energy"] = attribute_totals["energy"];
+
+            /*
+                //Logic cleaning. Code in place to help scrub bugged code. Comment out later
+                allTraits.forEach(function(trait){
+                  getAttrs([trait], function(values){
+                    switch(values[trait]){
+                      case "def":     break;
+                      case "brawn":   mainAttrs["brawn"]++;    break;
+                      case "magic":   mainAttrs["magic"]++;    break;
+                      case "mastery": mainAttrs["mastery"]++;  break;
+                      case "impact":  mainAttrs["impact"]++;   break;
+                      case "resist":  mainAttrs["resist"]++;   break;
+                      case "energy":  mainAttrs["energy"]++;   break;
+                    };
+                  });
+                });
+            */
+
+            recordAttributesToSheet(attrDict);
+            checkTierCounts();
+            updateLevel();
+            updateOtherAttributes();
+            calculatePointTotals();
+            calculateWeaponBonuses();
+            calculateArmorBonuses();
+            updateAllAttributeTotals();
+
+            console.log("#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=")
+
+          }
+
+
+        });
+
       });
+
     };
 
     function resetTalents(selectedRole, talents){
@@ -2268,7 +2358,6 @@ const tooltips_def = [
   "Talent 3 Placeholder",
   "Talent 4 Placeholder"
 ];
-
 const tooltips_blaster = [
     "3AP Action [Core]: Fire a basic spell bolt that can be treated as a weapon.",
     "2AP Action: Fire a weaker spell bolt that can stagger the enemy.",
@@ -2286,7 +2375,6 @@ const tooltips_blaster = [
     "5AP Rection: Uses a spell attack to deflect a melee or projectile attack.",
     "Passive: Allows paying of MP Attack/Support spells with AP.",
 ];
-
 const tooltips_brute = [
     "4AP Action. [Core] A hard, inaccurate weapon attack.",
     "6AP Action. Weighty attack that saps AP.",
@@ -2304,7 +2392,6 @@ const tooltips_brute = [
     "[TBD]",
     "[TBD]",
 ];
-
 const tooltips_defender = [
     "2AP Reaction. [Core] Intercepts an attack for an ally.",
     "1AP Rote (Intervene). Increases damage mitigation.",
@@ -2322,7 +2409,6 @@ const tooltips_defender = [
     "[TBD]",
     "[TBD]",
 ];
-
 const tooltips_element = [
     "[Core] Obtain an Element rote that changes the element of Attacks.",
     "3AP Reaction. Reduce threat from an element you know.",
@@ -2340,7 +2426,6 @@ const tooltips_element = [
     "Advance (Shift). Using an shift that matches an attacks element adds power.",
     "Passive. Effects that would hinder the use of Rotes do not apply to Shift Rotes.",
 ];
-
 const tooltips_healer = [
     "1MP Action. [Core] Casts a strong heal on a single target. Applies Heal Link.",
     "3AP Action. Cures conditions on an area of allies.",
@@ -2358,7 +2443,6 @@ const tooltips_healer = [
     "Passive. With heal link, healing spells received spread healing to other linked allies.",
     "4AP Reaction. When spending MP, apply Regenerate and Heal Link to a nearby ally.",
 ];
-
 const tooltips_hex = [
     "5AP Action. [Core] Inflicts a -1D penalty to a target.",
     "5AP Action. Inflicts Vulnerable on a target, increasing damage taken.",
@@ -2376,7 +2460,6 @@ const tooltips_hex = [
     "8AP Action. Spell attack that adds dice per condition.",
     "[tbd] Action. Cuts target off from healing. ",
 ];
-
 const tooltips_kata = [
     "Rote (Action). [Core] Reduces cost of linked Action by 1AP.",
     "Rote (Reaction). Reduces cost of linked Reaction by 1AP.",
@@ -2394,7 +2477,6 @@ const tooltips_kata = [
     "Passive. Gain +1D if using AP Charge to pay for an Action.",
     "Passive Gain Inspiration from Rest or Centering Breath.",
 ];
-
 const tooltips_marksman = [
     "3AP Rote (Ranged). [Core] Delay an action to increase accuracy and damage.",
     "3AP Action. Ranged attack that inflicts Impede.",
@@ -2412,7 +2494,6 @@ const tooltips_marksman = [
     "[TBD]",
     "[TBD]",
 ];
-
 const tooltips_proxy = [
     "1MP Action. [Core] Summon a construct to attack independently.",
     "Advance. Proxies can move 1 zone on their turn.",
@@ -2430,7 +2511,6 @@ const tooltips_proxy = [
     "Passive. Destroyed proxies give AP to summoner, and proxy can gain AP from summoner's AP Charge.",
     "Advance. Gives proxies the option to affect a zone with abilities.",
 ];
-
 const tooltips_stealth = [
     "2AP Action [Core] Hides, preventing direct targeting.",
     "Rote (Move). Movement does not provoke reactions or traps.",
@@ -2448,7 +2528,6 @@ const tooltips_stealth = [
     "[TBD]",
     "[TBD]",
 ];
-
 const tooltips_striker = [
     "4AP Action. [Core] A heightened weapon attack. ",
     "2AP Reaction. Block melee damage with Body or Instinct.",
@@ -2466,7 +2545,6 @@ const tooltips_striker = [
     "Advance for Flurry Strike. Delaying attack makes second strike deny reactions.",
     "Passive. Weapon attacks at +1D to the next weapon attack. ",
 ];
-
 const tooltips_support = [
     "5AP Action [Core] Grant Bravery and power to allies.",
     "6AP Action. Improve movement and give some AP to allies.",
@@ -2484,7 +2562,6 @@ const tooltips_support = [
     "[TBD]",
     "1MP Rote (Gift). Create a persistent zone to grant gifts.",
 ];
-
 const tooltips_tactician = [
     "6AP Action. [Core] Declare a target vulnerable and command allies to advance.",
     "8AP Action. Increase movement of allies and grant AP.",
@@ -2502,7 +2579,6 @@ const tooltips_tactician = [
     "1MP Rote (Action). Allies affected by your action may use a Rote you know.",
     "1MP Reaction. Set up a position that gives Power and Evade to allies within it.",
 ];
-
 const tooltips_venom = [
     "5AP Rote (Attack) [Core] Imbue an attack with a poisonous toxin.",
     "4AP Rote (Attack). Imbue an attack to set a target ablaze.",
@@ -2520,7 +2596,6 @@ const tooltips_venom = [
     "Passive. Decreases the effect of damaging conditions on you.",
     "Passive. Briefly maintain a free dose of venoms you use.",
 ];
-
 const tooltips_veteran = [
     "Rote for Basic Steady. [Core] No cost. Lowers the cost of the action this turn by 1AP.",
     "Rote for Basic Guard. 3AP. Makes Guard more stronger and able to dodge more.",
@@ -2538,7 +2613,6 @@ const tooltips_veteran = [
     "[TBD]",
     "[TBD]",
 ];
-
 const tooltips_warden = [
     "4AP Action. [Core] Casts a threat-negating barrier on an ally.",
     "7AP Action. Grants barrier and Protection to allies in a zone.",
@@ -2641,11 +2715,6 @@ const tooltips_warden = [
 
             attribute_totals[attr] = isNaN(parsed) ? 0 : parsed;
 
-            /*
-            var tempList = ["Checking attribute value ", attr, "| Found" + attribute_totals[attr]];
-            console.log(...tempList);
-            */
-
             //Set Attributes back (get written as Ints?)
             setAttrs({
                [attr] : attribute_totals[attr]
@@ -2666,21 +2735,6 @@ const tooltips_warden = [
         equippedWeapon.feature = feature;
     });
 
-    console.log("Capturing all chosen traits");
-    allTraits.forEach(function(trait){
-      getAttrs([trait], function(values){
-        switch(values[trait]){
-          case "def":     break;
-          case "brawn":   mainAttrs["brawn"]++;    break;
-          case "magic":   mainAttrs["magic"]++;    break;
-          case "mastery": mainAttrs["mastery"]++;  break;
-          case "impact":  mainAttrs["impact"]++;   break;
-          case "resist":  mainAttrs["resist"]++;   break;
-          case "energy":  mainAttrs["energy"]++;   break;
-        };
-      });
-    });
-
     getAttrs(["creationDone"], function(values){
         var parsed = parseInt(values["creationDone"]);
         if (isNaN(parsed)){
@@ -2698,8 +2752,6 @@ const tooltips_warden = [
           });
         };
     });
-
-    console.log("=====================================================================");
   });
 
   /* -------------------------- Gear Management ------------------------------------*/
@@ -2778,6 +2830,10 @@ const tooltips_warden = [
   function updateLevel(){
     console.log("Updating Level...");
 
+    console.log("Tier 1: " + attribute_totals["tier1_trait_counter"]);
+    console.log("Tier 2: " + attribute_totals["tier2_trait_counter"]);
+    console.log("Tier 3: " + attribute_totals["tier3_trait_counter"]);
+
     //Get all talent points
     attribute_totals["player_level"] = attribute_totals["tier1_trait_counter"] + attribute_totals["tier2_trait_counter"] + attribute_totals["tier3_trait_counter"];
 
@@ -2791,90 +2847,110 @@ const tooltips_warden = [
 
   function updateAttributes(oldTrait, newTrait){
 
-    console.log("Old Trait: " + oldTrait);
-    console.log("New Trait: " + newTrait);
+    var mainAttrs = {"brawn": 2, "magic": 2, "mastery": 2, "impact": 2, "resist": 2, "energy": 2};
 
-    var minimumTraitVal = 2;
+    getAttrs(["recorded_brawn", "recorded_magic", "recorded_mastery", "recorded_impact", "recorded_resist", "recorded_energy"], function(values){
+      mainAttrs["brawn"] = values["recorded_brawn"];
+      mainAttrs["magic"] = values["recorded_magic"];
+      mainAttrs["mastery"] = values["recorded_mastery"];
+      mainAttrs["impact"] = values["recorded_impact"];
+      mainAttrs["resist"] = values["recorded_resist"];
+      mainAttrs["energy"] = values["recorded_energy"];
 
-    //Subtract from the old attribute, but don't go lower than the minimum
-    switch(true){
-      case "def":   break;
-      case ((oldTrait == "brawn") && (mainAttrs["brawn"] > minimumTraitVal)):
-        mainAttrs["brawn"]--;
-        break;
-      case ((oldTrait == "magic") &&  mainAttrs["magic"] > minimumTraitVal):
-        mainAttrs["magic"]--;
-        break;
-      case ((oldTrait == "mastery") && mainAttrs["mastery"] > minimumTraitVal):
-        mainAttrs["mastery"]--;
-        break;
-      case ((oldTrait == "impact") &&  mainAttrs["impact"] > minimumTraitVal):
-        mainAttrs["impact"]--;
-        break;
-      case ((oldTrait == "resist") &&  mainAttrs["resist"] > minimumTraitVal):
-        mainAttrs["resist"]--;
-        break;
-      case ((oldTrait == "energy") &&  mainAttrs["energy"] > minimumTraitVal):
-        mainAttrs["energy"]--;
-        break;
-    };
 
-    //Add to the new attribute
-    switch(newTrait){
-      case "def":   break;
-      case "brawn":   mainAttrs["brawn"]++;    break;
-      case "magic":   mainAttrs["magic"]++;    break;
-      case "mastery": mainAttrs["mastery"]++;  break;
-      case "impact":  mainAttrs["impact"]++;   break;
-      case "resist":  mainAttrs["resist"]++;   break;
-      case "energy":  mainAttrs["energy"]++;   break;
-    };
+      var minimumTraitVal = 2;
 
-    //DEBUG: Write out values
+      //Subtract from the old attribute, but don't go lower than the minimum
+      switch(true){
+        case "def":   break;
+        case ((oldTrait == "brawn") && (mainAttrs["brawn"] > minimumTraitVal)):
+          mainAttrs["brawn"]--;
+          break;
+        case ((oldTrait == "magic") &&  mainAttrs["magic"] > minimumTraitVal):
+          mainAttrs["magic"]--;
+          break;
+        case ((oldTrait == "mastery") && mainAttrs["mastery"] > minimumTraitVal):
+          mainAttrs["mastery"]--;
+          break;
+        case ((oldTrait == "impact") &&  mainAttrs["impact"] > minimumTraitVal):
+          mainAttrs["impact"]--;
+          break;
+        case ((oldTrait == "resist") &&  mainAttrs["resist"] > minimumTraitVal):
+          mainAttrs["resist"]--;
+          break;
+        case ((oldTrait == "energy") &&  mainAttrs["energy"] > minimumTraitVal):
+          mainAttrs["energy"]--;
+          break;
+      };
+
+      //Add to the new attribute
+      switch(newTrait){
+        case "def":   break;
+        case "brawn":   mainAttrs["brawn"]++;    break;
+        case "magic":   mainAttrs["magic"]++;    break;
+        case "mastery": mainAttrs["mastery"]++;  break;
+        case "impact":  mainAttrs["impact"]++;   break;
+        case "resist":  mainAttrs["resist"]++;   break;
+        case "energy":  mainAttrs["energy"]++;   break;
+      };
+
+
+      //Write the new totals to the main attributes
+      for (attr in mainAttrs)
+      {
+        attribute_totals[attr] = mainAttrs[attr];
+      }
+
+
+      recordAttributesToSheet(mainAttrs);
+      updateOtherAttributes();
+      calculatePointTotals();
+      calculateWeaponBonuses();
+      calculateArmorBonuses();
+      updateAllAttributeTotals();
+
+    });
+
+
+  }
+
+  /*  Keep these values from staying in floating memory.
+      Otherwise it will cause problems when
+      multiple people manipulate sheet
+  */
+  function recordAttributesToSheet(mainAttrs){
     setAttrs({
-          debug_brawn : mainAttrs["brawn"],
-          debug_magic : mainAttrs["magic"],
-          debug_mastery : mainAttrs["mastery"],
-          debug_impact : mainAttrs["impact"],
-          debug_resist : mainAttrs["resist"],
-          debug_energy : mainAttrs["energy"],
-          debug_might : (mainAttrs["brawn"] + mainAttrs["impact"]),
-          debug_body : (mainAttrs["brawn"] + mainAttrs["resist"]),
-          debug_vigor : (mainAttrs["brawn"] + mainAttrs["energy"]),
-          debug_will : (mainAttrs["magic"] + mainAttrs["impact"]),
-          debug_ego : (mainAttrs["magic"] + mainAttrs["resist"]),
-          debug_essence : (mainAttrs["magic"] + mainAttrs["energy"]),
-          debug_tech : (mainAttrs["mastery"] + mainAttrs["impact"]),
-          debug_instinct : (mainAttrs["mastery"] + mainAttrs["resist"]),
-          debug_focus : (mainAttrs["mastery"] + mainAttrs["energy"])
+          recorded_brawn : mainAttrs["brawn"],
+          recorded_magic : mainAttrs["magic"],
+          recorded_mastery : mainAttrs["mastery"],
+          recorded_impact : mainAttrs["impact"],
+          recorded_resist : mainAttrs["resist"],
+          recorded_energy : mainAttrs["energy"],
+          recorded_might : (parseInt(mainAttrs["brawn"]) + parseInt(mainAttrs["impact"])),
+          recorded_body : (parseInt(mainAttrs["brawn"]) + parseInt(mainAttrs["resist"])),
+          recorded_vigor : (parseInt(mainAttrs["brawn"]) + parseInt(mainAttrs["energy"])),
+          recorded_will : (parseInt(mainAttrs["magic"]) + parseInt(mainAttrs["impact"])),
+          recorded_ego : (parseInt(mainAttrs["magic"]) + parseInt(mainAttrs["resist"])),
+          recorded_essence : (parseInt(mainAttrs["magic"]) + parseInt(mainAttrs["energy"])),
+          recorded_tech : (parseInt(mainAttrs["mastery"]) + parseInt(mainAttrs["impact"])),
+          recorded_instinct : (parseInt(mainAttrs["mastery"]) + parseInt(mainAttrs["resist"])),
+          recorded_focus : (parseInt(mainAttrs["mastery"]) + parseInt(mainAttrs["energy"]))
       });
-
-    //Write the new totals to the main attributes
-    for (attr in mainAttrs)
-    {
-      console.log("Trait " + capitalizeWord(attr) + ": " + mainAttrs[attr]);
-      attribute_totals[attr] = mainAttrs[attr];
-    }
-
-    updateOtherAttributes();
-    calculatePointTotals();
-    calculateWeaponBonuses();
-    calculateArmorBonuses();
-    updateAllAttributeTotals();
   }
 
   function updateOtherAttributes(){
-      attribute_totals["might"]       =   attribute_totals["brawn"]   +   attribute_totals["impact"];
-      attribute_totals["body"]        =   attribute_totals["brawn"]   +   attribute_totals["resist"];
-      attribute_totals["vigor"]       =   attribute_totals["brawn"]   +   attribute_totals["energy"];
-      attribute_totals["will"]        =   attribute_totals["magic"]   +   attribute_totals["impact"];
-      attribute_totals["ego"]         =   attribute_totals["magic"]   +   attribute_totals["resist"];
-      attribute_totals["essence"]     =   attribute_totals["magic"]   +   attribute_totals["energy"];
-      attribute_totals["technique"]   =   attribute_totals["mastery"] +   attribute_totals["impact"];
-      attribute_totals["instinct"]    =   attribute_totals["mastery"] +   attribute_totals["resist"];
-      attribute_totals["focus"]       =   attribute_totals["mastery"] +   attribute_totals["energy"];
+      attribute_totals["might"]       =   parseInt(attribute_totals["brawn"])   +   parseInt(attribute_totals["impact"]);
+      attribute_totals["body"]        =   parseInt(attribute_totals["brawn"])   +   parseInt(attribute_totals["resist"]);
+      attribute_totals["vigor"]       =   parseInt(attribute_totals["brawn"])   +   parseInt(attribute_totals["energy"]);
+      attribute_totals["will"]        =   parseInt(attribute_totals["magic"])   +   parseInt(attribute_totals["impact"]);
+      attribute_totals["ego"]         =   parseInt(attribute_totals["magic"])   +   parseInt(attribute_totals["resist"]);
+      attribute_totals["essence"]     =   parseInt(attribute_totals["magic"])   +   parseInt(attribute_totals["energy"]);
+      attribute_totals["technique"]   =   parseInt(attribute_totals["mastery"]) +   parseInt(attribute_totals["impact"]);
+      attribute_totals["instinct"]    =   parseInt(attribute_totals["mastery"]) +   parseInt(attribute_totals["resist"]);
+      attribute_totals["focus"]       =   parseInt(attribute_totals["mastery"]) +   parseInt(attribute_totals["energy"]);
   };
 
+  //Catch-all function to force-update values into memory
   function updateAllAttributeTotals(){
       attributes.forEach(function(attr){
           setAttrs({
